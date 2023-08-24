@@ -4,7 +4,31 @@
 window.onscroll = function() {
     var theta = document.documentElement.scrollTop / 1000 % Math.PI;
 document.getElementById('giant-logo').style.transform ='rotate(' + theta + 'rad)';
+
+var elem = document.querySelector("p#definition-text");
+if (isInViewport(elem)) {
+    document.getElementById("fourth-section").style.backgroundColor = "black";
+    document.getElementsByClassName("text-highlight")[0].style.backgroundColor = "white";
+    document.getElementsByClassName("text-highlight")[1].style.backgroundColor = "white";
+} 
+
+var reset = document.querySelector("span#reset-viewport");
+if (isInViewport(reset)) {
+    document.getElementById("fourth-section").style.backgroundColor = "white";
+    document.getElementsByClassName("text-highlight")[0].style.backgroundColor = "white";
+    document.getElementsByClassName("text-highlight")[1].style.backgroundColor = "white";
+} 
 }
 
+
 // add animations when entering viewport
+function isInViewport(elem) {
+    var bounding = elem.getBoundingClientRect();
+    return (
+        bounding.top >= 0 &&
+        bounding.left >= 0 &&
+        bounding.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        bounding.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+};
 

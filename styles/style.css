@@ -24,29 +24,6 @@ body {
   width: 100%;
   margin: 0;
   padding: 0;
-  border-bottom: 100px solid white;
-}
-
-.fourth-section {
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  background-color: white;
-  align-items: center;
-  overflow-x: hidden;
-}
-
-.fifth-section {
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  align-items: center;
-  padding-top: 200px;
-  background-color: white;
-  display: flex;
-  flex-wrap: wrap;
-  padding-bottom: 60px;
 }
 
 
@@ -206,6 +183,7 @@ body {
   display: none;
   cursor: default;
   letter-spacing: 1px;
+  border-radius: 20px;
 }
 
 #research-topic-description-1 {
@@ -246,13 +224,23 @@ body {
 
 /* --------------- FOURTH SECTION ----------------*/
 
-.definition-container {
+.fourth-section {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
   background-color: white;
+  align-items: center;
+  overflow-x: hidden;
+  transition: all 2s;
+  padding-top: 150px;
+}
+
+.definition-container {
   width: 60%;
 }
 
 .image-container {
-  background-color: white;
   width: 40%;
 }
 
@@ -262,33 +250,61 @@ body {
   font-size: 70px;  
   margin: 0;
   cursor: default;
-  padding: 200px 100px 100px 150px;
+  padding: 0px 100px 0px 150px;
+  transition: all 2s;
 }
 
 .text-highlight {
-  color: white;
-  background-color: black;
+  color: black;
+  background-color: white;
   text-transform: uppercase;
 }
 
 .definition-logo {
   width: 170%;
-  transform:translateX(10%)
+  transform: translateX(10%); 
 }
 
+
 /* --------------- FIFTH SECTION ----------------*/
+
+.fifth-section {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  background-color: black;
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 60px;
+  padding-top: 200px;
+}
+
+.fifth-section-inside {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  background-color: white;
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 60px;
+  border-radius: 800px;
+}
 
 .division-logo-container {
   width: 50%;
   justify-content: center;
   position: sticky;
-  top: 280px;
+  top: 50px;
   display: inline-flex;
   float: left;
 }
 
 .division-logo {
   width: 300px;
+  margin-top: 200px;
+  margin-bottom: 250px;
 }
 
 .division-text-container {
@@ -299,7 +315,6 @@ body {
     align-content: center;
     display: inline-flex;
     float: right;
-    background-color: white;
     padding-top: 250px;
     padding-bottom: 250px;
 }
@@ -318,6 +333,7 @@ body {
   font-size: 20px;  
   margin: 0;
   width: 60%;
+  margin-right:40%;
 }
 
 #division-logo-1 {
@@ -342,4 +358,92 @@ body {
 
 #division-logo-6 {
   z-index: 1050 !important;
+  
+}
+
+.division-call-to-action {
+    border-radius: 30px;
+    border: 0px solid transparent;
+    padding: 10px 15px 10px 15px;
+    font-size: 16px;
+    margin-right: 10px;
+    margin-top: 30px;
+    cursor: pointer;
+    transition: all 1s ease;
+}
+
+.division-call-to-action:hover {
+  border: 20px solid black;
+  border-radius: 50px;
+}
+
+
+/* --------------- SIXTH SECTION ----------------*/
+
+.sixth-section {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  background-color: black;
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 60px;
+  padding-top: 200px;
+}
+
+.news-container {
+  width: 100%;
+}
+
+.news-title-container {
+    margin-left: 10%;
+    margin-right: 10%;
+    display: flex;
+    width: 80%;
+    flex-wrap: wrap;
+}
+
+.news-subtitle {
+  color: white;
+    margin:0;
+    font-size: 30px;
+    font-family: Founders;
+    font-weight: normal;
+    cursor:default;
+}
+
+.news-title {
+  color: white;
+  font-family: Sequel;
+  font-size: 150px;  
+  margin: 0;
+  width: 100%;
+  font-weight: normal;
+  cursor:default;
+}
+
+.news-box-container {
+  width: 100%;
+  display: flex;
+  width: 90%;
+  margin-left: 5%;
+}
+
+.news-box {
+  margin: 20px;
+}
+
+.news-division {
+  color: white;
+  font-family: Sequel;
+  font-size: 30px;  
+  cursor:default;
+}
+
+.news-text {
+  color: white;
+  font-family: Sequel;
+  font-size: 20px;  
+  cursor:default;
 }
