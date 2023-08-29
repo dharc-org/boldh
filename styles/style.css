@@ -585,6 +585,7 @@ body {
   padding: 4px 7px 4px 7px;
   border-radius: 4px;
   margin-right: 10px;
+  text-transform: uppercase;
 }
 
 .agenda-date {
