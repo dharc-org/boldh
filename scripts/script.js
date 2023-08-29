@@ -45,8 +45,9 @@ function isInViewport(elem) {
     );
 };
 
-
+var news = []
 // FETCH DATA FROM JSON
 fetch("/content/news.json")
 .then(res => res.json())
-.then(data => console.log(data))
+.then(data => news = data)
+console.log(news);
