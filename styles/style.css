@@ -414,7 +414,7 @@ body {
     cursor:default;
 }
 
-.news-title {
+.news-main-title {
   color: white;
   font-family: Sequel;
   font-size: 150px;  
@@ -422,6 +422,7 @@ body {
   width: 100%;
   font-weight: normal;
   cursor:default;
+  margin-bottom: 50px;
 }
 
 .news-box-container {
@@ -442,20 +443,46 @@ body {
 }
 
 .news-box:first-child {
-  margin-left:10vw !important;
+  margin-left:10.5vw !important;
 }
 
 .news-division {
   color: white;
   font-family: Sequel;
+  font-size: 15px;  
+  cursor:default;
+  margin: 0;
+  display: inline-block;
+}
+
+.news-date {
+  color: white;
+  font-family: SequelLight;
+  font-size: 15px;  
+  cursor:default;
+  white-space:normal;
+  display: inline-block;
+  border: 0.5px solid white;
+  padding: 2px;
+  border-radius: 3px;
+  margin-right: 10px;
+}
+
+.news-title {
+  color: white;
+  font-family: Sequel;
   font-size: 30px;  
   cursor:default;
+  white-space:normal;
+  margin: 0;
 }
 
 .news-text {
   color: white;
-  font-family: Sequel;
+  font-family: SequelLight;
   font-size: 20px;  
   cursor:default;
   white-space:normal;
+  margin: 0;
+  margin-top: 5px;
 }

@@ -4,6 +4,12 @@
 }
 
 @font-face {
+    font-family: SequelLight;
+    src: url(../assets/fonts/Sequel/SequelSansLightHead.woff2);
+}
+
+@font-face {
     font-family: Founders;
     src: url(../assets/fonts/Founders/FoundersGroteskCondensedBold.woff2);
 }
+
