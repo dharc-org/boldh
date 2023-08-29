@@ -53,9 +53,10 @@ fetch("/content/news.json")
   obj = data;
  })
 .then(() => {
+  console.log(data);
   var div = document.getElementById('news-box-container');
-  div.innerHTML += "<div class='news-box'><h3 class='news-division'>✪ Division</h3><h3 class='news-text'>Hello</h3></div>";
+  div.innerHTML += "<div class='news-box'><h3 class='news-division'>✪ Division</h3><h3 class='news-text'>Hello hello</h3></div>";
  });
 
-console.log("ready");
+console.log("ready ready");
 console.log(obj);
