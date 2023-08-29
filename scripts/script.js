@@ -107,7 +107,7 @@ fetch("/content/news.json")
       var title = "<h3 class='agenda-title'>" + news_item.title  + "</h3>";
       var text = "<p class='agenda-text'>" + news_item.text + "</p>";
       var news_box = document.getElementById('agenda-box-container');
-      news_box.innerHTML += "<div class='agenda-box +" + status +"'>" + statusElem + date + division + type + title + text + "</div>";
+      news_box.innerHTML += "<div class='agenda-box " + status +"'>" + statusElem + date + division + type + title + text + "</div>";
     }); 
     });
 console.log("ready hello");
