@@ -45,18 +45,22 @@ function isInViewport(elem) {
     );
 };
 
-var obj = []
+var news_array = []
 // FETCH DATA FROM JSON
 fetch("/content/news.json")
 .then(res => res.json())
 .then(data => {
-  obj = data;
+  news_array = data;
  })
 .then(() => {
-  console.log(data);
-  var div = document.getElementById('news-box-container');
-  div.innerHTML += "<div class='news-box'><h3 class='news-division'>✪ Division</h3><h3 class='news-text'>Hello hello</h3></div>";
- });
+  news_array.forEach(function (news_item) {
+    var title = news_item.title;
+    var division = news_item.division;
+    var date = news_item.date;
+    var text = news_item.text;
+    var news_box = document.getElementById('news-box-container');
+    news_box.innerHTML += "<div class='news-box'><h3 class='news-division'>✪" + division + "</h3><h3 class='news-text'>" + text + "</h3></div>";
+  }); 
+  });
 
-console.log("ready ready");
-console.log(obj);
+console.log("ready hello");
