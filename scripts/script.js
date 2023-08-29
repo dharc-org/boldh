@@ -16,6 +16,15 @@ if (isInViewport(element)) {
     } else {
         document.getElementById('news-box-container').scrollLeft -= theta +5; }
     } 
+
+// moving events agenda on scroll animation
+var element = document.getElementById('agenda-box-container');
+if (isInViewport(element)) {
+    if(oldScrollY < window.scrollY) {
+        document.getElementById('agenda-box-container').scrollLeft += theta +5; 
+    } else {
+        document.getElementById('agenda-box-container').scrollLeft -= theta +5; }
+    } 
 oldScrollY = window.scrollY;
 
 // definition background color change
@@ -32,7 +41,17 @@ if (isInViewport(reset)) {
     document.getElementsByClassName("text-highlight")[0].style.backgroundColor = "white";
     document.getElementsByClassName("text-highlight")[1].style.backgroundColor = "white";
 } 
+
+// agenda background color change
+var agenda_title = document.querySelector("h2#agenda-main-title");
+if (isInViewport(agenda_title)) {
+    document.getElementById("seventh-section").style.backgroundColor = "#FA3005";
+} else {
+    document.getElementById("seventh-section").style.backgroundColor = "black";
 }
+
+}
+
 
 // add animations when entering viewport
 function isInViewport(elem) {
@@ -46,7 +65,10 @@ function isInViewport(elem) {
 };
 
 var news_array = []
+
 // FETCH DATA FROM JSON
+
+// news data
 fetch("/content/news.json")
 .then(res => res.json())
 .then(data => {
@@ -64,4 +86,23 @@ fetch("/content/news.json")
   }); 
   });
 
+
+// agenda data
+  fetch("/content/agenda.json")
+  .then(res => res.json())
+  .then(data => {
+    news_array = data;
+   })
+  .then(() => {
+    news_array.forEach(function (news_item) {
+      var date = "<p class='agenda-date'>" + news_item.date + "</p>";
+      var division = "<p class='agenda-division'>" + news_item.division + "</p>";
+      var type = "<p class='agenda-type'>" + news_item.type + "</p>";
+      var title = "<h3 class='agenda-title'>" + news_item.title  + "</h3>";
+      var text = "<p class='agenda-text'>" + news_item.text + "</p>";
+  
+      var news_box = document.getElementById('agenda-box-container');
+      news_box.innerHTML += "<div class='agenda-box'>" + date + division + type + title + text + "</div>";
+    }); 
+    });
 console.log("ready hello");

@@ -183,7 +183,6 @@ body {
   display: none;
   cursor: default;
   letter-spacing: 1px;
-  border-radius: 20px;
 }
 
 #research-topic-description-1 {
@@ -390,7 +389,7 @@ body {
   flex-wrap: wrap;
   padding-bottom: 60px;
   padding-top: 200px;
-  padding-bottom: 800px;
+  padding-bottom: 200px;
 }
 
 .news-container {
@@ -403,6 +402,7 @@ body {
     display: flex;
     width: 80%;
     flex-wrap: wrap;
+    padding-bottom: 50px;
 }
 
 .news-subtitle {
@@ -453,6 +453,7 @@ body {
   cursor:default;
   margin: 0;
   display: inline-block;
+  text-decoration: underline;
 }
 
 .news-date {
@@ -486,4 +487,164 @@ body {
   white-space:normal;
   margin: 0;
   margin-top: 5px;
+}
+
+
+/* --------------- SEVENTH SECTION ----------------*/
+
+.seventh-section {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  background-color: black;
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 60px;
+  padding-top: 200px;
+  padding-bottom: 800px;
+  transition: all 1s linear;
+}
+
+.agenda-container {
+  width: 100%;
+}
+
+.agenda-title-container {
+    margin-left: 10%;
+    margin-right: 10%;
+    display: flex;
+    width: 80%;
+    flex-wrap: wrap;
+    padding-bottom: 50px;
+    justify-content: flex-end;
+}
+
+.agenda-subtitle {
+  color: white;
+    margin:0;
+    font-size: 30px;
+    font-family: Founders;
+    font-weight: normal;
+    cursor:default;
+}
+
+.agenda-main-title {
+  color: white;
+  font-family: Sequel;
+  font-size: 150px;  
+  margin: 0;
+  width: 100%;
+  font-weight: normal;
+  cursor:default;
+  margin-bottom: 50px;
+  text-align: right;
+}
+
+.agenda-box-container {
+  width: 100%;
+  display: flex;
+  overflow: auto;
+  white-space: nowrap;
+}
+
+.agenda-box-container::-webkit-scrollbar {
+  display: none;
+}
+
+.agenda-box {
+  min-width: 400px;
+  margin: 20px;
+  display: inline-block;
+  padding: 30px;
+}
+
+.agenda-box:first-child {
+  margin-left:5.5vw !important;
+}
+
+.agenda-division {
+  color: white;
+  font-family: SequelLight;
+  font-size: 15px;  
+  cursor:default;
+  margin: 0;
+  display: inline-block;
+  text-decoration: underline;
+}
+
+.agenda-type {
+  color: white;
+  font-family: SequelLight;
+  font-size: 15px;  
+  cursor:default;
+  margin: 0;
+  letter-spacing: 2px;
+  white-space:normal;
+  border: 1px solid white;
+  padding: 4px 7px 4px 7px;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+.agenda-date {
+  color: white;
+  font-family: SequelLight;
+  font-size: 15px;  
+  cursor:default;
+  white-space:normal;
+  display: inline-block;
+  border: 1px solid white;
+  padding: 4px 7px 4px 7px;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+.agenda-title {
+  color: white;
+  font-family: Sequel;
+  font-size: 30px;  
+  cursor:default;
+  white-space:normal;
+  margin: 0;
+  font-weight: normal;
+  padding-top: 20px;
+}
+
+.agenda-text {
+  color: white;
+  font-family: SequelLight;
+  font-size: 20px;  
+  cursor:default;
+  white-space:normal;
+  margin: 0;
+  margin-top: 5px;
+}
+
+.concluded {
+  background-color: white;
+  border-radius: 5px;
+}
+
+.concluded p, .concluded h3 {
+  color: #FA3005;
+}
+
+.concluded .agenda-type, .concluded .agenda-date {
+  border-color: #FA3005;
+  color: #FA3005;
+}
+
+.agenda-concluded {
+  font-family: SequelLight;
+  font-size: 15px;  
+  display: inline-block;
+  background-color: #FA3005;
+  border: 1px solid  #FA3005;
+  color: white !important;
+  padding: 4px 7px 4px 7px;
+  border-radius: 4px;
+  margin-right: 10px;
+  display: inline-block;
+  
 }
