@@ -53,7 +53,8 @@ fetch("/content/news.json")
   obj = data;
  })
 .then(() => {
-  document.getElementById("news-box-container").appendChild(<div class='news-box'><h3 class='news-division'>✪ Division</h3><h3 class='news-text'>Hello</h3></div>);
+  var elem= document.createElement("<div class='news-box'><h3 class='news-division'>✪ Division</h3><h3 class='news-text'>Hello</h3></div>");
+  document.getElementById("news-box-container").appendChild(elem);
  });
 
 console.log("helloo");
