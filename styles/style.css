@@ -448,7 +448,7 @@ body {
 
 .news-division {
   color: white;
-  font-family: Sequel;
+  font-family: SequelLight;
   font-size: 15px;  
   cursor:default;
   margin: 0;
@@ -462,9 +462,9 @@ body {
   cursor:default;
   white-space:normal;
   display: inline-block;
-  border: 0.5px solid white;
-  padding: 2px;
-  border-radius: 3px;
+  border: 1px solid white;
+  padding: 4px 7px 4px 7px;
+  border-radius: 4px;
   margin-right: 10px;
 }
 
@@ -475,6 +475,7 @@ body {
   cursor:default;
   white-space:normal;
   margin: 0;
+  font-weight: normal;
 }
 
 .news-text {
