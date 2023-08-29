@@ -47,6 +47,6 @@ function isInViewport(elem) {
 
 
 // FETCH DATA FROM JSON
-fetch("content/news.json")
+fetch("/content/news.json")
 .then(res => res.json())
 .then(data => console.log(data))
