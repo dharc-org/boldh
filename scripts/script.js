@@ -97,7 +97,7 @@ fetch("/content/news.json")
     news_array.forEach(function (news_item) {
       var status = "";
       var statusElem = ""
-      if (news_item.status = "concluded") {
+      if (news_item.status === "concluded") {
         status = "concluded"
         statusElem = "<p class='agenda-concluded'>CONCLUDED</p>";
       }
