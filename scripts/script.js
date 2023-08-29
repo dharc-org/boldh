@@ -45,10 +45,16 @@ function isInViewport(elem) {
     );
 };
 
-var news = []
+var obj = []
 // FETCH DATA FROM JSON
 fetch("/content/news.json")
 .then(res => res.json())
-.then(data => news = data)
-console.log(news);
+.then(data => {
+  obj = data;
+ })
+.then(() => {
+  console.log(obj);
+ });
+
+
 console.log("helloo");
