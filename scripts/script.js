@@ -51,3 +51,4 @@ fetch("/content/news.json")
 .then(res => res.json())
 .then(data => news = data)
 console.log(news);
+console.log("helloo");
