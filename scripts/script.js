@@ -95,14 +95,19 @@ fetch("/content/news.json")
    })
   .then(() => {
     news_array.forEach(function (news_item) {
+      var status = "";
+      var statusElem = ""
+      if (news_item.status = "concluded") {
+        status = "concluded"
+        statusElem = "<p class='agenda-concluded'>CONCLUDED</p>";
+      }
       var date = "<p class='agenda-date'>" + news_item.date + "</p>";
       var division = "<p class='agenda-division'>" + news_item.division + "</p>";
       var type = "<p class='agenda-type'>" + news_item.type + "</p>";
       var title = "<h3 class='agenda-title'>" + news_item.title  + "</h3>";
       var text = "<p class='agenda-text'>" + news_item.text + "</p>";
-  
       var news_box = document.getElementById('agenda-box-container');
-      news_box.innerHTML += "<div class='agenda-box'>" + date + division + type + title + text + "</div>";
+      news_box.innerHTML += "<div class='agenda-box +" + status +"'>" + statusElem + date + division + type + title + text + "</div>";
     }); 
     });
 console.log("ready hello");
