@@ -1,10 +1,24 @@
 
-// scrolling logo in second section
+// SCROLLING ANIMATIONS
+var oldScrollY = window.scrollY;
 
 window.onscroll = function() {
-    var theta = document.documentElement.scrollTop / 1000 % Math.PI;
+
+// rotating logo animation
+var theta = document.documentElement.scrollTop / 1000 % Math.PI;
 document.getElementById('giant-logo').style.transform ='rotate(' + theta + 'rad)';
 
+// moving news on scroll animation
+var element = document.getElementById('news-box-container');
+if (isInViewport(element)) {
+    if(oldScrollY < window.scrollY) {
+        document.getElementById('news-box-container').scrollLeft += theta +5; 
+    } else {
+        document.getElementById('news-box-container').scrollLeft -= theta +5; }
+    } 
+oldScrollY = window.scrollY;
+
+// definition background color change
 var elem = document.querySelector("p#definition-text");
 if (isInViewport(elem)) {
     document.getElementById("fourth-section").style.backgroundColor = "black";
@@ -20,7 +34,6 @@ if (isInViewport(reset)) {
 } 
 }
 
-
 // add animations when entering viewport
 function isInViewport(elem) {
     var bounding = elem.getBoundingClientRect();
@@ -32,3 +45,8 @@ function isInViewport(elem) {
     );
 };
 
+
+// FETCH DATA FROM JSON
+fetch("content/news.json")
+.then(res => res.json())
+.then(data => console.log(data))

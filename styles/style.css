@@ -390,6 +390,7 @@ body {
   flex-wrap: wrap;
   padding-bottom: 60px;
   padding-top: 200px;
+  padding-bottom: 800px;
 }
 
 .news-container {
@@ -426,12 +427,22 @@ body {
 .news-box-container {
   width: 100%;
   display: flex;
-  width: 90%;
-  margin-left: 5%;
+  overflow: auto;
+  white-space: nowrap;
+}
+
+.news-box-container::-webkit-scrollbar {
+  display: none;
 }
 
 .news-box {
+  min-width: 300px;
   margin: 20px;
+  display: inline-block;
+}
+
+.news-box:first-child {
+  margin-left:10vw !important;
 }
 
 .news-division {
@@ -446,4 +457,5 @@ body {
   font-family: Sequel;
   font-size: 20px;  
   cursor:default;
+  white-space:normal;
 }
