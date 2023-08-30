@@ -46,8 +46,10 @@ if (isInViewport(reset)) {
 var agenda_title = document.querySelector("h2#agenda-main-title");
 if (isInViewport(agenda_title)) {
     document.getElementById("seventh-section").style.backgroundColor = "#FA3005";
+    document.getElementById("sixth-section").style.backgroundColor = "#FA3005";
 } else {
     document.getElementById("seventh-section").style.backgroundColor = "black";
+    document.getElementById("sixth-section").style.backgroundColor = "black";
 }
 
 }

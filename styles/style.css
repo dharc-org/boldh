@@ -390,6 +390,7 @@ body {
   padding-bottom: 60px;
   padding-top: 200px;
   padding-bottom: 200px;
+  transition: all 1s linear;
 }
 
 .news-container {
