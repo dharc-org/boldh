@@ -78,7 +78,7 @@ fetch("/content/news.json")
  })
 .then(() => {
   news_array.forEach(function (news_item) {
-    var url = "<a href='https://www.google.it/' target='_blank'>"
+    var url = "<a class='news-box-anchor' href='https://www.google.it/' target='_blank'>"
     var date = "<p class='news-date'>" + news_item.date + "</p>";
     var division = "<p class='news-division'>" + news_item.division + "</p>";
     var title = "<h3 class='news-title'>" + news_item.title  + "</h3>";
@@ -104,13 +104,14 @@ fetch("/content/news.json")
         status = "concluded"
         statusElem = "<p class='agenda-concluded'>CONCLUDED</p>";
       }
+      var url = "<a class='agenda-box-anchor' href='https://www.google.it/' target='_blank'>"
       var date = "<p class='agenda-date'>" + news_item.date + "</p>";
       var division = "<p class='agenda-division'>" + news_item.division + "</p>";
       var type = "<p class='agenda-type'>" + news_item.type + "</p>";
       var title = "<h3 class='agenda-title'>" + news_item.title  + "</h3>";
       var text = "<p class='agenda-text'>" + news_item.text + "</p>";
       var news_box = document.getElementById('agenda-box-container');
-      news_box.innerHTML += "<div class='agenda-box " + status +"'>" + statusElem + date + division + type + title + text + "</div>";
+      news_box.innerHTML += url + "<div class='agenda-box " + status +"'>" + statusElem + date + division + type + title + text + "</div></a>";
     }); 
     });
 console.log("ready hello");

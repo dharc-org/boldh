@@ -453,7 +453,7 @@ body {
   transform: scale(1.05);
 }
 
-.news-box:first-child {
+.news-box-anchor:first-child {
   margin-left:10.5vw !important;
 }
 
@@ -576,8 +576,8 @@ cursor: pointer;
 transform: scale(1.05);
 }
 
-.agenda-box:first-child {
-  margin-left:5.5vw !important;
+.agenda-box-anchor:first-child {
+  margin-left:10.5vw !important;
 }
 
 .agenda-division {
