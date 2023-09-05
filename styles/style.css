@@ -513,7 +513,7 @@ body {
   flex-wrap: wrap;
   padding-bottom: 60px;
   padding-top: 200px;
-  padding-bottom: 800px;
+  padding-bottom: 200px;
   transition: all 1s linear;
 }
 
@@ -664,5 +664,97 @@ transform: scale(1.05);
   border-radius: 4px;
   margin-right: 10px;
   display: inline-block;
-  
+}
+
+/* --------------- CONTACTS SECTION ----------------*/
+
+.contacts-section {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  background-color: black;
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 60px;
+  padding-top: 200px;
+  padding-bottom: 800px;
+  transition: all 1s linear;
+}
+
+.contacts-title-container {
+  margin-left: 10%;
+  margin-right: 10%;
+  display: flex;
+  width: 80%;
+  flex-wrap: wrap;
+  padding-bottom: 50px;
+  justify-content: flex-end;
+}
+
+.contacts-subtitle {
+color: white;
+  margin:0;
+  font-size: 30px;
+  font-family: Founders;
+  font-weight: normal;
+  cursor:default;
+}
+
+.contacts-main-title {
+color: white;
+font-family: Sequel;
+font-size: 150px;  
+margin: 0;
+width: 100%;
+font-weight: normal;
+cursor:default;
+margin-bottom: 50px;
+text-align: right;
+}
+
+.contacts-title {
+    font-family: 'SequelLight';
+    font-size: 30px;
+    color: white;
+    font-weight: normal;
+    margin: 0;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+}
+
+.contacts-body {
+  font-family: 'SequelLight';
+  font-size: 30px;
+  color: white;
+  font-weight: normal;
+  margin: 0;
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+  text-align: right;
+}
+
+.contacts-box {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    border-top: 1px solid white;
+    padding: 30px 10px 30px 10px;
+}
+
+.contacts-box:hover {
+  background-color: white;
+}
+
+.contacts-box:hover p{
+  color: #7EE787;
+}
+
+.contacts-box:last-child {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  border-bottom: 1px solid white;
 }
