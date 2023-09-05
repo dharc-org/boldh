@@ -335,8 +335,12 @@ body {
   margin-right:40%;
 }
 
-#division-logo-1 {
+#division-logo-0 {
   z-index: 1300 !important;
+}
+
+#division-logo-1 {
+  z-index: 127a0 !important;
 }
 
 #division-logo-2 {
@@ -441,6 +445,12 @@ body {
   min-width: 300px;
   margin: 20px;
   display: inline-block;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+
+.news-box:hover {
+  transform: scale(1.05);
 }
 
 .news-box:first-child {
@@ -451,7 +461,7 @@ body {
   color: white;
   font-family: SequelLight;
   font-size: 15px;  
-  cursor:default;
+  cursor:pointer;
   margin: 0;
   display: inline-block;
   text-decoration: underline;
@@ -461,7 +471,7 @@ body {
   color: white;
   font-family: SequelLight;
   font-size: 15px;  
-  cursor:default;
+  cursor:pointer;
   white-space:normal;
   display: inline-block;
   border: 1px solid white;
@@ -474,7 +484,7 @@ body {
   color: white;
   font-family: Sequel;
   font-size: 30px;  
-  cursor:default;
+  cursor:pointer;
   white-space:normal;
   margin: 0;
   font-weight: normal;
@@ -484,7 +494,7 @@ body {
   color: white;
   font-family: SequelLight;
   font-size: 20px;  
-  cursor:default;
+  cursor:pointer;
   white-space:normal;
   margin: 0;
   margin-top: 5px;
@@ -558,6 +568,12 @@ body {
   margin: 20px;
   display: inline-block;
   padding: 30px;
+transition: all 0.5s ease;
+cursor: pointer;
+}
+
+.agenda-box:hover {
+transform: scale(1.05);
 }
 
 .agenda-box:first-child {
@@ -568,7 +584,7 @@ body {
   color: white;
   font-family: SequelLight;
   font-size: 15px;  
-  cursor:default;
+  cursor: pointer;
   margin: 0;
   display: inline-block;
   text-decoration: underline;
@@ -578,7 +594,7 @@ body {
   color: white;
   font-family: SequelLight;
   font-size: 15px;  
-  cursor:default;
+  cursor: pointer;
   margin: 0;
   letter-spacing: 2px;
   white-space:normal;
@@ -593,7 +609,7 @@ body {
   color: white;
   font-family: SequelLight;
   font-size: 15px;  
-  cursor:default;
+  cursor: pointer;
   white-space:normal;
   display: inline-block;
   border: 1px solid white;
@@ -606,7 +622,7 @@ body {
   color: white;
   font-family: Sequel;
   font-size: 30px;  
-  cursor:default;
+  cursor: pointer;
   white-space:normal;
   margin: 0;
   font-weight: normal;
@@ -617,7 +633,7 @@ body {
   color: white;
   font-family: SequelLight;
   font-size: 20px;  
-  cursor:default;
+  cursor: pointer;
   white-space:normal;
   margin: 0;
   margin-top: 5px;

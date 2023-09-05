@@ -78,13 +78,14 @@ fetch("/content/news.json")
  })
 .then(() => {
   news_array.forEach(function (news_item) {
+    var url = "<a href='https://www.google.it/' target='_blank'>"
     var date = "<p class='news-date'>" + news_item.date + "</p>";
     var division = "<p class='news-division'>" + news_item.division + "</p>";
     var title = "<h3 class='news-title'>" + news_item.title  + "</h3>";
     var text = "<p class='news-text'>" + news_item.text + "</p>";
 
     var news_box = document.getElementById('news-box-container');
-    news_box.innerHTML += "<div class='news-box'>" + date + division + title + text + "</div>";
+    news_box.innerHTML += url + "<div class='news-box'>" + date + division + title + text + "</div></a>";
   }); 
   });
 
