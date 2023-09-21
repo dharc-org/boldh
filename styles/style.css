@@ -1,4 +1,3 @@
-
 body {
     margin: 0;
     background-color: black;
@@ -848,11 +847,19 @@ text-align: right;
   margin-left: 12px;
   text-decoration: underline;
   cursor: pointer;
+  color: white;
 }
 
 .footer-copy a:visited {
   color: grey;
 }
+
+.footer-copy a:link,
+.footer-copy a:hover,
+.footer-copy a:active {
+  color: white;
+}
+
 
 .footer-copy-container {
   background-color: rgb(12, 12, 12);
