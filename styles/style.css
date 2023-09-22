@@ -139,6 +139,7 @@ body {
     color: white;
     display: flex;
     justify-content: center;
+    overflow-x: hidden;
 }
 
 /* --------------- THIRD SECTION ----------------*/
@@ -876,5 +877,8 @@ text-align: right;
     font-size: 40px;
     padding: 0px 10px 40px 30px;
     transition: all 2s;
+}
+.giant-logo {
+  transform: scale(1.1) !important;
 }
 }
