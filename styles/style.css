@@ -1,0 +1,880 @@
+body {
+    margin: 0;
+    background-color: black;
+    overflow-x: hidden;
+ }
+
+
+.first-section {
+    background-color: black;
+    width: 100%;
+    height: 900px;
+    margin: 0;
+    padding: 0;
+ }
+
+ .second-section {
+    background-color: white;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.third-section {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+
+/* --------------- FIRST SECTION ----------------*/
+
+.top-title-container {
+    width: 100%;
+    height: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bottom-title-container {
+    width: 100%;
+    height: 60%;
+}
+
+.bottom-title {
+    color: white;
+    margin:0;
+    font-size: 30vw;
+    text-align: center;
+    font-family: Sequel;
+    font-weight: normal !important;
+    animation: slide-up 1s forwards;
+    cursor:default;
+}
+
+.top-title {
+    color: white;
+    margin:0;
+    font-size: 20px;
+    font-family: Founders;
+    margin: 0px 20px 0px 20px;
+    animation: slide-down 1.3s forwards;
+    cursor:default;
+}
+
+.top-logo {
+    width: 250px;
+    height: 250px;
+    animation: slide-rotate 1s forwards;
+}
+
+@keyframes slide-down {
+    from {
+      opacity: 0;
+      transform: translateY(-50px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+@keyframes slide-rotate {
+    from {
+      opacity: 0;
+      transform: translateY(-50px);
+    }
+    to {
+      opacity: 1;
+      transform: rotate(90deg);
+    }
+  }
+
+@keyframes slide-up {
+    from {
+      opacity: 0;
+      transform: translateY(50px);
+
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+
+/* --------------- SECOND SECTION ----------------*/
+
+.giant-logo {
+    height: auto;
+    display: block;
+    width: 100%;
+    margin: auto;
+}
+
+.claim-paragraph {
+    color: white;
+    font-family: 'SequelLight';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor:default;
+    padding-bottom: 100px;
+    width: 30%;
+    font-size: 2vw;
+  }
+
+  .claim-paragraph span {
+    font-family: 'Sequel';
+    letter-spacing: 1px;
+  }
+
+.claim-container {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    position: relative;
+    text-align: center;
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+
+/* --------------- THIRD SECTION ----------------*/
+
+
+.research-topics-container {
+    background-color: black;
+}
+
+.research-topic {
+ position: relative;
+}
+
+.research-topic-title {
+    color: white;
+    font-family: Sequel;
+    font-size: 100px;
+    margin: 0;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    cursor: default;
+    padding-left: 50px;
+}
+
+.research-topic-title:hover {
+    color: black;
+    background-color: white;
+    position: relative;
+}
+
+.research-topic:hover .research-topic-title {
+  color: black;
+  background-color: white;
+  position: relative;
+}
+
+.research-topic:hover .research-topic-description {
+  display: block;
+}
+
+.research-topic-description {
+  background-color: black;
+  color: white;
+  padding: 30px 30px 40px 30px;
+  width: 300px;
+  position: absolute;
+  right: 20px;
+  bottom: -40px;
+  display: none;
+  cursor: default;
+}
+
+.research-topic-description-title {
+  font-size: 23px;
+  font-family: 'Sequel';
+  letter-spacing: 1px;
+  color: white;
+  font-weight: normal;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.research-topic-description-text {
+  display: block;
+  font-size: 23px;
+  font-family: 'Sequel';
+  letter-spacing: 1px;
+  font-family: 'SequelLight';
+  font-size: 17px;
+  color: white;
+  font-weight: normal;
+}
+
+#research-topic-description-1 {
+  background-color: #6639B9;
+  right: 300px;
+  bottom: -80px;
+}
+
+#research-topic-description-2 {
+  background-color: #7EE787;
+  left: 300px;
+  bottom: -50px;
+}
+
+#research-topic-description-3 {
+  background-color: #FA3005;
+  right: 100px;
+  bottom: -50px;
+}
+
+#research-topic-description-4 {
+  background-color: #6639B9;
+  right: 300px;
+  bottom: -50px;
+}
+
+#research-topic-description-5 {
+  background-color: #7EE787;
+  left: 300px;
+  bottom: -50px;
+}
+
+#research-topic-description-6 {
+  background-color: #FA3005;
+  right: 100px;
+  bottom: -50px;
+}
+
+/* --------------- FOURTH SECTION ----------------*/
+
+.fourth-section {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  background-color: white;
+  align-items: center;
+  overflow-x: hidden;
+  transition: all 2s;
+  padding-top: 150px;
+}
+
+.definition-container {
+  width: 60%;
+}
+
+.image-container {
+  width: 40%;
+}
+
+.definition-text {
+  color: black;
+  font-family: Sequel;
+  font-size: 70px;  
+  margin: 0;
+  cursor: default;
+  padding: 0px 100px 0px 150px;
+  transition: all 2s;
+}
+
+.text-highlight {
+  color: black;
+  background-color: white;
+  text-transform: uppercase;
+}
+
+.definition-logo {
+  width: 170%;
+  transform: translateX(10%); 
+}
+
+
+/* --------------- FIFTH SECTION ----------------*/
+
+.fifth-section {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  background-color: black;
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 60px;
+  padding-top: 200px;
+  transition: all 1s linear;
+}
+
+.fifth-section-inside {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  background-color: white;
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 60px;
+  border-radius: 800px;
+}
+
+.division-logo-container {
+  width: 50%;
+  justify-content: center;
+  position: sticky;
+  top: 50px;
+  display: inline-flex;
+  float: left;
+}
+
+.division-logo {
+  width: 300px;
+  margin-top: 200px;
+  margin-bottom: 250px;
+}
+
+.division-text-container {
+  width: 50%;
+  display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    align-content: center;
+    display: inline-flex;
+    float: right;
+    padding-top: 250px;
+    padding-bottom: 250px;
+}
+
+.division-title {
+  color: black;
+  font-family: Sequel;
+  font-size: 70px;  
+  margin: 0;
+  width: 100%;
+}
+
+.division-subtitle {
+  color: grey;
+  font-family: SequelLight;
+  font-size: 18px;  
+  margin: 0;
+  width: 60%;
+  margin-right:40%;
+  margin-bottom: 20px;
+}
+
+.division-paragraph {
+  color: black;
+  font-family: SequelLight;
+  font-size: 19px;  
+  margin: 0;
+  width: 60%;
+  margin-right:40%;
+}
+
+#division-logo-0 {
+  z-index: 1300 !important;
+}
+
+#division-logo-1 {
+  z-index: 127a0 !important;
+}
+
+#division-logo-2 {
+  z-index: 1250 !important;
+}
+
+#division-logo-3 {
+  z-index: 1200 !important;
+}
+
+#division-logo-4 {
+  z-index: 1150 !important;
+}
+
+#division-logo-5 {
+  z-index: 1100 !important;
+}
+
+#division-logo-6 {
+  z-index: 1050 !important;
+  
+}
+
+.division-call-to-action {
+    border-radius: 30px;
+    border: 0px solid transparent;
+    padding: 10px 15px 10px 15px;
+    font-size: 16px;
+    margin-right: 10px;
+    margin-top: 30px;
+    cursor: pointer;
+    transition: all 1s ease;
+    font-family: SequelLight;
+}
+
+.division-call-to-action:hover {
+  border: 20px solid black;
+  border-radius: 50px;
+}
+
+
+/* --------------- SIXTH SECTION ----------------*/
+
+.sixth-section {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  background-color: black;
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 60px;
+  padding-top: 200px;
+  padding-bottom: 200px;
+  transition: all 1s linear;
+}
+
+.news-container {
+  width: 100%;
+}
+
+.news-title-container {
+    margin-left: 10%;
+    margin-right: 10%;
+    display: flex;
+    width: 80%;
+    flex-wrap: wrap;
+    padding-bottom: 50px;
+}
+
+.news-subtitle {
+  color: white;
+    margin:0;
+    font-size: 30px;
+    font-family: Founders;
+    font-weight: normal;
+    cursor:default;
+}
+
+.news-main-title {
+  color: white;
+  font-family: Sequel;
+  font-size: 150px;  
+  margin: 0;
+  width: 100%;
+  font-weight: normal;
+  cursor:default;
+  margin-bottom: 50px;
+}
+
+.news-box-container {
+  width: 100%;
+  display: flex;
+  overflow: auto;
+  white-space: nowrap;
+}
+
+.news-box-container::-webkit-scrollbar {
+  display: none;
+}
+
+.news-box {
+  min-width: 300px;
+  margin: 20px;
+  display: inline-block;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+
+.news-box:hover {
+  transform: scale(1.05);
+}
+
+.news-box-anchor:first-child {
+  margin-left:10.5vw !important;
+}
+
+.news-division {
+  color: white;
+  font-family: SequelLight;
+  font-size: 15px;  
+  cursor:pointer;
+  margin: 0;
+  display: inline-block;
+  text-decoration: underline;
+}
+
+.news-date {
+  color: white;
+  font-family: SequelLight;
+  font-size: 15px;  
+  cursor:pointer;
+  white-space:normal;
+  display: inline-block;
+  border: 1px solid white;
+  padding: 4px 7px 4px 7px;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+.news-title {
+  color: white;
+  font-family: Sequel;
+  font-size: 30px;  
+  cursor:pointer;
+  white-space:normal;
+  margin: 0;
+  font-weight: normal;
+}
+
+.news-text {
+  color: white;
+  font-family: SequelLight;
+  font-size: 20px;  
+  cursor:pointer;
+  white-space:normal;
+  margin: 0;
+  margin-top: 5px;
+}
+
+
+/* --------------- SEVENTH SECTION ----------------*/
+
+.seventh-section {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  background-color: black;
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 60px;
+  padding-top: 200px;
+  padding-bottom: 200px;
+  transition: all 1s linear;
+}
+
+.agenda-container {
+  width: 100%;
+}
+
+.agenda-title-container {
+    margin-left: 10%;
+    margin-right: 10%;
+    display: flex;
+    width: 80%;
+    flex-wrap: wrap;
+    padding-bottom: 50px;
+    justify-content: flex-end;
+}
+
+.agenda-subtitle {
+  color: white;
+    margin:0;
+    font-size: 30px;
+    font-family: Founders;
+    font-weight: normal;
+    cursor:default;
+}
+
+.agenda-main-title {
+  color: white;
+  font-family: Sequel;
+  font-size: 150px;  
+  margin: 0;
+  width: 100%;
+  font-weight: normal;
+  cursor:default;
+  margin-bottom: 50px;
+  text-align: right;
+}
+
+.agenda-box-container {
+  width: 100%;
+  display: flex;
+  overflow: auto;
+  white-space: nowrap;
+}
+
+.agenda-box-container::-webkit-scrollbar {
+  display: none;
+}
+
+.agenda-box {
+  min-width: 400px;
+  margin: 20px;
+  display: inline-block;
+  padding: 30px;
+transition: all 0.5s ease;
+cursor: pointer;
+}
+
+.agenda-box:hover {
+transform: scale(1.05);
+}
+
+.agenda-box-anchor:first-child {
+  margin-left:10.5vw !important;
+}
+
+.agenda-division {
+  color: white;
+  font-family: SequelLight;
+  font-size: 15px;  
+  cursor: pointer;
+  margin: 0;
+  display: inline-block;
+  text-decoration: underline;
+}
+
+.agenda-type {
+  color: white;
+  font-family: SequelLight;
+  font-size: 15px;  
+  cursor: pointer;
+  margin: 0;
+  letter-spacing: 2px;
+  white-space:normal;
+  border: 1px solid white;
+  padding: 4px 7px 4px 7px;
+  border-radius: 4px;
+  margin-right: 10px;
+  text-transform: uppercase;
+}
+
+.agenda-date {
+  color: white;
+  font-family: SequelLight;
+  font-size: 15px;  
+  cursor: pointer;
+  white-space:normal;
+  display: inline-block;
+  border: 1px solid white;
+  padding: 4px 7px 4px 7px;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+.agenda-title {
+  color: white;
+  font-family: Sequel;
+  font-size: 30px;  
+  cursor: pointer;
+  white-space:normal;
+  margin: 0;
+  font-weight: normal;
+  padding-top: 20px;
+}
+
+.agenda-text {
+  color: white;
+  font-family: SequelLight;
+  font-size: 20px;  
+  cursor: pointer;
+  white-space:normal;
+  margin: 0;
+  margin-top: 5px;
+}
+
+.concluded {
+  background-color: white;
+  border-radius: 5px;
+}
+
+.concluded p, .concluded h3 {
+  color: #FA3005;
+}
+
+.concluded .agenda-type, .concluded .agenda-date {
+  border-color: #FA3005;
+  color: #FA3005;
+}
+
+.agenda-concluded {
+  font-family: SequelLight;
+  font-size: 15px;  
+  display: inline-block;
+  background-color: #FA3005;
+  border: 1px solid  #FA3005;
+  color: white !important;
+  padding: 4px 7px 4px 7px;
+  border-radius: 4px;
+  margin-right: 10px;
+  display: inline-block;
+}
+
+/* --------------- TEMPORARY HIDDEN ----------------*/
+
+#sixth-section {
+  display: none;
+}
+
+#seventh-section {
+  display: none;
+}
+
+#news-button {
+  display: none;
+}
+
+#agenda-button {
+  display: none;
+}
+
+/* --------------- CONTACTS SECTION ----------------*/
+
+.contacts-section {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  background-color: black;
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 300px;
+  padding-top: 200px;
+  transition: all 1s linear;
+}
+
+.contacts-title-container {
+  margin-left: 10%;
+  margin-right: 10%;
+  display: flex;
+  width: 80%;
+  flex-wrap: wrap;
+  padding-bottom: 50px;
+  justify-content: flex-end;
+}
+
+.contacts-subtitle {
+color: white;
+  margin:0;
+  font-size: 30px;
+  font-family: Founders;
+  font-weight: normal;
+  cursor:default;
+}
+
+.contacts-main-title {
+color: white;
+font-family: Sequel;
+font-size: 150px;  
+margin: 0;
+width: 100%;
+font-weight: normal;
+cursor:default;
+margin-bottom: 50px;
+text-align: right;
+}
+
+.contacts-title {
+    font-family: 'SequelLight';
+    font-size: 30px;
+    color: white;
+    font-weight: normal;
+    margin: 0;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+}
+
+.contacts-body {
+  font-family: 'SequelLight';
+  font-size: 30px;
+  color: white;
+  font-weight: normal;
+  margin: 0;
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+  text-align: right;
+}
+
+.contacts-box {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    border-top: 1px solid white;
+    padding: 30px 10px 30px 10px;
+    text-decoration: inherit;
+    color: inherit;
+    cursor: pointer;
+}
+
+.contacts-box:hover {
+  background-color: white;
+}
+
+.contacts-box:hover p{
+  color: #7EE787;
+}
+
+.contacts-box:last-child {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  border-bottom: 1px solid white;
+}
+
+
+/* --------------- FOOTER ----------------*/
+
+.footer-section {
+  background-color: rgb(11, 11, 11);
+  margin: 0;
+  display: flex;
+  align-items: flex-end;
+}
+
+.footer-image-container {
+  width: 50%;
+  margin-right: 30px;
+  padding: 30px;
+}
+
+.footer-copy {
+  color:white;
+  font-size: 13px;
+    font-family: SequelLight;
+    font-weight: normal !important;
+    padding-bottom: 50px;
+    
+}
+
+.footer-copy a {
+  margin-left: 12px;
+  text-decoration: underline;
+  cursor: pointer;
+  color: white;
+}
+
+.footer-copy a:visited {
+  color: grey;
+}
+
+.footer-copy a:link,
+.footer-copy a:hover,
+.footer-copy a:active {
+  color: white;
+}
+
+
+.footer-copy-container {
+  background-color: rgb(12, 12, 12);
+  width: 50%;
+  padding: 30px;
+}
+
+
+@media (max-width: 600px) {
+  .fourth-section {
+    padding-top: 30px;
+  }
+  .definition-text {
+    font-size: 40px;
+    padding: 0px 10px 40px 30px;
+    transition: all 2s;
+}
+}

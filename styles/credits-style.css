@@ -1,0 +1,42 @@
+
+body {
+    margin: 0;
+    background-color: black;
+    overflow-x: hidden;
+    color: white;
+ }
+
+.credits-banner {
+  background-color: rgb(12, 12, 12);
+  padding: 30px;
+}
+
+.credits-logo {
+  width: 25%;
+}
+
+.credits-title {
+    padding: 50px;
+    color: white;
+    margin:0;
+    font-size: 100px;
+    font-family: Sequel;
+    font-weight: normal !important;
+    animation: slide-up 1s forwards;
+    cursor:default;
+}
+
+.credits-paragraph {
+    padding: 0px 0px 20px 50px;
+    color: white;
+    margin:0;
+    font-size: 40px;
+    font-family: SequelLight;
+    font-weight: normal !important;
+    animation: slide-up 1s forwards;
+    cursor:default;
+}
+
+.credits-paragraph span {
+  font-weight: 800;
+}
