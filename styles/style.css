@@ -261,6 +261,7 @@ body {
   overflow-x: hidden;
   transition: all 2s;
   padding-top: 150px;
+  padding-bottom: 150px;
 }
 
 .definition-container {
