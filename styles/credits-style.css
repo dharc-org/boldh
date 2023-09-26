@@ -16,10 +16,10 @@ body {
 }
 
 .credits-title {
-    padding: 50px;
+    padding: 50px 50px 10px 50px;
     color: white;
     margin:0;
-    font-size: 100px;
+    font-size: 50px;
     font-family: Sequel;
     font-weight: normal !important;
     animation: slide-up 1s forwards;
@@ -37,6 +37,34 @@ body {
     cursor:default;
 }
 
-.credits-paragraph span {
+.credits-paragraph span.title-credits {
   font-weight: 800;
+  background-color: white;
+  color: black;
+  padding: 5px;
+  margin-bottom: 10px;
+  margin-top: 30px;
+  display: inline-block;
 }
+
+.credits-paragraph span.email-credits {
+  font-size: 25px;
+}
+
+.credits-paragraph span.email-credits a {
+  margin-left: 12px;
+  text-decoration: underline;
+  cursor: pointer;
+  color: white;
+}
+
+.credits-paragraph span.email-credits a:visited {
+  color: grey;
+}
+
+.credits-paragraph span.email-credits a:link,
+.credits-paragraph span.email-credits a:hover,
+.credits-paragraph span.email-credits a:active {
+  color: white;
+}
+
