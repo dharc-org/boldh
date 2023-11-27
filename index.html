@@ -1,219 +1,127 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <link rel="stylesheet" href="styles/fonts.css">
-  <link rel="stylesheet" href="styles/style.css">
-  <meta charset="utf-8">
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <!-- Include Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" integrity="..." crossorigin="anonymous">
 
+  <!-- Include Google Fonts - Roboto -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700&display=swap">
+
+  <!-- Custom CSS for Dark and Light Mode and Form Styling -->
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f8f9fa; /* Light mode background color */
+      color: #212529; /* Light mode text color */
+    }
+
+    body.dark-mode {
+      background-color: #343a40; /* Dark mode background color */
+      color: #ffffff; /* Dark mode text color */
+    }
+
+    /* Responsive top bar styles */
+    .top-bar {
+      background-color: #007bff; /* Blue color for the top bar */
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #ffffff; /* Text color for the top bar */
+    }
+
+    /* Form styling */
+    .custom-form {
+      max-width: 400px;
+      margin: 30px auto;
+    }
+
+    /* Result section styling */
+    .result-section {
+      margin-top: 20px;
+    }
+  </style>
 </head>
 <body>
-  <section class="first-section">
-    <div class="top-title-container">
-      <p class="top-title">DIGITAL HUMANITIES</p>
-      <img src="assets/img/SVG/logo.svg" class="top-logo" alt="logo"></img>
-      <p class="top-title">MADE IN BOLOGNA</p> 
-    </div>
-    <div class="bottom-title-container">
-      <h1 class="bottom-title">BolDH</h1>
-    </div>
-  </section>
-  <section class="second-section">
-    <div class="claim-container">
-      <img src="assets/img/SVG/logo.svg" class="giant-logo" id="giant-logo" alt="logo"></img>
-      <p class="claim-paragraph"><span>BolDH</span> is an ecosystem <br>conceived as a combination of<br> <span>education</span>, <span>research practices</span> and <span>scholarly projects</span> in the <br>Digital Humanities domain</p>
-    </div>
-  </section>
-  <section class="third-section">
-    <div class="research-topic-container">
-      <div class="research-topic">
-        <p class="research-topic-title">Knowledge Organisation</p>
-        <p class="research-topic-description" id="research-topic-description-1"><span class="research-topic-description-title">Knowledge<br>Organization</span><span class="research-topic-description-text">is a broader field than Library and Information Science (LIS). While LIS which encompassess the organization of information in bibliographic records, Knowledge Organisation involves also other disciplines, institutions, languages and symbolic systems, conceptual systems and theories, and literatures and genres.</span></p>
-      </div>
-      <div class="research-topic">
-        <p class="research-topic-title">Knowledge Representation</p>
-        <p class="research-topic-description" id="research-topic-description-2"><span class="research-topic-description-title">Knowledge<br>Representation</span><span class="research-topic-description-text">refers to the formal representation of information so that computers can use it to solve more complex tasks. It is at the basis of Semantic Web and a key element in Ontology Engineering. Both of the research areas, their methods and theories are applied to the Arts and Humanities field and to the Cultural Heritage Domain (Libraries, Museums and Archives).</span></p>
-      </div>
-      <div class="research-topic">
-        <p class="research-topic-title">Data Science</p>
-        <p class="research-topic-description" id="research-topic-description-3"><span class="research-topic-description-title">Data<br>Science</span><span class="research-topic-description-text">encompasses a number of methods and techniques for manipulating and extracting knowledge out of data. Rather than being a research topic, techniques that fall into Data Science category are applied to other research areas, e.g. Linguistics, Library and Information Science. A peculiarity of /DH.arc is indeed the focus on data rather than other types of technological applications.</span></p>
-      </div>
-      <div class="research-topic">
-        <p class="research-topic-title">Semantic Publishing</p>
-        <p class="research-topic-description" id="research-topic-description-4"><span class="research-topic-description-title">Semantic<br>Publishing</span><span class="research-topic-description-text">concerns the use of Web and Semantic Web technologies and standards for enhancing a scholarly work semantically (by means of plain RDF statements, nano-publications, etc.) so as to improve its discoverability, interactivity, openness and (re-)usability for both humans and machines. The assumptions of openness implicit in Semantic Publishing have been also explicitly adopted for the publication of research data by the FAIR (Findable, Accessible, Interoperable, Re-usable) data principles.</span></p>
-      </div>
-      <div class="research-topic">
-        <p class="research-topic-title">Computational Linguistics</p>
-        <p class="research-topic-description" id="research-topic-description-5"><span class="research-topic-description-title">Computational<br>Linguistics</span><span class="research-topic-description-text">is the field investigating the usage of computational approaches to linguistic questions, so as to produce statistics and models out of natural language.</span></p>
-      </div>
-      <div class="research-topic">
-        <p class="research-topic-title">Digital Philology</p>
-        <p class="research-topic-description" id="research-topic-description-6"><span class="research-topic-description-title">Digital<br>Philology</span><span class="research-topic-description-text"> applies technical solutions to the study, the manipulation, and the publication of literary texts. Theoretical foundations of the discipline are purely humanistics, while approaches to solve specific problems are genuinely interdisciplinary. Among the main outputs of the research field are Digital Scholarly Editions. The usage of Semantic Web technologies allow to develop enhanced applications leveraging digital editions, called Semantic Digital Editions.</span></p>
-      </div>
-    </div>
-    <span id="reset-viewport"></span>
-  </section>
-  <section class="fourth-section" id="fourth-section">
-  <div class="definition-container">
-    <p class="definition-text" id="definition-text">We believe <span class="text-highlight">digital humanities</span> and digital practices <span class="text-highlight">are</span> making scholarly activities <span class="text-highlight">fundamental</span> again.</p>
-  </div>
-  <div class="image-container">
-    <img src="assets/img/SVG/logo.svg" class="definition-logo"  id="definition-logo"alt="logo in half"></img>
-  </div>
-  </section>
-  <section class="fifth-section" id="fifth-section">
-      <!-- HEADER -->
-    <div class="fifth-section-inside">
-      <!-- DHDK -->
-            <div class="division-logo-container" id="division-logo-0">
-              <img src="assets/img/SVG/division1.svg" class="division-logo"  alt="logo"></img>
-            </div>
-            <div class="division-text-container">
-              <h2 class="division-title">DHDK</h2>
-              <p class="division-subtitle">Digital Humanities and Digital Knowledge Master Degree </p>
-              <p class="division-paragraph">Acquire the pillars of your education in DH to reach a transversal knowledge across disciplines from humanities to computer science.</p>
-              <a href="https://corsi.unibo.it/2cycle/DigitalHumanitiesKnowledge" target="_blank"><button class="division-call-to-action">Learn more</button></a>
-              <a href="https://corsi.unibo.it/2cycle/DigitalHumanitiesKnowledge/studying" target="_blank"><button class="division-call-to-action">Studying</button></a>
-      </div>
-      <!-- CHeDE -->
-      <div class="division-logo-container" id="division-logo-1">
-        <img src="assets/img/SVG/division2.svg" class="division-logo"  alt="logo"></img>
-      </div>
-      <div class="division-text-container">
-        <h2 class="division-title">CHeDE</h2>
-        <p class="division-subtitle">Cultural Heritage in the Digital Ecosystem, PhD</p>
-        <p class="division-paragraph">Experiment advanced pedagogical practices for learning how to face scholarly research activities in the DH, training yourself to be a digital humanist.</p>
-        <a href="https://phd.unibo.it/chede/it" target="_blank"><button class="division-call-to-action">Learn more</button></a>
-        <a href="https://phd.unibo.it/chede/it/contatti" target="_blank"><button class="division-call-to-action">Contacts</button></a>
-      </div>
-      <!-- ADLab -->
-      <div class="division-logo-container" id="division-logo-2">
-        <img src="assets/img/SVG/division3.svg" class="division-logo" alt="logo"></img>
-      </div>
-      <div class="division-text-container">
-        <h2 class="division-title">ADLab</h2>
-        <p class="division-subtitle">Laboratory for Digital Acquisition</p>
-        <p class="division-paragraph">Take part concretely in activities at our technical lab, for acquiring expertises on heterogeneous primary sources digitalization and manipulation.</p>
-        <a href="https://site.unibo.it/adlab/it" target="_blank"><button class="division-call-to-action">The Lab</button></a>
-        <a href="https://site.unibo.it/adlab/it/progetti" target="_blank"><button class="division-call-to-action">Projects</button></a>
-      </div>
-      <!-- DHARC -->
-      <div class="division-logo-container" id="division-logo-3">
-        <img src="assets/img/SVG/division4.svg" class="division-logo" alt="logo"></img>
-      </div>
-      <div class="division-text-container">
-        <h2 class="division-title">/DH.arc</h2>
-        <p class="division-subtitle">Digital Humanities Advanced Research Centre</p>
-        <p class="division-paragraph">Learn advanced research practices, working on existent projects in the DH and participating in a team of domain experts.</p>
-        <a href="https://centri.unibo.it/dharc/en" target="_blank"><button class="division-call-to-action">The Centre</button></a>
-        <a href="https://centri.unibo.it/dharc/en/research" target="_blank"><button class="division-call-to-action">Research</button></a>
-        <a href="https://centri.unibo.it/dharc/en/activities" target="_blank"><button class="division-call-to-action">Activities</button></a>
-      </div>
-      <!-- DHDKey! -->
-      <div class="division-logo-container" id="division-logo-4">
-        <img src="assets/img/SVG/division5.svg" class="division-logo" alt="logo"></img>
-      </div>
-      <div class="division-text-container">
-        <h2 class="division-title">DHDKey!</h2>
-        <p class="division-subtitle">Digital Humanities and Digital Knowledge Educational Yearbook</p>
-        <p class="division-paragraph">Produce research outputs as  and collect them.</p>
-        <a href="https://projects.dharc.unibo.it/dhdkey/" target="_blank"><button class="division-call-to-action">Projects</button></a>
-      </div>
-      <!-- DL -->
-      <div class="division-logo-container" id="division-logo-5">
-        <img src="assets/img/SVG/division6.svg" class="division-logo" alt="logo"></img>
-      </div>
-      <div class="division-text-container">
-        <h2 class="division-title">DL</h2>
-        <p class="division-subtitle">Digital Library</p>
-        <p class="division-paragraph">Disseminate your data in a shared environment.</p>
-        <a href="https://dl.ficlit.unibo.it/s/lib/page/home" target="_blank"><button class="division-call-to-action">The Library</button></a>
-        <a href="https://dl.ficlit.unibo.it/s/lib/page/collezioni" target="_blank"><button class="division-call-to-action">Collections</button></a>
-        <a href="https://dl.ficlit.unibo.it/s/lib/page/virtual-exhibition" target="_blank"><button class="division-call-to-action">Virtual Exhibitions</button></a>
-      </div>
-      <!-- BolDH -->
-      <div class="division-logo-container" id="division-logo-6">
-        <img src="assets/img/SVG/division7.svg" class="division-logo" alt="logo"></img>
-      </div>
-      <div class="division-text-container">
-        <h2 class="division-title">BolDH</h2>
-        <p class="division-subtitle">Bologna Digital Humanities: the ecosystem</p>
-        <p class="division-paragraph">Everything comes together. The ecosystem collects all the courses, research activities and DH projects made in Bologna.</p>
-        <a href="#sixth-section" id="news-button"><button class="division-call-to-action">News</button></a>
-        <a href="#seventh-section" id="agenda-button"><button class="division-call-to-action">Agenda</button></a>
-        <a href="#contacts-section"><button class="division-call-to-action">Contacts</button></a>
-      </div>
-    </div>
-  </section>
-  <section class="sixth-section" id="sixth-section">
-    <div class="news-container">
-     <div class="news-title-container">
-      <p class="news-subtitle">BolDH UPDATES</p>
-      <h2 class="news-main-title" id="news-main-title">Latest News</h2>
-     </div>
-     <div class="news-box-container" id="news-box-container">
-      <a class="news-box-anchor" href="https://www.google.it/" target="_blank">
-        <div class="news-box">
-          <p class="news-date">23/09/2023</p>
-          <p class="news-division">Division</p>
-          <h3 class="news-title">This is a news about humanities</h3>
-          <p class="news-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sit amet tincidunt sapien.</p>
-        </div>
-      </a>
-      <a class="news-box-anchor" href="https://www.google.it/" target="_blank">
-      <div class="news-box">
-        <p class="news-date">23/09/2023</p>
-        <p class="news-division">Division</p>
-        <h3 class="news-title">This is a news about humanities</h3>
-        <p class="news-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sit amet tincidunt sapien.</p>
-      </div>
-      </a>
-    </div>
-    </div>
-  </section>
-  <section class="seventh-section" id="seventh-section">
-    <div class="agenda-container">
-     <div class="agenda-title-container">
-      <p class="agenda-subtitle">BolDH EVENTS</p>
-      <h2 class="agenda-main-title" id="agenda-main-title">Agenda</h2>
-     </div>
-     <div class="agenda-box-container" id="agenda-box-container">
-      <a class="agenda-box-anchor" href="https://www.google.it/" target="_blank">
-      <div class="agenda-box">
-        <p class="agenda-date">23/09 - 23/09</p>
-        <p class="agenda-division">Division</p>
-        <p class="agenda-type">CONFERENCE</p>
-        <h3 class="agenda-title">This is a agenda about humanities</h3>
-        <p class="agenda-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sit amet tincidunt sapien.</p>
-      </div>
-      </a>
-    </div>
-    </div>
-   </section>
-  <section class="contacts-section"  id="contacts-section" >
-   <div class="contacts-title-container">
-    <p class="contacts-subtitle">BolDH CONNECT</p>
-    <h2 class="contacts-main-title" id="contacts-main-title">CONTACTS</h2>
 
-   </div>
-   <a href="mailto:boldh@unibo.it" target="_blank" class="contacts-box">
-    <p class="contacts-title"> Email</p>
-    <p class="contacts-body"> boldh@unibo.it </p>
-   </a>
-   <a href="https://maps.app.goo.gl/ZsaPj323kPRyZSuf6" target="_blank" class="contacts-box">
-    <p class="contacts-title"> Visit</p>
-    <p class="contacts-body"> Department of Classical Philology and Italian Studies (FICLIT), via Zamboni 32, 40126, Bologna.</p>
-   </a>
-  </section>
-  <section class="footer-section"  id="footer-section" >
-    <div class="footer-image-container">
-      <img src="assets/img/SVG/footer-logo.svg" class="footer-logo"  id="footer-logo"alt="logo in half"></img>
+  <!-- Top Bar with Title and Dark Mode Switch -->
+  <div class="container-fluid top-bar">
+    <h1>My Responsive Website</h1>
+    <div class="form-check form-switch">
+      <input class="form-check-input" type="checkbox" id="darkModeToggle">
+      <label class="form-check-label" for="darkModeToggle">Dark Mode</label>
     </div>
-    <div class="footer-copy-container">
-    <p class="footer-copy" >©Copyright 2023 - BolDH 2023, Bologna Digital Humanities - Università di Bologna - Via Zamboni, 32 - 40126 Bologna <a href="credits.html">Credits</a></p>
-    </div>
-    </section>
-  
-  <script src="scripts/script.js"></script>
-  </body>
+  </div>
+
+  <!-- Form Section -->
+  <div class="container custom-form">
+    <form>
+      <!-- Numeric Input Field -->
+      <div class="mb-3">
+        <label for="numericInput" class="form-label">Enter Numeric Value:</label>
+        <input type="number" class="form-control" id="numericInput" step="0.01" required>
+      </div>
+
+      <!-- Dropdown Select for Categories -->
+      <div class="mb-3">
+        <label for="categorySelect" class="form-label">Select Category:</label>
+        <select class="form-select" id="categorySelect" required>
+          <!-- Categories will be dynamically populated here -->
+        </select>
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+
+  <!-- Result Section -->
+  <div class="container result-section">
+    <h2>Result:</h2>
+    <p id="resultText">The result will be displayed here.</p>
+  </div>
+
+  <!-- Include Bootstrap JS (optional, for components that require JavaScript) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="..." crossorigin="anonymous"></script>
+
+  <!-- Custom JavaScript for Dark and Light Mode and Form Submission -->
+  <script>
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    darkModeToggle.addEventListener('change', () => {
+      document.body.classList.toggle('dark-mode', darkModeToggle.checked);
+    });
+
+    const form = document.querySelector('form');
+    const resultText = document.getElementById('resultText');
+    const categorySelect = document.getElementById('categorySelect');
+
+    // Fetch categories from the API
+    fetch('https://tassidicambio.bancaditalia.it/terzevalute-wf-web/rest/v1.0/latestRates?lang={}')
+      .then(response => response.json())
+      console.log(response.json())
+      .then(latestRates => {
+        // Populate the dropdown with categories
+        latestRates.forEach(category => {
+          const option = document.createElement('option');
+          option.value = category.id; // Set the appropriate value
+          option.textContent = category.name; // Set the appropriate text
+          categorySelect.appendChild(option);
+        });
+      })
+      .catch(error => console.error('Error fetching categories:', error));
+
+
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      const numericInput = parseFloat(document.getElementById('numericInput').value);
+      const selectedCategoryId = categorySelect.value;
+
+      // Your logic for processing the input and category goes here
+      // For demonstration purposes, the result is displayed in the resultText paragraph.
+
+      resultText.textContent = `Numeric Value: ${numericInput}, Selected Category ID: ${selectedCategoryId}`;
+    });
+  </script>
+</body>
 </html>
