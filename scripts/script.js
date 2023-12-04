@@ -54,8 +54,8 @@ var agenda_title = document.querySelector("h2#agenda-main-title");
 var contacts_title = document.querySelector("h2#contacts-main-title");
 if (isInViewport(contacts_title)) {
     document.getElementById("seventh-section").style.backgroundColor = "#7EE787"; // to remove if news-agenda hidden
-    document.getElementById("sixth-section").style.backgroundColor = "#7EE787";// to remove if news-agenda hidden
-    //document.getElementById("contacts-section").style.backgroundColor = "#7EE787";
+    document.getElementById("sixth-section").style.backgroundColor = "#7EE787"; // to remove if news-agenda hidden
+    document.getElementById("contacts-section").style.backgroundColor = "#7EE787"; // to remove if news-agenda hidde
     //document.getElementById("fifth-section").style.backgroundColor = "#7EE787"; // to remove if news-agenda NOT hidden
 } else {
     //document.getElementById("contacts-section").style.backgroundColor = "black"; // to remove if news-agenda NOT hidden
