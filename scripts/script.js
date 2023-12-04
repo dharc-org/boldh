@@ -42,33 +42,33 @@ if (isInViewport(reset)) {
     document.getElementsByClassName("text-highlight")[1].style.backgroundColor = "white";
 } 
 
-// agenda background color change
-//var agenda_title = document.querySelector("h2#agenda-main-title");
-// if (isInViewport(agenda_title)) {
-    //document.getElementById("seventh-section").style.backgroundColor = "#FA3005";
-    ///document.getElementById("sixth-section").style.backgroundColor = "#FA3005";
-    //document.getElementById("contacts-section").style.backgroundColor = "#FA3005";
-//}
+// agenda background color change -- to remove if news-agenda hidden
+var agenda_title = document.querySelector("h2#agenda-main-title");
+    if (isInViewport(agenda_title)) {
+        document.getElementById("seventh-section").style.backgroundColor = "#FA3005";
+        document.getElementById("sixth-section").style.backgroundColor = "#FA3005";
+        document.getElementById("contacts-section").style.backgroundColor = "#FA3005";
+    }
 
 // contacts background color change
 var contacts_title = document.querySelector("h2#contacts-main-title");
 if (isInViewport(contacts_title)) {
-    //document.getElementById("seventh-section").style.backgroundColor = "#7EE787";
-    //document.getElementById("sixth-section").style.backgroundColor = "#7EE787";
-    document.getElementById("contacts-section").style.backgroundColor = "#7EE787";
-    document.getElementById("fifth-section").style.backgroundColor = "#7EE787"; // to remove if news-agenda not hidden
+    document.getElementById("seventh-section").style.backgroundColor = "#7EE787"; // to remove if news-agenda hidden
+    document.getElementById("sixth-section").style.backgroundColor = "#7EE787";// to remove if news-agenda hidden
+    //document.getElementById("contacts-section").style.backgroundColor = "#7EE787";
+    //document.getElementById("fifth-section").style.backgroundColor = "#7EE787"; // to remove if news-agenda NOT hidden
 } else {
-    document.getElementById("contacts-section").style.backgroundColor = "black"; // to remove if news-agenda not hidden
-    document.getElementById("fifth-section").style.backgroundColor = "black"; // to remove if news-agenda not hidden
+    //document.getElementById("contacts-section").style.backgroundColor = "black"; // to remove if news-agenda NOT hidden
+    //document.getElementById("fifth-section").style.backgroundColor = "black"; // to remove if news-agenda NOT hidden
 }
 
-// news background color change
-//var news_title = document.querySelector("h2#news-main-title");
-//if (isInViewport(news_title)) {
-    //document.getElementById("seventh-section").style.backgroundColor = "black";
-    //document.getElementById("sixth-section").style.backgroundColor  = "black";
-    //document.getElementById("contacts-section").style.backgroundColor  = "black";
-//}
+// news background color change -- to remove if news-agenda hidden
+var news_title = document.querySelector("h2#news-main-title");
+    if (isInViewport(news_title)) {
+        document.getElementById("seventh-section").style.backgroundColor = "black";
+        document.getElementById("sixth-section").style.backgroundColor  = "black";
+        document.getElementById("contacts-section").style.backgroundColor  = "black";
+    }
 
 
 }
