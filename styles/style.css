@@ -707,8 +707,7 @@ transform: scale(1.05);
   display: inline-block;
 }
 
-/* --------------- TEMPORARY HIDDEN ----------------*/
-
+/* --------------- TEMPORARY HIDDEN ----------------
 #sixth-section {
   display: none;
 }
@@ -725,7 +724,11 @@ transform: scale(1.05);
   display: none;
 }
 
+*/
+
+
 /* --------------- CONTACTS SECTION ----------------*/
+
 
 .contacts-section {
   width: 100%;
