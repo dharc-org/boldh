@@ -99,9 +99,9 @@ fetch("/content/news.json")
       var date = "<p class='news-date'>" + news_item.date + "</p>";
       var division = "<p class='news-division'>" + news_item.division + "</p>";
       var title = "<h3 class='news-title'>" + news_item.title + "</h3>";
-      if (news_item.text.length > 80) {
-        newText = news_item.text.substring(0, 80) + "...";
-        var text = "<p class='news-text'>" + newText + "</p> <p class='news-text expand-trigger'>Read more ⇢</p>";
+      if (news_item.text.length > 90) {
+        newText = news_item.text.substring(0, 90) + "...";
+        var text = "<p class='news-text'>" + news_item.text + "</p> <p class='news-text expand-trigger' onclick='populateModal(\"news\", "+news_item.id+")'>Read more ⇢</p>";
       } else {
         var text = "<p class='news-text'>" + news_item.text + "</p>";
       }
@@ -118,32 +118,56 @@ fetch("/content/news.json")
 fetch("/content/agenda.json")
   .then((res) => res.json())
   .then((data) => {
-    news_array = data;
+    agenda_array = data;
   })
   .then(() => {
-    news_array.forEach(function (news_item) {
+    agenda_array.forEach(function (agenda_item) {
       var status = "";
       var statusElem = "";
-      if (news_item.status === "concluded") {
+      if (agenda_item.status === "concluded") {
         status = "concluded";
         statusElem = "<p class='agenda-concluded'>CONCLUDED</p>";
       }
       //var url = "<a class='agenda-box-anchor' href='https://www.google.it/' target='_blank'>";  // to remove if using the visible link in the news box
-      var date = "<p class='agenda-date'>" + news_item.date + "</p>";
-      var division = "<p class='agenda-division'>" + news_item.division + "</p>";
-      var type = "<p class='agenda-type'>" + news_item.type + "</p>";
-      var title = "<h3 class='agenda-title'>" + news_item.title + "</h3>";
+      var date = "<p class='agenda-date'>" + agenda_item.date + "</p>";
+      var division = "<p class='agenda-division'>" + agenda_item.division + "</p>";
+      var type = "<p class='agenda-type'>" + agenda_item.type + "</p>";
+      var title = "<h3 class='agenda-title'>" + agenda_item.title + "</h3>";
 
-      if (news_item.text.length > 80) {
-        newText = news_item.text.substring(0, 80) + "...";
-        var text = "<p class='agenda-text'>" + newText + "</p> <p class='agenda-text expand-trigger'>Read more ⇢</p>";
+      if (agenda_item.text.length > 90) {
+        newText = agenda_item.text.substring(0, 90) + "...";
+        var text = "<p class='agenda-text'>" + newText + "</p> <p class='agenda-text expand-trigger' onclick='populateModal(\"news\", "+agenda_item.id+")'>Read more ⇢</p>";
       } else {
-        var text = "<p class='agenda-text'>" + news_item.text + "</p>";
+        var text = "<p class='agenda-text'>" + agenda_item.text + "</p>";
       }
 
-      var toEventPage = "<a class='agenda-link agenda-text' href='"+news_item.url+"'>Go to the news ⇢</a>";
+      var toEventPage = "<a class='agenda-link agenda-text' href='"+agenda_item.url+"'>Go to the news ⇢</a>";
       var news_box = document.getElementById("agenda-box-container");
       news_box.innerHTML += "<div class='agenda-box " + status + "'>" + statusElem + date + division + type + title + text + toEventPage + "</div></a>"; //if using url, add url before <div class='news-box'>
     });
   });
 
+
+
+function populateModal(type, id){
+  var modalContent = document.getElementById("modal-content");
+  modalContent.innerHTML = "";
+  if (type == 'news'){
+    var item = news_array.find(x => x.id == id);
+    modalContent.innerHTML = "<h3 class='modal-title'>"+item.title+"</h3><p class='modal-text'>"+item.text+"</p> <a class='modal-link' href='"+item.url+"'>Go to the news ⇢</a></div>";
+  } else {
+    var item = agenda_array.find(x => x.id == id);
+    modalContent.innerHTML = "<h3 class='modal-title'>"+item.title+"</h3><p class='modal-text'>"+item.text+"</p><a class='modal-link' href='"+item.url+"'>Go to the news ⇢</a></div>";
+
+  }
+
+
+  document.getElementById("expansion-container").style.display = "flex";
+}
+
+function closeModal(){
+  var modal = document.getElementById("expansion-container");
+  modal.style.display = "none";
+  var modalContent = document.getElementById("modal-content");
+  modalContent.innerHTML = "";
+}

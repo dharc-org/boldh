@@ -724,6 +724,99 @@ transform: scale(1.05);
 }
 
 
+
+/* --------------- EXPANSION MODAL ----------------*/
+#expansion-container {
+  position: fixed;
+  top: 0;
+  display: none;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 80%;
+  width: 50%;
+  margin: 10% 25%;
+  background-color: blue;
+  z-index: 9999;
+  color: white;
+  border-radius: 10px;
+  overflow-y: auto;
+}
+
+#modal-close-container {
+  display: flex;
+  justify-content: flex-end;
+  cursor: default;
+}
+
+#modal-close-icon {
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  width: 33px;
+  height: 33px;
+  margin-right: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 0;
+}
+
+#modal-close-icon::before, #modal-close-icon::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 2px;
+  height: 33px;
+  background-color: white;
+}
+
+#modal-close-icon::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+#modal-close-icon::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+
+#modal-content{
+  width: 80%;
+  margin: 0 10%;
+  padding: 0;
+}
+
+
+.modal-text {
+  color: white;
+  font-family: SequelLight;
+  font-size: 20px;  
+  white-space:normal;
+  margin: 5px 0 0 0;
+}
+
+.modal-title {
+  color: white;
+  font-family: Sequel;
+  font-size: 45px;  
+  white-space:normal;
+  margin: 0;
+  font-weight: normal;
+  padding-top: 20px;
+}
+
+.modal-link {
+  color: white;
+  font-family: SequelLight;
+  font-size: 20px;  
+  white-space:normal;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.modal-link:hover {
+  text-decoration: none;
+}
+
+
 /* --------------- TEMPORARY HIDDEN ----------------
 #sixth-section {
   display: none;
