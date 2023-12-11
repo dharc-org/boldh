@@ -707,6 +707,21 @@ transform: scale(1.05);
   display: inline-block;
 }
 
+
+.expand-trigger {
+  text-decoration: underline;
+}
+
+.news-link {
+  text-decoration: underline;
+  color: white;
+}
+.expand-trigger:hover, .news-link:hover {
+  color: #7EE787;
+  text-decoration: none;
+}
+
+
 /* --------------- TEMPORARY HIDDEN ----------------
 #sixth-section {
   display: none;
