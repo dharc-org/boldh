@@ -453,11 +453,11 @@ body {
 
 .news-subtitle {
   color: white;
-    margin:0;
-    font-size: 30px;
-    font-family: Founders;
-    font-weight: normal;
-    cursor:default;
+  margin:0;
+  font-size: 30px;
+  font-family: Founders;
+  font-weight: normal;
+  cursor:default;
 }
 
 .news-main-title {
@@ -467,7 +467,7 @@ body {
   margin: 0;
   width: 100%;
   font-weight: normal;
-  cursor:default;
+  cursor: default;
   margin-bottom: 50px;
 }
 
@@ -487,7 +487,8 @@ body {
   margin: 20px;
   display: inline-block;
   transition: all 0.5s ease;
-  cursor: pointer;
+  cursor: default;
+  /*cursor: pointer; */
 }
 
 .news-box:hover {
@@ -502,7 +503,7 @@ body {
   color: white;
   font-family: SequelLight;
   font-size: 15px;  
-  cursor:pointer;
+  /*cursor: pointer; */
   margin: 0;
   display: inline-block;
   text-decoration: underline;
@@ -512,7 +513,7 @@ body {
   color: white;
   font-family: SequelLight;
   font-size: 15px;  
-  cursor:pointer;
+  /*cursor: pointer; */
   white-space:normal;
   display: inline-block;
   border: 1px solid white;
@@ -525,7 +526,7 @@ body {
   color: white;
   font-family: Sequel;
   font-size: 30px;  
-  cursor:pointer;
+  /*cursor: pointer; */
   white-space:normal;
   margin: 0;
   font-weight: normal;
@@ -535,7 +536,7 @@ body {
   color: white;
   font-family: SequelLight;
   font-size: 20px;  
-  cursor:pointer;
+  /*cursor: pointer; */
   white-space:normal;
   margin: 0;
   margin-top: 5px;
@@ -609,8 +610,9 @@ body {
   margin: 20px;
   display: inline-block;
   padding: 30px;
-transition: all 0.5s ease;
-cursor: pointer;
+  transition: all 0.5s ease;
+  cursor: default;
+  /*cursor: pointer; */
 }
 
 .agenda-box:hover {
@@ -625,7 +627,7 @@ transform: scale(1.05);
   color: white;
   font-family: SequelLight;
   font-size: 15px;  
-  cursor: pointer;
+  /*cursor: pointer; */
   margin: 0;
   display: inline-block;
   text-decoration: underline;
@@ -635,7 +637,7 @@ transform: scale(1.05);
   color: white;
   font-family: SequelLight;
   font-size: 15px;  
-  cursor: pointer;
+  /*cursor: pointer; */
   margin: 0;
   letter-spacing: 2px;
   white-space:normal;
@@ -650,7 +652,7 @@ transform: scale(1.05);
   color: white;
   font-family: SequelLight;
   font-size: 15px;  
-  cursor: pointer;
+  /*cursor: pointer; */
   white-space:normal;
   display: inline-block;
   border: 1px solid white;
@@ -663,7 +665,7 @@ transform: scale(1.05);
   color: white;
   font-family: Sequel;
   font-size: 30px;  
-  cursor: pointer;
+  /*cursor: pointer; */
   white-space:normal;
   margin: 0;
   font-weight: normal;
@@ -674,7 +676,7 @@ transform: scale(1.05);
   color: white;
   font-family: SequelLight;
   font-size: 20px;  
-  cursor: pointer;
+  /*cursor: pointer; */
   white-space:normal;
   margin: 0;
   margin-top: 5px;
@@ -685,7 +687,7 @@ transform: scale(1.05);
   border-radius: 5px;
 }
 
-.concluded p, .concluded h3 {
+.concluded p, .concluded h3, .concluded a {
   color: #FA3005;
 }
 
@@ -710,13 +712,13 @@ transform: scale(1.05);
 
 .expand-trigger {
   text-decoration: underline;
+  cursor: pointer;
 }
 
-.news-link {
+.news-link, .agenda-link {
   text-decoration: underline;
-  color: white;
 }
-.expand-trigger:hover, .news-link:hover {
+.expand-trigger:hover, .news-link:hover, .agenda-link:hover {
   color: #7EE787;
   text-decoration: none;
 }

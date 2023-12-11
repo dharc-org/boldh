@@ -128,15 +128,22 @@ fetch("/content/agenda.json")
         status = "concluded";
         statusElem = "<p class='agenda-concluded'>CONCLUDED</p>";
       }
-      var url = "<a class='agenda-box-anchor' href='https://www.google.it/' target='_blank'>";
+      //var url = "<a class='agenda-box-anchor' href='https://www.google.it/' target='_blank'>";  // to remove if using the visible link in the news box
       var date = "<p class='agenda-date'>" + news_item.date + "</p>";
       var division = "<p class='agenda-division'>" + news_item.division + "</p>";
       var type = "<p class='agenda-type'>" + news_item.type + "</p>";
       var title = "<h3 class='agenda-title'>" + news_item.title + "</h3>";
-      var text = "<p class='agenda-text'>" + news_item.text + "</p>";
+
+      if (news_item.text.length > 80) {
+        newText = news_item.text.substring(0, 80) + "...";
+        var text = "<p class='agenda-text'>" + newText + "</p> <p class='agenda-text expand-trigger'>Read more ⇢</p>";
+      } else {
+        var text = "<p class='agenda-text'>" + news_item.text + "</p>";
+      }
+
+      var toEventPage = "<a class='agenda-link agenda-text' href='"+news_item.url+"'>Go to the news ⇢</a>";
       var news_box = document.getElementById("agenda-box-container");
-      news_box.innerHTML += url + "<div class='agenda-box " + status + "'>" + statusElem + date + division + type + title + text + "</div></a>";
+      news_box.innerHTML += "<div class='agenda-box " + status + "'>" + statusElem + date + division + type + title + text + toEventPage + "</div></a>"; //if using url, add url before <div class='news-box'>
     });
   });
 
-console.log("ready hello");
