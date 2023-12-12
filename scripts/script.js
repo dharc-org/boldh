@@ -161,13 +161,14 @@ function populateModal(type, id){
 
   }
 
-
+  document.getElementById("modal-overlay").style.display = "flex";
   document.getElementById("expansion-container").style.display = "flex";
+  document.body.style.overflowY = "hidden";
 }
 
 function closeModal(){
-  var modal = document.getElementById("expansion-container");
-  modal.style.display = "none";
-  var modalContent = document.getElementById("modal-content");
-  modalContent.innerHTML = "";
+  document.getElementById("modal-overlay").style.display = "none";
+  document.getElementById("expansion-container").style.display = "none";
+  document.getElementById("modal-content").innerHTML = "";
+  document.body.style.overflowY = "auto";
 }

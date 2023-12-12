@@ -726,19 +726,32 @@ transform: scale(1.05);
 
 
 /* --------------- EXPANSION MODAL ----------------*/
-#expansion-container {
+#modal-overlay {
+  width: 100vw;
+  height: 100vh;
   position: fixed;
   top: 0;
+  left: 0;
+  background-color: rgba(255,255,255,0.3);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9998;
+  backdrop-filter: blur(8px);
+}
+
+#expansion-container {
   display: none;
   flex-direction: column;
   justify-content: flex-start;
-  height: 80%;
-  width: 50%;
-  margin: 10% 25%;
-  background-color: blue;
+  height: fit-content;
+  width: 80%;
+  max-width: 650px;
+  background-color: rgba(24, 24, 24, 0.9);
+  backdrop-filter: blur(50px);
   z-index: 9999;
   color: white;
-  border-radius: 10px;
+  border-radius: 20px;
   overflow-y: auto;
 }
 
@@ -752,11 +765,22 @@ transform: scale(1.05);
   cursor: pointer;
   position: relative;
   display: inline-block;
-  width: 33px;
-  height: 33px;
-  margin-right: 1rem;
-  margin-top: 1rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 1.5rem;
+  margin-top: 1.5rem;
   margin-bottom: 0;
+}
+
+#modal-close-icon:hover {
+  transform: scale(1.05) rotate(90deg) scaleX(-1);
+  transition: all 0.4s ease-in-out;
+
+}
+
+#modal-close-icon:not(:hover) {
+  transform: scale(1) rotate(-90deg);
+  transition: all 0.4s ease-in-out;
 }
 
 #modal-close-icon::before, #modal-close-icon::after {
@@ -765,7 +789,7 @@ transform: scale(1.05);
   top: 50%;
   left: 50%;
   width: 2px;
-  height: 33px;
+  height: 2rem;
   background-color: white;
 }
 
@@ -778,10 +802,14 @@ transform: scale(1.05);
 }
 
 
+
 #modal-content{
   width: 80%;
-  margin: 0 10%;
-  padding: 0;
+  height: 90%;
+  margin: 5% 10%;
+  padding-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
 }
 
 
@@ -789,18 +817,20 @@ transform: scale(1.05);
   color: white;
   font-family: SequelLight;
   font-size: 20px;  
-  white-space:normal;
-  margin: 5px 0 0 0;
+  white-space: normal;
+  margin: 0;
+  line-height: 1.3;
 }
 
 .modal-title {
   color: white;
+  line-height: 1;
   font-family: Sequel;
   font-size: 45px;  
   white-space:normal;
-  margin: 0;
+  padding: 0;
   font-weight: normal;
-  padding-top: 20px;
+  margin: 0 0 1rem 0;
 }
 
 .modal-link {
@@ -810,6 +840,8 @@ transform: scale(1.05);
   white-space:normal;
   text-decoration: underline;
   cursor: pointer;
+  padding: 0;
+  margin: 0.5rem 0 0 0;
 }
 
 .modal-link:hover {
@@ -991,8 +1023,8 @@ text-align: right;
     font-size: 40px;
     padding: 0px 10px 40px 30px;
     transition: all 2s;
-}
-.giant-logo {
-  transform: scale(1.1) !important;
-}
+  }
+  .giant-logo {
+    transform: scale(1.1) !important;
+  }
 }
