@@ -99,9 +99,9 @@ fetch("/content/news.json")
       var date = "<p class='news-date'>" + news_item.date + "</p>";
       var division = "<p class='news-division'>" + news_item.division + "</p>";
       var title = "<h3 class='news-title'>" + news_item.title + "</h3>";
-      if (news_item.text.length > 90) {
-        newText = news_item.text.substring(0, 90) + "...";
-        var text = "<p class='news-text'>" + news_item.text + "</p> <p class='news-text expand-trigger' onclick='populateModal(\"news\", "+news_item.id+")'>Read more ⇢</p>";
+      if (news_item.text.length > 120) {
+        newText = news_item.text.substring(0, 120) + "...";
+        var text = "<p class='news-text'>" + newText + "</p> <p class='news-text expand-trigger' onclick='populateModal(\"news\", "+news_item.id+")'>Read more ⇢</p>";
       } else {
         var text = "<p class='news-text'>" + news_item.text + "</p>";
       }
@@ -134,9 +134,9 @@ fetch("/content/agenda.json")
       var type = "<p class='agenda-type'>" + agenda_item.type + "</p>";
       var title = "<h3 class='agenda-title'>" + agenda_item.title + "</h3>";
 
-      if (agenda_item.text.length > 90) {
-        newText = agenda_item.text.substring(0, 90) + "...";
-        var text = "<p class='agenda-text'>" + newText + "</p> <p class='agenda-text expand-trigger' onclick='populateModal(\"news\", "+agenda_item.id+")'>Read more ⇢</p>";
+      if (agenda_item.text.length > 120) {
+        newText = agenda_item.text.substring(0, 120) + "...";
+        var text = "<p class='agenda-text'>" + newText + "</p> <p class='agenda-text expand-trigger' onclick='populateModal(\"event\", "+agenda_item.id+")'>Read more ⇢</p>";
       } else {
         var text = "<p class='agenda-text'>" + agenda_item.text + "</p>";
       }
@@ -157,7 +157,7 @@ function populateModal(type, id){
     modalContent.innerHTML = "<h3 class='modal-title'>"+item.title+"</h3><p class='modal-text'>"+item.text+"</p> <a class='modal-link' href='"+item.url+"'>Go to the news ⇢</a></div>";
   } else {
     var item = agenda_array.find(x => x.id == id);
-    modalContent.innerHTML = "<h3 class='modal-title'>"+item.title+"</h3><p class='modal-text'>"+item.text+"</p><a class='modal-link' href='"+item.url+"'>Go to the news ⇢</a></div>";
+    modalContent.innerHTML = "<h3 class='modal-title'>"+item.title+"</h3><p class='modal-text modal-subtitle-pill'><span class='to-upper'>"+item.type+ "</span> — " +item.division+"</p><p class='modal-text modal-subtitle-pill'><b><span class='to-upper'>Date:<span class='to-upper'></b> "+item.date+"</p><p class='modal-text'>"+item.text+"</p><a class='modal-link' href='"+item.url+"'>Go to the news ⇢</a></div>";
 
   }
 
