@@ -6,7 +6,7 @@
       "status": "active",
       "type": "conference",
       "date": "24/03/2023",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sit amet tincidunt sapien."
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
      },
     {
       "id": 2,
@@ -15,7 +15,7 @@
       "status": "active",
       "type": "conference",
       "date": "24/03/2023",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vel mattis libero. Ut varius metus non ipsum rhoncus rhoncus. Sed ullamcorper nunc eu luctus rutrum."
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vel mattis libero. Ut varius metus non ipsum rhoncus rhoncus. Sed ullamcorper nunc eu luctus rutrum.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vel mattis libero. Ut varius metus non ipsum rhoncus rhoncus. Sed ullamcorper nunc eu luctus rutrum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vel mattis libero. Ut varius metus non ipsum rhoncus rhoncus. Sed ullamcorper nunc eu luctus rutrum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vel mattis libero. Ut varius metus non ipsum rhoncus rhoncus. Sed ullamcorper nunc eu luctus rutrum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vel mattis libero. Ut varius metus non ipsum rhoncus rhoncus. Sed ullamcorper nunc eu luctus rutrum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vel mattis libero. Ut varius metus non ipsum rhoncus rhoncus. Sed ullamcorper nunc eu luctus rutrum."
     },
     {
       "id": 3,
@@ -24,11 +24,12 @@
       "status": "concluded",
       "type": "conference",
       "date": "24/03/2023",
+      "img": "../assets/img/JPG/logo.jpg",
       "text": "Mauris vel mattis libero. Ut varius metus non ipsum rhoncus rhoncus. In consectetur laoreet bibendum. Vestibulum placerat, augue suscipit viverra viverra, neque leo."
     },
     {
       "id": 4,
-      "title": "Projects and teachers announced",
+      "title": "Projects",
       "division": "CHede",
       "status": "concluded",
       "type": "conference",

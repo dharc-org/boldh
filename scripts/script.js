@@ -28,6 +28,7 @@ window.onscroll = function () {
   oldScrollY = window.scrollY;
 
   // definition background color change
+  
   var elem = document.querySelector("p#definition-text");
   if (isInViewport(elem)) {
     document.getElementById("fourth-section").style.backgroundColor = "black";
@@ -68,6 +69,7 @@ window.onscroll = function () {
     document.getElementById("sixth-section").style.backgroundColor = "black";
     document.getElementById("contacts-section").style.backgroundColor = "black";
   }
+  
 };
 
 // add animations when entering viewport
@@ -105,10 +107,7 @@ fetch("/content/news.json")
       } else {
         var text = "<p class='news-text'>" + news_item.text + "</p>";
       }
-
       var toNewsPage = "<a class='news-link news-text' href='"+news_item.url+"'>Go to the news ⇢</a>";
-      
-
       var news_box = document.getElementById("news-box-container");
       news_box.innerHTML += "<div class='news-box'>" + date + division + title + text + toNewsPage + "</div></a>"; //if using url, add url before <div class='news-box'>
     });
@@ -134,14 +133,14 @@ fetch("/content/agenda.json")
       var type = "<p class='agenda-type'>" + agenda_item.type + "</p>";
       var title = "<h3 class='agenda-title'>" + agenda_item.title + "</h3>";
 
-      if (agenda_item.text.length > 120) {
+      if (agenda_item.text.length > 120 || agenda_item.img) {
         newText = agenda_item.text.substring(0, 120) + "...";
         var text = "<p class='agenda-text'>" + newText + "</p> <p class='agenda-text expand-trigger' onclick='populateModal(\"event\", "+agenda_item.id+")'>Read more ⇢</p>";
       } else {
         var text = "<p class='agenda-text'>" + agenda_item.text + "</p>";
       }
 
-      var toEventPage = "<a class='agenda-link agenda-text' href='"+agenda_item.url+"'>Go to the news ⇢</a>";
+      var toEventPage = "<a class='agenda-link agenda-text' href='"+agenda_item.url+"'>Go to the event ⇢</a>";
       var news_box = document.getElementById("agenda-box-container");
       news_box.innerHTML += "<div class='agenda-box " + status + "'>" + statusElem + date + division + type + title + text + toEventPage + "</div></a>"; //if using url, add url before <div class='news-box'>
     });
@@ -154,10 +153,36 @@ function populateModal(type, id){
   modalContent.innerHTML = "";
   if (type == 'news'){
     var item = news_array.find(x => x.id == id);
-    modalContent.innerHTML = "<h3 class='modal-title'>"+item.title+"</h3><p class='modal-text'>"+item.text+"</p> <a class='modal-link' href='"+item.url+"'>Go to the news ⇢</a></div>";
+    var modalTitle = "<h3 class='modal-title'>"+item.title+"</h3>";
+    var modalInfo = "<div id='modal-info-div'><p>"+item.date+"</p><p>"+item.division+"</p></div>";
+    var modalText = "<p class='modal-text'>"+item.text+"</p>";
+    var modalLink = "<a class='modal-link' href='"+item.url+"'>Go to the news ⇢</a></div>";
+    modalContent.innerHTML =  modalTitle + modalInfo + modalText + modalLink;
   } else {
     var item = agenda_array.find(x => x.id == id);
-    modalContent.innerHTML = "<h3 class='modal-title'>"+item.title+"</h3><p class='modal-text modal-subtitle-pill'><span class='to-upper'>"+item.type+ "</span> — " +item.division+"</p><p class='modal-text modal-subtitle-pill'><b><span class='to-upper'>Date:<span class='to-upper'></b> "+item.date+"</p><p class='modal-text'>"+item.text+"</p><a class='modal-link' href='"+item.url+"'>Go to the news ⇢</a></div>";
+    var modalTitle = "<h3 class='modal-title'>"+item.title+"</h3>";
+    var modalInfo = "<div id='modal-info-div'><p>"+item.date+"</p><p>"+item.division+"</p>";
+    var modalType = "<p id='modal-event-type'>"+item.type+"</p></div>";
+    var modalText = "<p class='modal-text'>"+item.text+"</p>";
+    var modalLink = "<a class='modal-link' href='"+item.url+"'>Go to the event ⇢</a></div>";
+    var status = "<p id='modal-concluded'>"+item.status+"</p>";
+
+    if (item.img){
+      var tempModalContent = modalTitle + modalInfo + modalType + "<div id='modal-img-container'><img id='modal-img' src='"+item.img+"'></div>" + modalText + modalLink ;
+    } else {
+      var tempModalContent = modalTitle + modalInfo + modalType + modalText + modalLink;
+    }
+    
+    if (item.status == "concluded"){
+      modalContent.innerHTML = status + tempModalContent;
+    } else {
+      modalContent.innerHTML = tempModalContent;
+    }
+    
+    
+
+
+
 
   }
 
