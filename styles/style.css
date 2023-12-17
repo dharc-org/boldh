@@ -21,7 +21,7 @@ header {
   width: 100%;
   border-bottom: 1.5px solid var(--BolDH-white, #F5F5F5);
   background: var(--BolDH-black);
-  z-index: 99999999;
+  z-index: 99;
 }
 
 nav {
@@ -473,31 +473,31 @@ nav ul li a:not(a.active):hover:before {
 }
 
 #division-logo-0 {
-  z-index: 1300 !important;
+  z-index: 8 !important;
 }
 
 #division-logo-1 {
-  z-index: 127a0 !important;
+  z-index: 7 !important;
 }
 
 #division-logo-2 {
-  z-index: 1250 !important;
+  z-index: 6 !important;
 }
 
 #division-logo-3 {
-  z-index: 1200 !important;
+  z-index: 5 !important;
 }
 
 #division-logo-4 {
-  z-index: 1150 !important;
+  z-index: 4 !important;
 }
 
 #division-logo-5 {
-  z-index: 1100 !important;
+  z-index: 3 !important;
 }
 
 #division-logo-6 {
-  z-index: 1050 !important;
+  z-index: 2 !important;
   
 }
 
@@ -832,7 +832,7 @@ transform: scale(1.02);
   display: none;
   justify-content: center;
   align-items: center;
-  z-index: 9998;
+  z-index: 999;
   backdrop-filter: blur(8px);
 }
 
