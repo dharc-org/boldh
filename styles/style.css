@@ -2,34 +2,47 @@
   --BolDH-black: #121212;
   --BolDH-white: #f5f5f5;
   --BolDH-white-800: #f5f5f5cc;
+  --BolDH-white-400: #f5f5f566;
+  --BolDH-neutral-800: rgba(18, 18, 18, 0.8);
+  --BolDH-neutral-640: #121212a3;
+  --Boldh-red: #FA3005;
 }
 
 html {
   font-size: 16px;
 }
 
+html * {
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6, p, a {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   width: 100%;
   margin: 0;
   padding: 0;
-  background-color: var(--BolDH-black);
+  background-color: black;
 }
 
 header {
   position: sticky;
   top: 0;
   width: 100%;
-  border-bottom: 1.5px solid var(--BolDH-white, #F5F5F5);
-  background: var(--BolDH-black);
+  border-bottom: 1.5px solid white;
+  background: black;
   z-index: 99;
 }
+
 
 nav {
   display: flex;
   padding: 1rem 10%;
   justify-content: space-between;
   align-items: center;
-
 }
 
 #nav-logo-cnt {
@@ -51,52 +64,118 @@ nav ul {
 
 nav ul li a {
   text-decoration: none;
-  color: var(--BolDH-white-800);
+  color: #ffffffcc;
   /* BolDH/Body - Sequel */
   font-family: Sequel Sans;
   font-size: 1.25rem;
   font-style: normal;
   font-weight: 350;
-  line-height: 150%; /* 1.875rem */
+  line-height: 100%; /* 150% 1.875rem */
   letter-spacing: 0.025rem;
   position: relative;
 }
 
 nav ul li a.active{
-  color: var(--BolDH-white, #F5F5F5);
-  /* BolDH/Body - Sequel */
-  font-family: Sequel Sans;
-  font-size: 1.25rem;
-  font-style: normal;
-  font-weight: 350;
-  line-height: 150%; /* 1.875rem */
-  letter-spacing: 0.025rem;
+  color: white;
 }
 
 nav ul li a.active:before {
   position: absolute;
   content: "";
   width: 100%;
-  border-bottom: 1.5px solid var(--BolDH-white);
+  border-bottom: 2px solid white;
   bottom: -0.25rem;
 }
 
-nav ul li a:before {
+nav ul li a:not(.active):before {
   position: absolute;
   content: "";
-  width: 0%;
-  border-bottom: 1.5px solid var(--BolDH-white-800);
+  width: 100%;
+  border-bottom: 1.5px solid #ffffffcc;
   bottom: -0.25rem;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform 0.4s ease-in-out;
 }
 
 nav ul li a:not(a.active):hover:before {
   position: absolute;
   content: "";
-  width: 100%;
-  border-bottom: 1.5px solid var(--BolDH-white-800);
+  border-bottom: 1.5px solid #ffffffcc;
   bottom: -0.25rem;
-  transition: width .3s ease-in-out;
+  transform-origin: left;
+  transform:scaleX(1);
+  transition: transform 0.4s ease-in-out;
 }
+
+.hamburger {
+  display: none;
+  position: relative;
+  height: 1.25rem;
+  width: 2rem
+}
+
+.hamburger::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 18px; /*1rem + 2px*/
+  border-top: 2px solid white;
+  border-bottom: 2px solid white;
+  transform: scaleX(1);
+  transition: transform 0.3s ease-in-out;
+  transform-origin: right;
+}
+.hamburger::after {
+  position: absolute;
+  content: "";
+  top: 10px; /*0.5rem + 2px */
+  left: 0;
+  width: 100%;
+  height: 0.5rem;
+  border-top: 2px solid white;
+  transform: scaleX(1);
+  transition: transform 0.3s ease-in-out;
+  transform-origin: left;
+}
+
+.hamburger:hover::before{
+  transform: scaleX(0.6);
+}
+
+.hamburger:hover::after{
+  transform: scaleX(0.6);
+}
+
+
+
+
+
+@media screen and (max-width: 840px) {
+
+  .hamburger {
+    display: block;
+  }
+
+  nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: flex-end;
+  }
+
+  .nav-link-li {
+    display: none;
+  }
+
+
+}
+
+
+
+
 
 
 
@@ -111,7 +190,7 @@ nav ul li a:not(a.active):hover:before {
  }
 
  .second-section {
-    background-color: var(--BolDH-white);
+    background-color: white;
     width: 100%;
     margin: 0;
     padding: 0;
@@ -573,6 +652,7 @@ nav ul li a:not(a.active):hover:before {
   display: flex;
   overflow: auto;
   white-space: nowrap;
+  padding-bottom: 1rem;
 }
 
 .news-box-container::-webkit-scrollbar {
@@ -588,12 +668,14 @@ nav ul li a:not(a.active):hover:before {
   /*cursor: pointer; */
 }
 
+
 .news-box:hover {
-  transform: scale(1.02);
+  transform: scale(1.01);
 }
 
+
 .news-box-anchor:first-child {
-  margin-left:10.5vw !important;
+  margin-left:10% !important;
 }
 
 .news-division {
@@ -696,6 +778,7 @@ nav ul li a:not(a.active):hover:before {
   display: flex;
   overflow: auto;
   white-space: nowrap;
+  padding-bottom: 1rem;
 }
 
 .agenda-box-container::-webkit-scrollbar {
@@ -713,11 +796,11 @@ nav ul li a:not(a.active):hover:before {
 }
 
 .agenda-box:hover {
-transform: scale(1.02);
+transform: scale(1.01);
 }
 
 .agenda-box-anchor:first-child {
-  margin-left:10.5vw !important;
+  margin-left: 10% !important;
 }
 
 .agenda-division {
@@ -743,6 +826,7 @@ transform: scale(1.02);
   border-radius: 4px;
   margin-right: 10px;
   text-transform: uppercase;
+  margin-top: 0.75rem;
 }
 
 .agenda-date {
@@ -788,6 +872,10 @@ transform: scale(1.02);
   color: #FA3005;
 }
 
+.concluded .boldh-a:hover {
+  color: #fa3205bb;
+}
+
 .concluded .agenda-type, .concluded .agenda-date {
   border-color: #FA3005;
   color: #FA3005;
@@ -807,77 +895,61 @@ transform: scale(1.02);
 }
 
 
-.expand-trigger {
-  text-decoration: underline;
-  cursor: pointer;
-}
 
-.news-link, .agenda-link {
-  text-decoration: underline;
-}
-.expand-trigger:hover, .news-link:hover, .agenda-link:hover {
-  text-decoration: none;
-}
-
-
-
-/* --------------- EXPANSION MODAL ----------------*/
+/* --------------- Read more MODAL ----------------*/
 #modal-overlay {
   width: 100vw;
   height: 100vh;
   position: fixed;
   top: 0;
   left: 0;
-  background-color: rgba(255,255,255,0.3);
+  background-color: var(--BolDH-white-400);
   display: none;
   justify-content: center;
   align-items: center;
   z-index: 999;
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(12.5px);
 }
 
 #expansion-container {
+  position: relative;
+  box-sizing: border-box;
   display: none;
   flex-direction: column;
-  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 1.5rem;
+  flex-shrink: 0;
   height: fit-content;
   max-height: 90%;
-  width: 80%;
+  width: 40%;
   max-width: 800px;
-  background-color: rgba(24, 24, 24, 0.9);
-  backdrop-filter: blur(50px);
+  border-radius: 0.5rem;
+  background-color: var(--BolDH-black);
+  backdrop-filter: blur(25px)!important;
   z-index: 9999;
-  color: white;
-  border-radius: 15px;
-  overflow-y: auto;
 }
 
-#modal-close-container {
-  display: flex;
-  justify-content: flex-end;
-  cursor: default;
-}
+
 
 #modal-close-icon {
   cursor: pointer;
-  position: relative;
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
   display: inline-block;
-  width: 1.5rem;
-  height: 1.5rem;
-  margin-right: 1.8rem;
-  margin-top: 1.5rem;
-  margin-bottom: 0;
+  width: 2rem;
+  height: 2rem;
 }
 
 #modal-close-icon:hover {
-  transform: scale(1.05) rotate(90deg) scaleX(-1);
-  transition: all 0.4s ease-in-out;
+  transform: scale(1.05);
+  transition: all 0.3s ease-in-out;
 
 }
 
 #modal-close-icon:not(:hover) {
-  transform: scale(1) rotate(-90deg);
-  transition: all 0.4s ease-in-out;
+  transform: scale(1);
+  transition: all 0.3s ease-in-out;
 }
 
 #modal-close-icon::before, #modal-close-icon::after {
@@ -899,120 +971,177 @@ transform: scale(1.02);
 }
 
 
-
 #modal-content{
-  width: 80%;
-  max-height: 90%;
-  margin: 5% 10%;
-  padding-bottom: 3rem;
+  width: 100%;
+  height: fit-content;
   display: flex;
   flex-direction: column;
-}
-
-
-.modal-text {
-  color: white;
-  font-family: SequelLight;
-  font-size: 20px;  
-  white-space: normal;
-  margin: 0 0 0 0;
-  line-height: 1.3;
-}
-
-#modal-info-div {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
   align-items: flex-start;
-  padding: 0 0 0 0;
-  margin: 0.8rem 0;
-  width: 100%;
-  height: 100%;
+  gap: 1.5rem;
+  padding: 5rem 5rem;
+  scrollbar-color: var(--BolDH-white-800) transparent;
   overflow-y: auto;
 }
 
-#modal-info-div p, #modal-concluded {
+#modal-t-sbt-cnt {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+#modal-title {
   color: white;
-  font-family: SequelLight;
-  font-size: 1rem;  
-  white-space: normal;
-  margin: 0.5rem 0 0 0;
+  /* BolDH/Heading 4 */
+  font-family: Sequel Sans;
+  font-size: 2.5rem;
+  font-style: normal;
+  font-weight: 425;
+  line-height: 110%; /* 2.75rem */
 }
 
-#modal-info-div p {
-  border: 1px solid white;
-  color: white !important;
-  padding: 4px 7px 4px 7px;
-  border-radius: 4px;
-  margin-right: 10px;
+#modal-sbt {
+  color: white;
+  /* BolDH/Subtitle 2 */
+  font-family: Sequel Sans;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 350;
+  line-height: 120%; /* 1.8rem */
+  letter-spacing: 0.03rem;
+}
+
+#modal-tag-group {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.modal-tag-cnt {
+  display: flex;
+  padding: 0.25rem 0.5rem;
+  align-items: flex-start;
   width: fit-content;
+  border-radius: 0.5rem;
+  border: 1.5px solid white;
 }
 
+.modal-tag-cnt p {
+  color: white;
+  /* BolDH/Body - small */
+  font-family: Sequel Sans;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 350;
+  line-height: 150%; /* 1.5rem */
+  letter-spacing: 0.02rem;
+}
 
-#modal-concluded {
+#tag-concluded {
   text-transform: uppercase;
-  font-weight: bold;
-  background-color: #FA3005;
-  border: 1px solid  #FA3005;
-  color: white !important;
-  padding: 4px 7px 4px 7px;
-  border-radius: 4px;
-  margin-right: 10px;
-  width: fit-content;
-  margin-bottom: 1rem;
+  background-color: var(--Boldh-red);
+  border: 1.5px solid var(--BolDH-red);
 }
 
-
-#modal-event-type {
-  text-transform: capitalize;
-}
-
-
-.modal-title {
-  color: white;
-  line-height: 1;
-  font-family: Sequel;
-  font-size: 45px;  
-  white-space:normal;
-  padding: 0;
-  font-weight: normal;
-  margin: 0;
-}
-
-.modal-link {
-  color: white;
-  font-family: SequelLight;
-  font-size: 20px;  
-  white-space:normal;
-  text-decoration: underline;
-  cursor: pointer;
-  padding: 0;
-  margin: 0.8rem 0 0 0;
-  width: fit-content;
-}
-
-.modal-link:hover {
-  text-decoration: none;
-}
-
-.modal-subtitle-pill {
-  font-size: 1em;
-  margin-bottom: 0.1rem;
-}
-
-.to-upper {
+#tag-e-type {
   text-transform: uppercase;
 }
 
-#modal-img-container {
-  margin: 0.8rem 0;
-  width: 60%;
+#modal-img-cnt {
+  width: 100%;
 }
 
-#modal-img {
+#modal-img-cnt img {
   width: 100%;
   height: auto;
 }
+
+
+#modal-main-cnt {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.modal-text {
+  color: white;
+  /* BolDH/Body - Sequel */
+  font-family: Sequel Sans;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 350;
+  line-height: 150%; /* 1.875rem */
+  letter-spacing: 0.025rem;
+}
+
+#modal-link-group {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  gap: 0.75rem;
+}
+
+.boldh-a {
+  width: fit-content;
+  text-decoration: none;
+  position: relative;
+  cursor: pointer;
+  padding: 0.15rem 0rem;
+  color: white;
+  /* BolDH/Body - small - bold */
+  font-family: Sequel Sans;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 425;
+  line-height: 150%; /* 1.5rem */
+  letter-spacing: 0.02rem;
+  transition: all 0.4s ease-in-out;
+}
+
+.boldh-a:before{
+  position: absolute;
+  bottom: 0;
+  content: "";
+  width: 100%;
+  border-bottom: 2px solid;
+  transform: scaleX(1);
+  transform-origin: left;
+  transition: transform 0.4s ease-in-out;
+
+}
+
+.boldh-a:hover:before {
+  transform-origin: right;
+  transform:scaleX(0);
+  transition: transform 0.4s ease-in-out;
+}
+
+.boldh-a:hover {
+  color: var(--BolDH-white-800);
+  transition: all 0.4s ease-in-out;
+}
+
+/*
+.boldh-a:after {
+  content: url("../assets/img/SVG/arrow.svg");
+  font-size: 1.2rem;
+  color: var(--BolDH-white, #F5F5F5);
+  padding-left: 0.5rem;
+  transition: all 0.4s ease-in-out;
+}
+
+.boldh-a:hover:after {
+  padding-left: 0.75rem;
+  transition: all 0.4s ease-in-out;
+}
+*/
+
+
+
+
 
 /* --------------- TEMPORARY HIDDEN ----------------
 #sixth-section {
@@ -1192,4 +1321,22 @@ text-align: right;
   .giant-logo {
     transform: scale(1.1) !important;
   }
+}
+
+@media  screen and (max-width: 1200px) {
+  #expansion-container {
+    width: 60%;
+  }  
+}
+
+@media  screen and (max-width: 720px) {
+  #expansion-container {
+    width: 80%;
+  }  
+}
+
+@media  screen and (max-width: 560px) {
+  #expansion-container {
+    width: 90%;
+  }  
 }

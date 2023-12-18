@@ -98,18 +98,23 @@ fetch("/content/news.json")
   .then(() => {
     news_array.forEach(function (news_item) {
       //var url = "<a class='news-box-anchor' href='https://www.google.it/' target='_blank'>";   // to remove if using the visible link in the news box
-      var date = "<p class='news-date'>" + news_item.date + "</p>";
       var division = "<p class='news-division'>" + news_item.division + "</p>";
       var title = "<h3 class='news-title'>" + news_item.title + "</h3>";
       if (news_item.text.length > 120) {
         newText = news_item.text.substring(0, 120) + "...";
-        var text = "<p class='news-text'>" + newText + "</p> <p class='news-text expand-trigger' onclick='populateModal(\"news\", "+news_item.id+")'>Read more ⇢</p>";
+        var text = "<p class='news-text'>" + newText + "</p> <p class='news-text boldh-a' style='margin-bottom: 0.25rem' onclick='populateModal(\"news\", "+news_item.id+")'>Read more</p>";
       } else {
         var text = "<p class='news-text'>" + news_item.text + "</p>";
       }
-      var toNewsPage = "<a class='news-link news-text' href='"+news_item.url+"'>Go to the news ⇢</a>";
+      var toNewsPage = "<a class='news-text boldh-a' target='_blank' href='"+news_item.url+"'>Go to the news</a>";
       var news_box = document.getElementById("news-box-container");
-      news_box.innerHTML += "<div class='news-box'>" + date + division + title + text + toNewsPage + "</div></a>"; //if using url, add url before <div class='news-box'>
+      if (news_item.date){
+        var date = "<p class='news-date'>" + news_item.date + "</p>";
+        news_box.innerHTML += "<div class='news-box'>" + date + division + title + text + toNewsPage + "</div></a>"; //if using url, add url before <div class='news-box'>
+      } else {
+        news_box.innerHTML += "<div class='news-box'>" + division + title + text + toNewsPage + "</div></a>"; //if using url, add url before <div class='news-box'>
+      }
+      
     });
   });
 
@@ -135,12 +140,12 @@ fetch("/content/agenda.json")
 
       if (agenda_item.text.length > 120 || agenda_item.img) {
         newText = agenda_item.text.substring(0, 120) + "...";
-        var text = "<p class='agenda-text'>" + newText + "</p> <p class='agenda-text expand-trigger' onclick='populateModal(\"event\", "+agenda_item.id+")'>Read more ⇢</p>";
+        var text = "<p class='agenda-text'>" + newText + "</p> <p class='agenda-text boldh-a' style='margin-bottom: 0.25rem' onclick='populateModal(\"event\", "+agenda_item.id+")'>Read more</p>";
       } else {
         var text = "<p class='agenda-text'>" + agenda_item.text + "</p>";
       }
 
-      var toEventPage = "<a class='agenda-link agenda-text' href='"+agenda_item.url+"'>Go to the event ⇢</a>";
+      var toEventPage = "<a class='agenda-text boldh-a' target='_blank' href='"+agenda_item.url+"'>Go to the event</a>";
       var news_box = document.getElementById("agenda-box-container");
       news_box.innerHTML += "<div class='agenda-box " + status + "'>" + statusElem + date + division + type + title + text + toEventPage + "</div></a>"; //if using url, add url before <div class='news-box'>
     });
@@ -149,51 +154,63 @@ fetch("/content/agenda.json")
 
 
 function populateModal(type, id){
+  console.log(type, id);
   var modalContent = document.getElementById("modal-content");
   modalContent.innerHTML = "";
   if (type == 'news'){
     var item = news_array.find(x => x.id == id);
-    var modalTitle = "<h3 class='modal-title'>"+item.title+"</h3>";
-    var modalInfo = "<div id='modal-info-div'><p>"+item.date+"</p><p>"+item.division+"</p></div>";
-    var modalText = "<p class='modal-text'>"+item.text+"</p>";
-    var modalLink = "<a class='modal-link' href='"+item.url+"'>Go to the news ⇢</a></div>";
-    modalContent.innerHTML =  modalTitle + modalInfo + modalText + modalLink;
+    if (item.subtitle){
+      var modalTitleSubtitle = "<div id='modal-t-sbt-cnt'><h4 id='modal-title'>"+item.title+"</h4><p id='modal-sbt'>"+item.subtitle+"</p></div>";
+    } else {
+      var modalTitleSubtitle = "<h3 id='modal-title'>"+item.title+"</h3>";
+    }
+    if (item.date){
+      var tagGroup = "<div id='modal-tag-group'><div class='modal-tag-cnt' id='tag-date'><p>"+item.date+"</p></div><div class='modal-tag-cnt' id='tag-division'><p>"+item.division+"</p></div></div>"
+    } else {
+      var tagGroup = "<div id='modal-tag-group'><div class='modal-tag-cnt' id='tag-division'><p>"+item.division+"</p></div></div>"
+    }
+    var modalMainContent = "<div id='modal-main-cnt'><p class='modal-text'>"+item.text+"</p><div id='modal-link-group'><a class='boldh-a' target='_blank' href='"+item.url+"'>Go to the news</a></div></div>"
+    modalContent.innerHTML = modalTitleSubtitle + tagGroup + modalMainContent;
   } else {
     var item = agenda_array.find(x => x.id == id);
-    var modalTitle = "<h3 class='modal-title'>"+item.title+"</h3>";
-    var modalInfo = "<div id='modal-info-div'><p>"+item.date+"</p><p>"+item.division+"</p>";
-    var modalType = "<p id='modal-event-type'>"+item.type+"</p></div>";
-    var modalText = "<p class='modal-text'>"+item.text+"</p>";
-    var modalLink = "<a class='modal-link' href='"+item.url+"'>Go to the event ⇢</a></div>";
-    var status = "<p id='modal-concluded'>"+item.status+"</p>";
-
-    if (item.img){
-      var tempModalContent = modalTitle + modalInfo + modalType + "<div id='modal-img-container'><img id='modal-img' src='"+item.img+"'></div>" + modalText + modalLink ;
-    } else {
-      var tempModalContent = modalTitle + modalInfo + modalType + modalText + modalLink;
-    }
-    
+    var modalTitleSubtitle = "<div id='modal-t-sbt-cnt'><h4 id='modal-title'>"+item.title+"</h4><p id='modal-sbt'>"+item.subtitle+"</p></div>";
     if (item.status == "concluded"){
-      modalContent.innerHTML = status + tempModalContent;
+      var tagGroup = "<div id='modal-tag-group'><div class='modal-tag-cnt' id='tag-concluded'><p>Concluded</p></div><div class='modal-tag-cnt' id='tag-date'><p>"+item.date+"</p></div><div class='modal-tag-cnt' id='tag-division'><p>"+item.division+"</p></div></div>"
     } else {
-      modalContent.innerHTML = tempModalContent;
+      var tagGroup = "<div id='modal-tag-group'><div class='modal-tag-cnt' id='tag-date'><p>"+item.date+"</p></div><div class='modal-tag-cnt' id='tag-division'><p>"+item.division+"</p></div></div>"
     }
-    
-    
-
-
-
-
+    if (item.img){
+      var modalMainContent = "<div id='modal-main-cnt'><div id='modal-img-cnt'><img src='"+item.img+"' alt='event presentation image'></div><p class='modal-text'>"+item.text+"</p><div id='modal-link-group'><a class='boldh-a' target='_blank' href='"+item.url+"'>Go to the news</a></div></div>"
+    } else {
+      var modalMainContent = "<div id='modal-main-cnt'><p class='modal-text'>"+item.text+"</p><div id='modal-link-group'><a class='boldh-a' target='_blank' href='"+item.url+"'>Go to the news</a></div></div>"
+    }
+    modalContent.innerHTML = modalTitleSubtitle + tagGroup + modalMainContent;
   }
 
   document.getElementById("modal-overlay").style.display = "flex";
   document.getElementById("expansion-container").style.display = "flex";
-  document.body.style.overflowY = "hidden";
 }
 
 function closeModal(){
   document.getElementById("modal-overlay").style.display = "none";
   document.getElementById("expansion-container").style.display = "none";
   document.getElementById("modal-content").innerHTML = "";
-  document.body.style.overflowY = "auto";
+}
+
+
+
+
+
+function openMenu(){
+  console.log("open menu")
+  let elements = document.getElementsByClassName("nav-link-li");
+  if(window.getComputedStyle(elements[0]).display == "none"){
+    for (let i = 0; i < elements.length; i++) {
+      elements[i].style.display = "block";
+    };
+  }else{
+    for (let i = 0; i < elements.length; i++) {
+      elements[i].style.display = "none";
+    }
+  }
 }
