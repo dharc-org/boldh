@@ -668,7 +668,7 @@ nav ul li a:not(a.active):hover:before {
   min-width: 27rem;
   max-width: 27rem;
   min-height: min-content;
-  max-height: max-content;
+  max-height: 90vh;
   padding: 2rem 1.5rem;
   flex-direction: column;
   justify-content: space-between;
@@ -687,7 +687,7 @@ nav ul li a:not(a.active):hover:before {
   min-width: 27rem;
   max-width: 27rem;
   min-height: min-content;
-  max-height: max-content;
+  max-height: 90vh;
   padding: 2rem 1.5rem;
   flex-direction: column;
   justify-content: space-between;
