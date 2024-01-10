@@ -10,19 +10,18 @@ window.onscroll = function () {
   var element = document.getElementById("news-box-container");
   if (isInViewport(element)) {
     if (oldScrollY < window.scrollY) {
-      document.getElementById("news-box-container").scrollLeft += theta + 5;
+      document.getElementById("news-box-container").scrollLeft += theta + 10;
     } else {
-      document.getElementById("news-box-container").scrollLeft -= theta + 5;
+      document.getElementById("news-box-container").scrollLeft -= theta + 10;
     }
   }
-
   // moving events agenda on scroll animation
   var element = document.getElementById("agenda-box-container");
   if (isInViewport(element)) {
     if (oldScrollY < window.scrollY) {
-      document.getElementById("agenda-box-container").scrollLeft += theta + 5;
+      document.getElementById("agenda-box-container").scrollLeft += theta + 10;
     } else {
-      document.getElementById("agenda-box-container").scrollLeft -= theta + 5;
+      document.getElementById("agenda-box-container").scrollLeft -= theta + 10;
     }
   }
   oldScrollY = window.scrollY;
@@ -43,6 +42,7 @@ window.onscroll = function () {
     document.getElementsByClassName("text-highlight")[1].style.backgroundColor = "white";
   }
 
+/*
   // agenda background color change -- to remove if news-agenda hidden
   var agenda_title = document.querySelector("h2#agenda-main-title");
   if (isInViewport(agenda_title)) {
@@ -50,7 +50,7 @@ window.onscroll = function () {
     document.getElementById("sixth-section").style.backgroundColor = "#FA3005";
     document.getElementById("contacts-section").style.backgroundColor = "#FA3005";
   }
-
+*/
   var contacts_title = document.querySelector("h2#contacts-main-title");
   if (isInViewport(contacts_title)) {
     document.getElementById("seventh-section").style.backgroundColor = "#7EE787"; // to remove if news-agenda hidden
@@ -97,26 +97,11 @@ fetch("/content/news.json")
   })
   .then(() => {
     news_array.forEach(function (news_item) {
-      //var url = "<a class='news-box-anchor' href='https://www.google.it/' target='_blank'>";   // to remove if using the visible link in the news box
-      var division = "<p class='news-division'>" + news_item.division + "</p>";
-      var title = "<h3 class='news-title'>" + news_item.title + "</h3>";
-      if (news_item.text.length > 120) {
-        newText = news_item.text.substring(0, 120) + "...";
-        var text = "<p class='news-text'>" + newText + "</p> <p class='news-text boldh-a' style='margin-bottom: 0.25rem' onclick='populateModal(\"news\", "+news_item.id+")'>Read more</p>";
-      } else {
-        var text = "<p class='news-text'>" + news_item.text + "</p>";
-      }
-      var toNewsPage = "<a class='news-text boldh-a' target='_blank' href='"+news_item.url+"'>Go to the news</a>";
-      var news_box = document.getElementById("news-box-container");
-      if (news_item.date){
-        var date = "<p class='news-date'>" + news_item.date + "</p>";
-        news_box.innerHTML += "<div class='news-box'>" + date + division + title + text + toNewsPage + "</div></a>"; //if using url, add url before <div class='news-box'>
-      } else {
-        news_box.innerHTML += "<div class='news-box'>" + division + title + text + toNewsPage + "</div></a>"; //if using url, add url before <div class='news-box'>
-      }
-      
+      console.log("HELLOOOO");
+      populateCard("news", news_item);
     });
   });
+
 
 // agenda data
 fetch("/content/agenda.json")
@@ -126,31 +111,70 @@ fetch("/content/agenda.json")
   })
   .then(() => {
     agenda_array.forEach(function (agenda_item) {
-      var status = "";
-      var statusElem = "";
-      if (agenda_item.status === "concluded") {
-        status = "concluded";
-        statusElem = "<p class='agenda-concluded'>CONCLUDED</p>";
-      }
-      //var url = "<a class='agenda-box-anchor' href='https://www.google.it/' target='_blank'>";  // to remove if using the visible link in the news box
-      var date = "<p class='agenda-date'>" + agenda_item.date + "</p>";
-      var division = "<p class='agenda-division'>" + agenda_item.division + "</p>";
-      var type = "<p class='agenda-type'>" + agenda_item.type + "</p>";
-      var title = "<h3 class='agenda-title'>" + agenda_item.title + "</h3>";
-
-      if (agenda_item.text.length > 120 || agenda_item.img) {
-        newText = agenda_item.text.substring(0, 120) + "...";
-        var text = "<p class='agenda-text'>" + newText + "</p> <p class='agenda-text boldh-a' style='margin-bottom: 0.25rem' onclick='populateModal(\"event\", "+agenda_item.id+")'>Read more</p>";
-      } else {
-        var text = "<p class='agenda-text'>" + agenda_item.text + "</p>";
-      }
-
-      var toEventPage = "<a class='agenda-text boldh-a' target='_blank' href='"+agenda_item.url+"'>Go to the event</a>";
-      var news_box = document.getElementById("agenda-box-container");
-      news_box.innerHTML += "<div class='agenda-box " + status + "'>" + statusElem + date + division + type + title + text + toEventPage + "</div></a>"; //if using url, add url before <div class='news-box'>
+      populateCard("agenda", agenda_item);
     });
   });
 
+
+
+
+function populateCard(tp, item) {
+  console.log(tp, item);
+  let itemDivision = "<p class='card-division'>" + item.division + "</p>";
+  let itemType = "<p class='card-type'>" + item.type + "</p>";
+  let arrow = '<svg xmlns="http://www.w3.org/2000/svg" width="66" height="51" viewBox="0 0 66 51" fill="none"><path d="M0 25.3613H64M64 25.3613L41.7391 1.36133M64 25.3613L41.7391 49.3613" stroke="#F2F2F2" stroke-width="2"/></svg>';
+  
+  let itemTitle = "";
+  if (item.title.length > 80) {
+    let newTitle = item.title.substring(0, 80) + "...";
+    itemTitle = "<h3 class='card-title'>" + newTitle + "</h3>";;
+  } else {
+    itemTitle = "<h3 class='card-title'>" + item.title + "</h3>";
+  }
+
+  let itemText = "";
+  if (item.text.length > 200) {
+    let newText = item.text.substring(0, 200) + "...";
+    itemText = "<p class='card-text'>" + newText + "</p>";
+  } else {
+    itemText = "<p class='card-text'>" + item.text + "</p>";
+  }
+
+  let itemTextDiv = "<div class='card-text-div'>"+ itemTitle + itemText +"</div>";
+  let box = "";
+  let infoDiv = "";
+
+  if (tp == "news") {
+    box = document.getElementById("news-box-container");
+    infoDiv = "<div class='card-info-div'>" + itemDivision + itemType +"</div>";
+  } else {
+    box = document.getElementById("agenda-box-container");
+    var status = "";
+    if (item.status == "concluded") {
+      status = "Concluded";
+    } else {
+      status = "Upcoming";
+    }
+    let itemStatus = "<p class='agenda-"+status+"'>"+status+"</p>";
+    let itemDate = "<p class='card-date'>" + item.date + "</p>";
+    let itemPlace = "<p class='card-place'>" + item.place + "</p>";
+    infoDiv = "<div class='card-info-div'>" + itemDate + itemPlace + itemDivision + itemType + itemStatus +"</div>";
+  }
+  
+  let itemContentA = "<div class='card-box-content-a'>"+ infoDiv + itemTextDiv +"</div>";
+  let arrowDiv = "<div class='card-arrow-div'>"+ arrow +"</div></div>";
+
+  if (tp == "news") {
+    let itemUrl = item.url;
+    box.innerHTML += "<a class='card-box' href='"+ itemUrl +"' target='_blank' onmouseover='animateCardOver(this)' onmouseout='reverseAnimateCard(this)'>"+ itemContentA + arrowDiv +"</a>";
+  } else {
+    if (status == "Concluded"){
+      box.innerHTML += "<div class='card-box-concluded' onmouseover='animateCardOver(this, \"concluded\")' onmouseout='reverseAnimateCard(this, \"concluded\")' onclick='populateModal(\"event\", "+item.id+")' >"+ itemContentA + arrowDiv +"</div>";
+    } else {
+      box.innerHTML += "<div class='card-box event-box' onmouseover='animateCardOver(this, \"active\")' onmouseout='reverseAnimateCard(this, \"active\")' onclick='populateModal(\"event\", "+item.id+")' >"+ itemContentA + arrowDiv +"</div>";
+    }
+  }
+};
 
 
 function populateModal(type, id){
@@ -213,4 +237,22 @@ function openMenu(){
       elements[i].style.display = "none";
     }
   }
+}
+
+
+
+function animateCardOver(x, type){
+  if (type == "active"){
+    x.style.backgroundColor = "#292929"
+    x.style.borderColor = "transparent"
+  }
+  x.childNodes[1].style.paddingLeft = "1.2rem"
+}
+
+function reverseAnimateCard(x, type){
+  if (type == "active"){
+    x.style.backgroundColor = "#252525"
+    x.style.borderColor = "white"
+  }
+  x.childNodes[1].style.paddingLeft = "0"
 }

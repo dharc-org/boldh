@@ -648,77 +648,152 @@ nav ul li a:not(a.active):hover:before {
 }
 
 .news-box-container {
-  width: 100%;
   display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  gap: 2rem;
+  gap: 2rem;
   overflow: auto;
-  white-space: nowrap;
-  padding-bottom: 1rem;
-}
-
-.news-box-container::-webkit-scrollbar {
-  display: none;
-}
-
-.news-box {
-  min-width: 300px;
-  margin: 20px;
-  display: inline-block;
-  transition: all 0.5s ease;
-  cursor: default;
-  /*cursor: pointer; */
+  padding-bottom: 2rem;
 }
 
 
-.news-box:hover {
-  transform: scale(1.01);
+
+.card-box {
+  text-decoration: none;
+  transition: all .4s ease-in-out;
+  cursor: pointer;
+
+  display: flex;
+  min-width: 27rem;
+  max-width: 27rem;
+  min-height: min-content;
+  max-height: max-content;
+  padding: 2rem 1.5rem;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  border-radius: 0.5rem;
+  border: 2px solid var(--BolDH-White-Logo-Text, #F2F2F2);
+  background: var(--BolDH-Black-Grey-card-1, #252525);
+}
+
+.card-box-concluded {
+  transition: all .4s ease-in-out;
+  cursor: pointer;
+
+  display: flex;
+  min-width: 27rem;
+  max-width: 27rem;
+  min-height: min-content;
+  max-height: max-content;
+  padding: 2rem 1.5rem;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 
 
-.news-box-anchor:first-child {
-  margin-left:10% !important;
+.card-box:first-child {
+  margin-left: 10% !important;
 }
 
-.news-division {
+
+.card-box-content-a {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5rem;
+  align-self: stretch;
+  margin-bottom: 2rem;
+}
+
+.card-info-div {
+  display: flex;
+  align-items: flex-end;
+  align-content: flex-end;
+  gap: 0.75rem;
+  align-self: stretch;
+  flex-wrap: wrap;
+}
+
+.card-type, .card-division, .card-date, .card-place, .agenda-Concluded, .agenda-Upcoming {
   color: white;
   font-family: SequelLight;
-  font-size: 15px;  
-  /*cursor: pointer; */
-  margin: 0;
-  display: inline-block;
-  text-decoration: underline;
+  font-size: 1rem;
+  line-height: 150%; /* 1.5rem */
+  letter-spacing: 0.02rem;
+
+  display: flex;
+  padding: 0.375rem 0.75rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 0.5rem;
+  border: 2px solid white;
 }
 
-.news-date {
-  color: white;
-  font-family: SequelLight;
-  font-size: 15px;  
-  /*cursor: pointer; */
-  white-space:normal;
-  display: inline-block;
-  border: 1px solid white;
-  padding: 4px 7px 4px 7px;
-  border-radius: 4px;
-  margin-right: 10px;
-}
-
-.news-title {
-  color: white;
+.agenda-Concluded {
+  border: 2px solid #E03800;
   font-family: Sequel;
-  font-size: 30px;  
-  /*cursor: pointer; */
-  white-space:normal;
-  margin: 0;
-  font-weight: normal;
 }
 
-.news-text {
+.agenda-Upcoming {
+  border: 2px solid #00E1AB;
+  font-family: Sequel;
+}
+
+
+.card-text-div {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.card-text {
+  display: -webkit-box; 
+  -webkit-box-orient: vertical; 
+  -webkit-line-clamp: 8; 
+  overflow: hidden; 
+  text-overflow: ellipsis; 
+}
+
+.card-title {
+  display: -webkit-box; 
+  -webkit-box-orient: vertical; 
+  -webkit-line-clamp: 4; 
+  overflow: hidden; 
+  text-overflow: ellipsis; 
+}
+
+.card-title {
+  align-self: stretch;
   color: white;
   font-family: SequelLight;
-  font-size: 20px;  
-  /*cursor: pointer; */
-  white-space:normal;
-  margin: 0;
-  margin-top: 5px;
+  font-weight: 350;
+  font-size: 2rem;
+  line-height: 110%; /* 2.75rem */
+}
+
+.card-text {
+  align-self: stretch;
+  color: white;
+  font-family: SequelLight;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 350;
+  line-height: 150%; /* 1.875rem */
+  letter-spacing: 0.025rem;
+}
+
+.card-arrow-div {
+  display: flex;
+  align-items: flex-start;
+  align-self: stretch;
+  transition: all ease-in-out .4s;
 }
 
 
@@ -774,16 +849,16 @@ nav ul li a:not(a.active):hover:before {
 }
 
 .agenda-box-container {
-  width: 100%;
-  display: flex;
-  overflow: auto;
-  white-space: nowrap;
-  padding-bottom: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    gap: 2rem;
+    gap: 2rem;
+    overflow: auto;
+    padding-bottom: 2rem;
 }
 
-.agenda-box-container::-webkit-scrollbar {
-  display: none;
-}
+
 
 .agenda-box {
   min-width: 400px;
@@ -881,18 +956,6 @@ transform: scale(1.01);
   color: #FA3005;
 }
 
-.agenda-concluded {
-  font-family: SequelLight;
-  font-size: 15px;  
-  display: inline-block;
-  background-color: #FA3005;
-  border: 1px solid  #FA3005;
-  color: white !important;
-  padding: 4px 7px 4px 7px;
-  border-radius: 4px;
-  margin-right: 10px;
-  display: inline-block;
-}
 
 
 

@@ -6,6 +6,7 @@
       "status": "active",
       "type": "conference",
       "date": "24/03/2023",
+      "place": "Room I, via Zamboni 38, Bologna",
       "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
      },
     {
@@ -15,6 +16,7 @@
       "status": "active",
       "type": "conference",
       "date": "24/03/2023",
+      "place": "Room I, via Zamboni 38, Bologna",
       "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vel mattis libero. Ut varius metus non ipsum rhoncus rhoncus. Sed ullamcorper nunc eu luctus rutrum.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vel mattis libero. Ut varius metus non ipsum rhoncus rhoncus. Sed ullamcorper nunc eu luctus rutrum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vel mattis libero. Ut varius metus non ipsum rhoncus rhoncus. Sed ullamcorper nunc eu luctus rutrum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vel mattis libero. Ut varius metus non ipsum rhoncus rhoncus. Sed ullamcorper nunc eu luctus rutrum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vel mattis libero. Ut varius metus non ipsum rhoncus rhoncus. Sed ullamcorper nunc eu luctus rutrum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vel mattis libero. Ut varius metus non ipsum rhoncus rhoncus. Sed ullamcorper nunc eu luctus rutrum."
     },
     {
@@ -25,6 +27,7 @@
       "type": "conference",
       "date": "24/03/2023",
       "img": "../assets/img/JPG/logo.jpg",
+      "place": "Room I, via Zamboni 38, Bologna",
       "text": "Mauris vel mattis libero. Ut varius metus non ipsum rhoncus rhoncus. In consectetur laoreet bibendum. Vestibulum placerat, augue suscipit viverra viverra, neque leo."
     },
     {
@@ -34,6 +37,7 @@
       "status": "concluded",
       "type": "conference",
       "date": "24/03/2023",
+      "place": "Room I, via Zamboni 38, Bologna",
       "text": "Mauris vel mattis libero. Ut varius metus non ipsum rhoncus rhoncus. In consectetur laoreet bibendum. Vestibulum placerat, augue suscipit viverra viverra, neque leo."
     },
     {
@@ -43,6 +47,7 @@
       "status": "concluded",
       "type": "conference",
       "date": "24/03/2023",
+      "place": "Room I, via Zamboni 38, Bologna",
       "text": "Mauris vel mattis libero. Ut varius metus non ipsum rhoncus rhoncus. In consectetur laoreet bibendum. Vestibulum placerat, augue suscipit viverra viverra, neque leo."
     }
 ]
