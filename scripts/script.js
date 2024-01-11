@@ -90,7 +90,7 @@ var news_array = [];
 // FETCH DATA FROM JSON
 
 // news data
-fetch("/content/news.json")
+fetch("/content/news.json") //to replace with hosted json
   .then((res) => res.json())
   .then((data) => {
     news_array = data;
@@ -103,11 +103,10 @@ fetch("/content/news.json")
 
 
 // agenda data
-fetch("/content/agenda.json")
+fetch("/content/agenda.json") //to replace with hosted json
   .then((res) => res.json())
   .then((data) => {
     agenda_array = data;
-    console.log(agenda_array)
   })
   .then(() => {
       divideEvents(agenda_array);
@@ -120,6 +119,8 @@ function divideEvents(agendaArray){
   let concludedArr = [];
 
   agendaArray.forEach(function (item) {
+    let itemIndex = agendaArray.indexOf(item);
+    item.id = itemIndex;
     if (item.date.includes("-")){
       let dateRange = item.date.split("-");
       let endDate = dateRange[1].trim();
@@ -142,7 +143,6 @@ function divideEvents(agendaArray){
 
   activeArr = sortEvents(activeArr).reverse();
   concludedArr = sortEvents(concludedArr);
-
 
   activeArr.forEach(function (item){
     populateCard("active", item);
@@ -242,45 +242,29 @@ function populateCard(tp, item) {
     let itemUrl = item.url;
     box.innerHTML += "<a class='card-box' href='"+ itemUrl +"' target='_blank' onmouseover='animateCardOver(this)' onmouseout='reverseAnimateCard(this)'>"+ itemContentA + arrowDiv +"</a>";
   } else if (tp == "concluded"){
-      box.innerHTML += "<div class='card-box-concluded' onmouseover='animateCardOver(this, \"concluded\")' onmouseout='reverseAnimateCard(this, \"concluded\")' onclick='populateModal(\"event\", "+item.id+")' >"+ itemContentA + arrowDiv +"</div>";
+      box.innerHTML += "<div class='card-box-concluded' onmouseover='animateCardOver(this, \"concluded\")' onmouseout='reverseAnimateCard(this, \"concluded\")' onclick='populateModal("+item.id+")' >"+ itemContentA + arrowDiv +"</div>";
   } else {
-    box.innerHTML += "<div class='card-box event-box' onmouseover='animateCardOver(this, \"active\")' onmouseout='reverseAnimateCard(this, \"active\")' onclick='populateModal(\"event\", "+item.id+")' >"+ itemContentA + arrowDiv +"</div>";
+    box.innerHTML += "<div class='card-box event-box' onmouseover='animateCardOver(this, \"active\")' onmouseout='reverseAnimateCard(this, \"active\")' onclick='populateModal("+item.id+")' >"+ itemContentA + arrowDiv +"</div>";
   }
 };
 
 
-function populateModal(type, id){
+function populateModal(id){
   var modalContent = document.getElementById("modal-content");
   modalContent.innerHTML = "";
-  if (type == 'news'){
-    var item = news_array.find(x => x.id == id);
-    if (item.subtitle){
-      var modalTitleSubtitle = "<div id='modal-t-sbt-cnt'><h4 id='modal-title'>"+item.title+"</h4><p id='modal-sbt'>"+item.subtitle+"</p></div>";
-    } else {
-      var modalTitleSubtitle = "<h3 id='modal-title'>"+item.title+"</h3>";
-    }
-    if (item.date){
-      var tagGroup = "<div id='modal-tag-group'><div class='modal-tag-cnt' id='tag-date'><p>"+item.date+"</p></div><div class='modal-tag-cnt' id='tag-division'><p>"+item.division+"</p></div></div>"
-    } else {
-      var tagGroup = "<div id='modal-tag-group'><div class='modal-tag-cnt' id='tag-division'><p>"+item.division+"</p></div></div>"
-    }
-    var modalMainContent = "<div id='modal-main-cnt'><p class='modal-text'>"+item.text+"</p><div id='modal-link-group'><a class='boldh-a' target='_blank' href='"+item.url+"'>Go to the news</a></div></div>"
-    modalContent.innerHTML = modalTitleSubtitle + tagGroup + modalMainContent;
+  var item = agenda_array.find(x => x.id == id);
+  var modalTitleSubtitle = "<div id='modal-t-sbt-cnt'><h4 id='modal-title'>"+item.title+"</h4><p id='modal-sbt'>"+item.subtitle+"</p></div>";
+  if (item.status == "concluded"){
+    var tagGroup = "<div id='modal-tag-group'><div class='modal-tag-cnt' id='tag-concluded'><p>Concluded</p></div><div class='modal-tag-cnt' id='tag-date'><p>"+item.date+"</p></div><div class='modal-tag-cnt' id='tag-division'><p>"+item.division+"</p></div></div>"
   } else {
-    var item = agenda_array.find(x => x.id == id);
-    var modalTitleSubtitle = "<div id='modal-t-sbt-cnt'><h4 id='modal-title'>"+item.title+"</h4><p id='modal-sbt'>"+item.subtitle+"</p></div>";
-    if (item.status == "concluded"){
-      var tagGroup = "<div id='modal-tag-group'><div class='modal-tag-cnt' id='tag-concluded'><p>Concluded</p></div><div class='modal-tag-cnt' id='tag-date'><p>"+item.date+"</p></div><div class='modal-tag-cnt' id='tag-division'><p>"+item.division+"</p></div></div>"
-    } else {
-      var tagGroup = "<div id='modal-tag-group'><div class='modal-tag-cnt' id='tag-date'><p>"+item.date+"</p></div><div class='modal-tag-cnt' id='tag-division'><p>"+item.division+"</p></div></div>"
-    }
-    if (item.img){
-      var modalMainContent = "<div id='modal-main-cnt'><div id='modal-img-cnt'><img src='"+item.img+"' alt='event presentation image'></div><p class='modal-text'>"+item.text+"</p><div id='modal-link-group'><a class='boldh-a' target='_blank' href='"+item.url+"'>Go to the news</a></div></div>"
-    } else {
-      var modalMainContent = "<div id='modal-main-cnt'><p class='modal-text'>"+item.text+"</p><div id='modal-link-group'><a class='boldh-a' target='_blank' href='"+item.url+"'>Go to the news</a></div></div>"
-    }
-    modalContent.innerHTML = modalTitleSubtitle + tagGroup + modalMainContent;
+    var tagGroup = "<div id='modal-tag-group'><div class='modal-tag-cnt' id='tag-date'><p>"+item.date+"</p></div><div class='modal-tag-cnt' id='tag-division'><p>"+item.division+"</p></div></div>"
   }
+  if (item.img){
+    var modalMainContent = "<div id='modal-main-cnt'><div id='modal-img-cnt'><img src='"+item.img+"' alt='event presentation image'></div><p class='modal-text'>"+item.text+"</p><div id='modal-link-group'><a class='boldh-a' target='_blank' href='"+item.url+"'>Go to the news</a></div></div>"
+  } else {
+    var modalMainContent = "<div id='modal-main-cnt'><p class='modal-text'>"+item.text+"</p><div id='modal-link-group'><a class='boldh-a' target='_blank' href='"+item.url+"'>Go to the news</a></div></div>"
+  }
+  modalContent.innerHTML = modalTitleSubtitle + tagGroup + modalMainContent;
 
   document.getElementById("modal-overlay").style.display = "flex";
   document.getElementById("expansion-container").style.display = "flex";

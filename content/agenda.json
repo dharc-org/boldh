@@ -1,6 +1,5 @@
 [
     {
-      "id": 1,
       "title": "New course available now",
       "division": "DHDK",
       "type": "conference",
@@ -10,7 +9,6 @@
       "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
      },
     {
-      "id": 2,
       "title": "Discover our newest projects",
       "division": "DHDKey!",
       "type": "conference",
@@ -19,7 +17,6 @@
       "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vel mattis libero. Ut varius metus non ipsum rhoncus rhoncus. Sed ullamcorper nunc eu luctus rutrum.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vel mattis libero. Ut varius metus non ipsum rhoncus rhoncus. Sed ullamcorper nunc eu luctus rutrum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vel mattis libero. Ut varius metus non ipsum rhoncus rhoncus. Sed ullamcorper nunc eu luctus rutrum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vel mattis libero. Ut varius metus non ipsum rhoncus rhoncus. Sed ullamcorper nunc eu luctus rutrum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vel mattis libero. Ut varius metus non ipsum rhoncus rhoncus. Sed ullamcorper nunc eu luctus rutrum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vel mattis libero. Ut varius metus non ipsum rhoncus rhoncus. Sed ullamcorper nunc eu luctus rutrum."
     },
     {
-      "id": 3,
       "title": "Annual conference. Sign in now!",
       "division": "DHARC",
       "type": "conference",
@@ -30,7 +27,6 @@
       "text": "Mauris vel mattis libero. Ut varius metus non ipsum rhoncus rhoncus. In consectetur laoreet bibendum. Vestibulum placerat, augue suscipit viverra viverra, neque leo."
     },
     {
-      "id": 4,
       "title": "Projects",
       "division": "CHede",
       "type": "conference",
@@ -39,7 +35,6 @@
       "text": "Mauris vel mattis libero. Ut varius metus non ipsum rhoncus rhoncus. In consectetur laoreet bibendum. Vestibulum placerat, augue suscipit viverra viverra, neque leo."
     },
     {
-      "id": 5,
       "title": "A new tool for digial philosophy",
       "division": "DL",
       "type": "conference",
@@ -48,7 +43,6 @@
       "text": "Mauris vel mattis libero. Ut varius metus non ipsum rhoncus rhoncus. In consectetur laoreet bibendum. Vestibulum placerat, augue suscipit viverra viverra, neque leo."
     },
     {
-      "id": 6,
       "title": "Projects",
       "division": "CHede",
       "type": "conference",
@@ -57,7 +51,6 @@
       "text": "Mauris vel mattis libero. Ut varius metus non ipsum rhoncus rhoncus. In consectetur laoreet bibendum. Vestibulum placerat, augue suscipit viverra viverra, neque leo."
     },
     {
-      "id": 7,
       "title": "A new tool for digial philosophy",
       "division": "DL",
       "type": "conference",
@@ -66,7 +59,6 @@
       "text": "Mauris vel mattis libero. Ut varius metus non ipsum rhoncus rhoncus. In consectetur laoreet bibendum. Vestibulum placerat, augue suscipit viverra viverra, neque leo."
     },
     {
-      "id": 8,
       "title": "Projects",
       "division": "CHede",
       "type": "conference",
@@ -75,7 +67,6 @@
       "text": "Mauris vel mattis libero. Ut varius metus non ipsum rhoncus rhoncus. In consectetur laoreet bibendum. Vestibulum placerat, augue suscipit viverra viverra, neque leo."
     },
     {
-      "id": 9,
       "title": "A new tool for digial philosophy",
       "division": "DL",
       "type": "conference",
