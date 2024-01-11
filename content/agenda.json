@@ -3,19 +3,18 @@
       "id": 1,
       "title": "New course available now",
       "division": "DHDK",
-      "status": "active",
       "type": "conference",
-      "date": "24/03/2023",
+      "date": "02/02/2024 - 07/02/2024",
       "place": "Room I, via Zamboni 38, Bologna",
+      "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
      },
     {
       "id": 2,
       "title": "Discover our newest projects",
       "division": "DHDKey!",
-      "status": "active",
       "type": "conference",
-      "date": "24/03/2023",
+      "date": "16/01/2024",
       "place": "Room I, via Zamboni 38, Bologna",
       "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vel mattis libero. Ut varius metus non ipsum rhoncus rhoncus. Sed ullamcorper nunc eu luctus rutrum.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vel mattis libero. Ut varius metus non ipsum rhoncus rhoncus. Sed ullamcorper nunc eu luctus rutrum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vel mattis libero. Ut varius metus non ipsum rhoncus rhoncus. Sed ullamcorper nunc eu luctus rutrum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vel mattis libero. Ut varius metus non ipsum rhoncus rhoncus. Sed ullamcorper nunc eu luctus rutrum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vel mattis libero. Ut varius metus non ipsum rhoncus rhoncus. Sed ullamcorper nunc eu luctus rutrum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vel mattis libero. Ut varius metus non ipsum rhoncus rhoncus. Sed ullamcorper nunc eu luctus rutrum."
     },
@@ -23,20 +22,19 @@
       "id": 3,
       "title": "Annual conference. Sign in now!",
       "division": "DHARC",
-      "status": "concluded",
       "type": "conference",
-      "date": "24/03/2023",
+      "date": "05/02/2024",
       "img": "../assets/img/JPG/logo.jpg",
       "place": "Room I, via Zamboni 38, Bologna",
+      "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       "text": "Mauris vel mattis libero. Ut varius metus non ipsum rhoncus rhoncus. In consectetur laoreet bibendum. Vestibulum placerat, augue suscipit viverra viverra, neque leo."
     },
     {
       "id": 4,
       "title": "Projects",
       "division": "CHede",
-      "status": "concluded",
       "type": "conference",
-      "date": "24/03/2023",
+      "date": "05/02/2024 - 06/02/2024",
       "place": "Room I, via Zamboni 38, Bologna",
       "text": "Mauris vel mattis libero. Ut varius metus non ipsum rhoncus rhoncus. In consectetur laoreet bibendum. Vestibulum placerat, augue suscipit viverra viverra, neque leo."
     },
@@ -44,9 +42,44 @@
       "id": 5,
       "title": "A new tool for digial philosophy",
       "division": "DL",
-      "status": "concluded",
       "type": "conference",
-      "date": "24/03/2023",
+      "date": "02/02/2024",
+      "place": "Room I, via Zamboni 38, Bologna",
+      "text": "Mauris vel mattis libero. Ut varius metus non ipsum rhoncus rhoncus. In consectetur laoreet bibendum. Vestibulum placerat, augue suscipit viverra viverra, neque leo."
+    },
+    {
+      "id": 6,
+      "title": "Projects",
+      "division": "CHede",
+      "type": "conference",
+      "date": "05/02/2023 - 06/02/2023",
+      "place": "Room I, via Zamboni 38, Bologna",
+      "text": "Mauris vel mattis libero. Ut varius metus non ipsum rhoncus rhoncus. In consectetur laoreet bibendum. Vestibulum placerat, augue suscipit viverra viverra, neque leo."
+    },
+    {
+      "id": 7,
+      "title": "A new tool for digial philosophy",
+      "division": "DL",
+      "type": "conference",
+      "date": "02/01/2024",
+      "place": "Room I, via Zamboni 38, Bologna",
+      "text": "Mauris vel mattis libero. Ut varius metus non ipsum rhoncus rhoncus. In consectetur laoreet bibendum. Vestibulum placerat, augue suscipit viverra viverra, neque leo."
+    },
+    {
+      "id": 8,
+      "title": "Projects",
+      "division": "CHede",
+      "type": "conference",
+      "date": "04/01/2024 - 07/02/2024",
+      "place": "Room I, via Zamboni 38, Bologna",
+      "text": "Mauris vel mattis libero. Ut varius metus non ipsum rhoncus rhoncus. In consectetur laoreet bibendum. Vestibulum placerat, augue suscipit viverra viverra, neque leo."
+    },
+    {
+      "id": 9,
+      "title": "A new tool for digial philosophy",
+      "division": "DL",
+      "type": "conference",
+      "date": "01/01/2024",
       "place": "Room I, via Zamboni 38, Bologna",
       "text": "Mauris vel mattis libero. Ut varius metus non ipsum rhoncus rhoncus. In consectetur laoreet bibendum. Vestibulum placerat, augue suscipit viverra viverra, neque leo."
     }

@@ -718,13 +718,13 @@ nav ul li a:not(a.active):hover:before {
   flex-wrap: wrap;
 }
 
-.card-type, .card-division, .card-date, .card-place, .agenda-Concluded, .agenda-Upcoming {
+.card-type, .card-division, .card-place, .agenda-concluded, .agenda-active {
   color: white;
   font-family: SequelLight;
   font-size: 1rem;
   line-height: 150%; /* 1.5rem */
   letter-spacing: 0.02rem;
-
+  text-transform: capitalize;
   display: flex;
   padding: 0.375rem 0.75rem;
   justify-content: center;
@@ -734,12 +734,12 @@ nav ul li a:not(a.active):hover:before {
   border: 2px solid white;
 }
 
-.agenda-Concluded {
+.agenda-concluded {
   border: 2px solid #E03800;
   font-family: Sequel;
 }
 
-.agenda-Upcoming {
+.agenda-active {
   border: 2px solid #00E1AB;
   font-family: Sequel;
 }
@@ -780,7 +780,7 @@ nav ul li a:not(a.active):hover:before {
 
 .card-text {
   align-self: stretch;
-  color: white;
+  color: rgba(255, 255, 255, 0.75);
   font-family: SequelLight;
   font-size: 1.25rem;
   font-style: normal;

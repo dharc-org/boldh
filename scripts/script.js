@@ -97,7 +97,6 @@ fetch("/content/news.json")
   })
   .then(() => {
     news_array.forEach(function (news_item) {
-      console.log("HELLOOOO");
       populateCard("news", news_item);
     });
   });
@@ -108,18 +107,94 @@ fetch("/content/agenda.json")
   .then((res) => res.json())
   .then((data) => {
     agenda_array = data;
+    console.log(agenda_array)
   })
   .then(() => {
-    agenda_array.forEach(function (agenda_item) {
-      populateCard("agenda", agenda_item);
-    });
+      divideEvents(agenda_array);
   });
 
 
 
+function divideEvents(agendaArray){
+  let activeArr = [];
+  let concludedArr = [];
+
+  agendaArray.forEach(function (item) {
+    if (item.date.includes("-")){
+      let dateRange = item.date.split("-");
+      let endDate = dateRange[1].trim();
+      var parts = endDate.split("/");
+    } else {
+      let endDate = item.date.trim();
+      var parts = endDate.split("/");
+    }
+    endDate =  new Date(parts[2], parts[1] - 1, parts[0]);
+    let today = new Date();
+    endDate.setHours(0,0,0,0);
+    today.setHours(0,0,0,0);
+
+    if (endDate < today) {
+      concludedArr.push(item);
+    } else {
+      activeArr.push(item);
+    };
+  });
+
+  activeArr = sortEvents(activeArr).reverse();
+  concludedArr = sortEvents(concludedArr);
+
+
+  activeArr.forEach(function (item){
+    populateCard("active", item);
+  });
+  concludedArr.forEach(function (item){
+    populateCard("concluded", item);
+  });
+};
+
+
+function sortEvents(arr){
+  arr.sort(function(a, b){
+    if (!a.date.includes("-") && !b.date.includes("-")){
+      var partsA = a.date.split("/");
+      var partsB = b.date.split("/");
+      var dateA = new Date(partsA[2], partsA[1] - 1, partsA[0]);
+      var dateB = new Date(partsB[2], partsB[1] - 1, partsB[0]);
+      return dateB - dateA;
+    } else if (a.date.includes("-") && b.date.includes("-")){
+      var dateRangeA = a.date.split("-");
+      var dateRangeB = b.date.split("-");
+      var endDateA = dateRangeA[1].trim();
+      var endDateB = dateRangeB[1].trim();
+      var partsA = endDateA.split("/");
+      var partsB = endDateB.split("/");
+      var dateA = new Date(partsA[2], partsA[1] - 1, partsA[0]);
+      var dateB = new Date(partsB[2], partsB[1] - 1, partsB[0]);
+      return dateB - dateA;
+    } else if (a.date.includes("-") && !b.date.includes("-")){
+      var dateRangeA = a.date.split("-");
+      var endDateA = dateRangeA[1].trim();
+      var partsA = endDateA.split("/");
+      var dateA = new Date(partsA[2], partsA[1] - 1, partsA[0]);
+      var partsB = b.date.split("/");
+      var dateB = new Date(partsB[2], partsB[1] - 1, partsB[0]);
+      return dateB - dateA;
+    } else if (!a.date.includes("-") && b.date.includes("-")){
+      var dateRangeB = b.date.split("-");
+      var endDateB = dateRangeB[1].trim();
+      var partsB = endDateB.split("/");
+      var dateB = new Date(partsB[2], partsB[1] - 1, partsB[0]);
+      var partsA = a.date.split("/");
+      var dateA = new Date(partsA[2], partsA[1] - 1, partsA[0]);
+      return dateB - dateA;
+    }
+  });
+  return arr;
+};
+
+
 
 function populateCard(tp, item) {
-  console.log(tp, item);
   let itemDivision = "<p class='card-division'>" + item.division + "</p>";
   let itemType = "<p class='card-type'>" + item.type + "</p>";
   let arrow = '<svg xmlns="http://www.w3.org/2000/svg" width="66" height="51" viewBox="0 0 66 51" fill="none"><path d="M0 25.3613H64M64 25.3613L41.7391 1.36133M64 25.3613L41.7391 49.3613" stroke="#F2F2F2" stroke-width="2"/></svg>';
@@ -141,6 +216,7 @@ function populateCard(tp, item) {
   }
 
   let itemTextDiv = "<div class='card-text-div'>"+ itemTitle + itemText +"</div>";
+
   let box = "";
   let infoDiv = "";
 
@@ -148,18 +224,16 @@ function populateCard(tp, item) {
     box = document.getElementById("news-box-container");
     infoDiv = "<div class='card-info-div'>" + itemDivision + itemType +"</div>";
   } else {
+    if(tp == "concluded") {
     box = document.getElementById("agenda-box-container");
-    var status = "";
-    if (item.status == "concluded") {
-      status = "Concluded";
+    itemDate = "<p class='agenda-"+tp+"'>" + item.date + "</p>";
     } else {
-      status = "Upcoming";
+      box = document.getElementById("agenda-box-container");
+      itemDate = "<p class='agenda-"+tp+"'>" + item.date + "</p>";
     }
-    let itemStatus = "<p class='agenda-"+status+"'>"+status+"</p>";
-    let itemDate = "<p class='card-date'>" + item.date + "</p>";
     let itemPlace = "<p class='card-place'>" + item.place + "</p>";
-    infoDiv = "<div class='card-info-div'>" + itemDate + itemPlace + itemDivision + itemType + itemStatus +"</div>";
-  }
+    infoDiv = "<div class='card-info-div'>" + itemDivision + itemType +  itemPlace + itemDate + "</div>";
+  };
   
   let itemContentA = "<div class='card-box-content-a'>"+ infoDiv + itemTextDiv +"</div>";
   let arrowDiv = "<div class='card-arrow-div'>"+ arrow +"</div></div>";
@@ -167,18 +241,15 @@ function populateCard(tp, item) {
   if (tp == "news") {
     let itemUrl = item.url;
     box.innerHTML += "<a class='card-box' href='"+ itemUrl +"' target='_blank' onmouseover='animateCardOver(this)' onmouseout='reverseAnimateCard(this)'>"+ itemContentA + arrowDiv +"</a>";
-  } else {
-    if (status == "Concluded"){
+  } else if (tp == "concluded"){
       box.innerHTML += "<div class='card-box-concluded' onmouseover='animateCardOver(this, \"concluded\")' onmouseout='reverseAnimateCard(this, \"concluded\")' onclick='populateModal(\"event\", "+item.id+")' >"+ itemContentA + arrowDiv +"</div>";
-    } else {
-      box.innerHTML += "<div class='card-box event-box' onmouseover='animateCardOver(this, \"active\")' onmouseout='reverseAnimateCard(this, \"active\")' onclick='populateModal(\"event\", "+item.id+")' >"+ itemContentA + arrowDiv +"</div>";
-    }
+  } else {
+    box.innerHTML += "<div class='card-box event-box' onmouseover='animateCardOver(this, \"active\")' onmouseout='reverseAnimateCard(this, \"active\")' onclick='populateModal(\"event\", "+item.id+")' >"+ itemContentA + arrowDiv +"</div>";
   }
 };
 
 
 function populateModal(type, id){
-  console.log(type, id);
   var modalContent = document.getElementById("modal-content");
   modalContent.innerHTML = "";
   if (type == 'news'){
@@ -226,7 +297,6 @@ function closeModal(){
 
 
 function openMenu(){
-  console.log("open menu")
   let elements = document.getElementsByClassName("nav-link-li");
   if(window.getComputedStyle(elements[0]).display == "none"){
     for (let i = 0; i < elements.length; i++) {
