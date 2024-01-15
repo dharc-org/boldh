@@ -1,7 +1,39 @@
 // SCROLLING ANIMATIONS
 var oldScrollY = window.scrollY;
 
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+      e.preventDefault();
 
+      document.querySelector(this.getAttribute('href')).scrollIntoView({
+          block: 'start',
+          behavior: 'smooth'
+      });
+  });
+});
+
+
+// NAVBAR LINKS ACTIVE STATE
+const links = document.querySelectorAll('.nav-link-li a');
+const sections = document.querySelectorAll('section');
+
+function changeLinkState() {
+  let index = sections.length;
+
+  while(--index && window.scrollY + 50 < sections[index].offsetTop) {}
+  
+  links.forEach((link) => link.classList.remove('active'));
+  links[index].classList.add('active');
+}
+
+changeLinkState();
+window.addEventListener('scroll', changeLinkState);
+
+
+
+
+
+// NEWS AND AGENDA CARDS ANIMATION
 const arrow = '<svg xmlns="http://www.w3.org/2000/svg" width="66" height="50" viewBox="0 0 66 50" fill="none"><path d="M0 25H64M64 25L41.7391 1M64 25L41.7391 49" stroke="#F2F2F2" stroke-width="2" vector-effect="non-scaling-stroke"/></svg>';
 const arrowDown = '<svg xmlns="http://www.w3.org/2000/svg" width="66" height="50" viewBox="0 0 66 50" fill="none"><path d="M0 25H64M64 25L41.7391 1M64 25L41.7391 49" stroke="#F2F2F2" stroke-width="2" vector-effect="non-scaling-stroke"/></svg>';
 
@@ -54,7 +86,7 @@ window.onscroll = function () {
     document.getElementById("sixth-section").style.backgroundColor = "#FA3005";
     document.getElementById("contacts-section").style.backgroundColor = "#FA3005";
   }
-*/
+
   var contacts_title = document.querySelector("h2#contacts-main-title");
   if (isInViewport(contacts_title)) {
     document.getElementById("seventh-section").style.backgroundColor = "#7EE787"; // to remove if news-agenda hidden
@@ -65,7 +97,7 @@ window.onscroll = function () {
     //document.getElementById("contacts-section").style.backgroundColor = "black"; // to remove if news-agenda NOT hidden
     //document.getElementById("fifth-section").style.backgroundColor = "black"; // to remove if news-agenda NOT hidden
   }
-
+*/
   // news background color change -- to remove if news-agenda hidden
   var news_title = document.querySelector("h2#news-main-title");
   if (isInViewport(news_title)) {
@@ -75,6 +107,7 @@ window.onscroll = function () {
   }
   
 };
+
 
 // add animations when entering viewport
 function isInViewport(elem) {

@@ -32,7 +32,7 @@ header {
   position: sticky;
   top: 0;
   width: 100%;
-  border-bottom: 1.5px solid white;
+  border-bottom: 2px solid white;
   background: black;
   z-index: 99;
 }
@@ -40,13 +40,13 @@ header {
 
 nav {
   display: flex;
-  padding: 1rem 10%;
+  padding: 0.5rem 10%;
   justify-content: space-between;
   align-items: center;
 }
 
 #nav-logo-cnt {
-  width: 12rem;
+  width: 10rem;
 }
 
 #nav-logo-cnt img {
@@ -66,7 +66,7 @@ nav ul li a {
   text-decoration: none;
   color: #ffffffcc;
   /* BolDH/Body - Sequel */
-  font-family: Sequel Sans;
+  font-family: Sequel;
   font-size: 1.25rem;
   font-style: normal;
   font-weight: 350;
@@ -83,7 +83,7 @@ nav ul li a.active:before {
   position: absolute;
   content: "";
   width: 100%;
-  border-bottom: 2px solid white;
+  border-bottom: 2px solid #00E1AB;
   bottom: -0.25rem;
 }
 
@@ -91,7 +91,7 @@ nav ul li a:not(.active):before {
   position: absolute;
   content: "";
   width: 100%;
-  border-bottom: 1.5px solid #ffffffcc;
+  border-bottom: 2px solid #ffffffcc;
   bottom: -0.25rem;
   transform-origin: right;
   transform: scaleX(0);
@@ -101,7 +101,7 @@ nav ul li a:not(.active):before {
 nav ul li a:not(a.active):hover:before {
   position: absolute;
   content: "";
-  border-bottom: 1.5px solid #ffffffcc;
+  border-bottom: 2px solid #ffffffcc;
   bottom: -0.25rem;
   transform-origin: left;
   transform:scaleX(1);

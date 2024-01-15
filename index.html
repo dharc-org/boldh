@@ -8,6 +8,8 @@
   <script src="scripts/stats.js"></script>
   <script src="scripts/matomo.js"></script>
   <script src="https://www.unibo.it/++resource++unibo.cookiebanner/unibo-cookies.min.js?v=20"></script>
+  <!--Waypoints-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.0/jquery.waypoints.min.js"></script>
 </head>
 <body>
 
@@ -42,7 +44,7 @@
     </div>
   </div>
 
-<!--
+
   <header>
     <nav>
       <a href="#">
@@ -52,68 +54,74 @@
       </a>
       <ul id="nav-items-group">
         <li class="nav-burger-li"><div onclick="openMenu()" class="hamburger"></div></li>
-        <li class="nav-link-li"><a class="nav-item-a active" href="#">BolDH</a></li>
-        <li class="nav-link-li"><a class="nav-item-a" href="#">Divisions</a></li>
-        <li class="nav-link-li"><a class="nav-item-a" href="#">News</a></li>
-        <li class="nav-link-li"><a class="nav-item-a" href="#">Agenda</a></li>
-        <li class="nav-link-li"><a class="nav-item-a" href="#">Contacts</a></li>
+        <li class="nav-link-li"><a class="nav-item-a active" id="boldh-nav-a" href="#first-section">BolDH</a></li>
+        <li class="nav-link-li"><a class="nav-item-a" id="topics-nav-a" href="#third-section">Topics</a></li>
+        <li class="nav-link-li"><a class="nav-item-a" id="units-nav-a" href="#fifth-section">Units</a></li>
+        <li class="nav-link-li"><a class="nav-item-a" id="news-nav-a" href="#sixth-section">News</a></li>
+        <li class="nav-link-li"><a class="nav-item-a" id="events-nav-a" href="#seventh-section">Events</a></li>
+        <li class="nav-link-li"><a class="nav-item-a" id="contacts-nav-a" href="#contacts-section">Contacts</a></li>
       </ul>
     </nav>
   </header>
--->
 
-  <section class="first-section">
-    <div class="top-title-container">
-      <p class="top-title">DIGITAL HUMANITIES</p>
-      <img src="assets/img/SVG/logo.svg" class="top-logo" alt="logo"></img>
-      <p class="top-title">MADE IN BOLOGNA</p>
+
+  <section>
+    <div id="first-section" class="first-section">
+      <div class="top-title-container">
+        <p class="top-title">DIGITAL HUMANITIES</p>
+        <img src="assets/img/SVG/logo.svg" class="top-logo" alt="logo"></img>
+        <p class="top-title">MADE IN BOLOGNA</p>
+      </div>
+      <div class="bottom-title-container">
+        <h1 class="bottom-title">BolDH</h1>
+      </div>
     </div>
-    <div class="bottom-title-container">
-      <h1 class="bottom-title">BolDH</h1>
-    </div>
+    <div class="second-section">
+      <div class="claim-container">
+        <img src="assets/img/SVG/logo.svg" class="giant-logo" id="giant-logo" alt="logo"></img>
+        <p class="claim-paragraph"><span>BolDH</span> is an ecosystem <br>conceived as a combination of<br> <span>education</span>, <span>research practices</span> and <span>scholarly projects</span> in the <br>Digital Humanities domain</p>
+      </div>
   </section>
-  <section class="second-section">
-    <div class="claim-container">
-      <img src="assets/img/SVG/logo.svg" class="giant-logo" id="giant-logo" alt="logo"></img>
-      <p class="claim-paragraph"><span>BolDH</span> is an ecosystem <br>conceived as a combination of<br> <span>education</span>, <span>research practices</span> and <span>scholarly projects</span> in the <br>Digital Humanities domain</p>
+
+  <section>
+
+    <div id="third-section" class="third-section">
+      <div class="research-topic-container">
+        <div class="research-topic">
+          <p class="research-topic-title">Knowledge Organisation</p>
+          <p class="research-topic-description" id="research-topic-description-1"><span class="research-topic-description-title">Knowledge<br>Organization</span><span class="research-topic-description-text">is a broader field than Library and Information Science (LIS). While LIS which encompassess the organization of information in bibliographic records, Knowledge Organisation involves also other disciplines, institutions, languages and symbolic systems, conceptual systems and theories, and literatures and genres.</span></p>
+        </div>
+        <div class="research-topic">
+          <p class="research-topic-title">Knowledge Representation</p>
+          <p class="research-topic-description" id="research-topic-description-2"><span class="research-topic-description-title">Knowledge<br>Representation</span><span class="research-topic-description-text">refers to the formal representation of information so that computers can use it to solve more complex tasks. It is at the basis of Semantic Web and a key element in Ontology Engineering. Both of the research areas, their methods and theories are applied to the Arts and Humanities field and to the Cultural Heritage Domain (Libraries, Museums and Archives).</span></p>
+        </div>
+        <div class="research-topic">
+          <p class="research-topic-title">Data Science</p>
+          <p class="research-topic-description" id="research-topic-description-3"><span class="research-topic-description-title">Data<br>Science</span><span class="research-topic-description-text">encompasses a number of methods and techniques for manipulating and extracting knowledge out of data. Rather than being a research topic, techniques that fall into Data Science category are applied to other research areas, e.g. Linguistics, Library and Information Science. A peculiarity of /DH.arc is indeed the focus on data rather than other types of technological applications.</span></p>
+        </div>
+        <div class="research-topic">
+          <p class="research-topic-title">Semantic Publishing</p>
+          <p class="research-topic-description" id="research-topic-description-4"><span class="research-topic-description-title">Semantic<br>Publishing</span><span class="research-topic-description-text">concerns the use of Web and Semantic Web technologies and standards for enhancing a scholarly work semantically (by means of plain RDF statements, nano-publications, etc.) so as to improve its discoverability, interactivity, openness and (re-)usability for both humans and machines. The assumptions of openness implicit in Semantic Publishing have been also explicitly adopted for the publication of research data by the FAIR (Findable, Accessible, Interoperable, Re-usable) data principles.</span></p>
+        </div>
+        <div class="research-topic">
+          <p class="research-topic-title">Computational Linguistics</p>
+          <p class="research-topic-description" id="research-topic-description-5"><span class="research-topic-description-title">Computational<br>Linguistics</span><span class="research-topic-description-text">is the field investigating the usage of computational approaches to linguistic questions, so as to produce statistics and models out of natural language.</span></p>
+        </div>
+        <div class="research-topic">
+          <p class="research-topic-title">Digital Philology</p>
+          <p class="research-topic-description" id="research-topic-description-6"><span class="research-topic-description-title">Digital<br>Philology</span><span class="research-topic-description-text"> applies technical solutions to the study, the manipulation, and the publication of literary texts. Theoretical foundations of the discipline are purely humanistics, while approaches to solve specific problems are genuinely interdisciplinary. Among the main outputs of the research field are Digital Scholarly Editions. The usage of Semantic Web technologies allow to develop enhanced applications leveraging digital editions, called Semantic Digital Editions.</span></p>
+        </div>
+      </div>
+      <span id="reset-viewport"></span>
     </div>
-  </section>
-  <section class="third-section">
-    <div class="research-topic-container">
-      <div class="research-topic">
-        <p class="research-topic-title">Knowledge Organisation</p>
-        <p class="research-topic-description" id="research-topic-description-1"><span class="research-topic-description-title">Knowledge<br>Organization</span><span class="research-topic-description-text">is a broader field than Library and Information Science (LIS). While LIS which encompassess the organization of information in bibliographic records, Knowledge Organisation involves also other disciplines, institutions, languages and symbolic systems, conceptual systems and theories, and literatures and genres.</span></p>
+    <div class="fourth-section" id="fourth-section">
+      <div class="definition-container">
+        <p class="definition-text" id="definition-text">We believe <span class="text-highlight">digital humanities</span> and digital practices <span class="text-highlight">are</span> making scholarly activities <span class="text-highlight">fundamental</span> again.</p>
       </div>
-      <div class="research-topic">
-        <p class="research-topic-title">Knowledge Representation</p>
-        <p class="research-topic-description" id="research-topic-description-2"><span class="research-topic-description-title">Knowledge<br>Representation</span><span class="research-topic-description-text">refers to the formal representation of information so that computers can use it to solve more complex tasks. It is at the basis of Semantic Web and a key element in Ontology Engineering. Both of the research areas, their methods and theories are applied to the Arts and Humanities field and to the Cultural Heritage Domain (Libraries, Museums and Archives).</span></p>
-      </div>
-      <div class="research-topic">
-        <p class="research-topic-title">Data Science</p>
-        <p class="research-topic-description" id="research-topic-description-3"><span class="research-topic-description-title">Data<br>Science</span><span class="research-topic-description-text">encompasses a number of methods and techniques for manipulating and extracting knowledge out of data. Rather than being a research topic, techniques that fall into Data Science category are applied to other research areas, e.g. Linguistics, Library and Information Science. A peculiarity of /DH.arc is indeed the focus on data rather than other types of technological applications.</span></p>
-      </div>
-      <div class="research-topic">
-        <p class="research-topic-title">Semantic Publishing</p>
-        <p class="research-topic-description" id="research-topic-description-4"><span class="research-topic-description-title">Semantic<br>Publishing</span><span class="research-topic-description-text">concerns the use of Web and Semantic Web technologies and standards for enhancing a scholarly work semantically (by means of plain RDF statements, nano-publications, etc.) so as to improve its discoverability, interactivity, openness and (re-)usability for both humans and machines. The assumptions of openness implicit in Semantic Publishing have been also explicitly adopted for the publication of research data by the FAIR (Findable, Accessible, Interoperable, Re-usable) data principles.</span></p>
-      </div>
-      <div class="research-topic">
-        <p class="research-topic-title">Computational Linguistics</p>
-        <p class="research-topic-description" id="research-topic-description-5"><span class="research-topic-description-title">Computational<br>Linguistics</span><span class="research-topic-description-text">is the field investigating the usage of computational approaches to linguistic questions, so as to produce statistics and models out of natural language.</span></p>
-      </div>
-      <div class="research-topic">
-        <p class="research-topic-title">Digital Philology</p>
-        <p class="research-topic-description" id="research-topic-description-6"><span class="research-topic-description-title">Digital<br>Philology</span><span class="research-topic-description-text"> applies technical solutions to the study, the manipulation, and the publication of literary texts. Theoretical foundations of the discipline are purely humanistics, while approaches to solve specific problems are genuinely interdisciplinary. Among the main outputs of the research field are Digital Scholarly Editions. The usage of Semantic Web technologies allow to develop enhanced applications leveraging digital editions, called Semantic Digital Editions.</span></p>
+      <div class="image-container">
+        <img src="assets/img/SVG/logo.svg" class="definition-logo"  id="definition-logo"alt="logo in half"></img>
       </div>
     </div>
-    <span id="reset-viewport"></span>
-  </section>
-  <section class="fourth-section" id="fourth-section">
-  <div class="definition-container">
-    <p class="definition-text" id="definition-text">We believe <span class="text-highlight">digital humanities</span> and digital practices <span class="text-highlight">are</span> making scholarly activities <span class="text-highlight">fundamental</span> again.</p>
-  </div>
-  <div class="image-container">
-    <img src="assets/img/SVG/logo.svg" class="definition-logo"  id="definition-logo"alt="logo in half"></img>
-  </div>
   </section>
   <section class="fifth-section" id="fifth-section">
       <!-- HEADER -->
