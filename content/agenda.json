@@ -6,7 +6,23 @@
       "date": "02/02/2024 - 07/02/2024",
       "place": "Room I, via Zamboni 38, Bologna",
       "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "urls": [{
+          "text": "Link to the course",
+          "url": "https://google.com"
+        }, {
+          "text": "Link to the website",
+          "url": "https://google.com"
+        }
+      ],
+      "downloads": [{
+          "text": "Download the program",
+          "url": "/assets/img/JPG/logo.jpg"
+        }, {
+          "text": "Download the brochure",
+          "url": "/assets/img/JPG/logo.jpg"
+        }
+      ]
      },
     {
       "title": "Discover our newest projects",
@@ -22,6 +38,19 @@
       "type": "conference",
       "date": "05/02/2024",
       "img": "../assets/img/JPG/logo.jpg",
+      "urls": [{
+          "text": "Link to the course",
+          "url": "https://google.com"
+        }, {
+          "text": "Link to the website",
+          "url": "https://google.com"
+        }
+      ],
+      "downloads": [{
+          "text": "Download the program",
+          "url": "/assets/img/JPG/logo.jpg"
+        }
+      ],
       "place": "Room I, via Zamboni 38, Bologna",
       "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       "text": "Mauris vel mattis libero. Ut varius metus non ipsum rhoncus rhoncus. In consectetur laoreet bibendum. Vestibulum placerat, augue suscipit viverra viverra, neque leo."

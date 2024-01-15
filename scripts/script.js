@@ -1,6 +1,10 @@
 // SCROLLING ANIMATIONS
 var oldScrollY = window.scrollY;
 
+
+const arrow = '<svg xmlns="http://www.w3.org/2000/svg" width="66" height="50" viewBox="0 0 66 50" fill="none"><path d="M0 25H64M64 25L41.7391 1M64 25L41.7391 49" stroke="#F2F2F2" stroke-width="2" vector-effect="non-scaling-stroke"/></svg>';
+const arrowDown = '<svg xmlns="http://www.w3.org/2000/svg" width="66" height="50" viewBox="0 0 66 50" fill="none"><path d="M0 25H64M64 25L41.7391 1M64 25L41.7391 49" stroke="#F2F2F2" stroke-width="2" vector-effect="non-scaling-stroke"/></svg>';
+
 window.onscroll = function () {
   // rotating logo animation
   var theta = (document.documentElement.scrollTop / 1000) % Math.PI;
@@ -103,6 +107,7 @@ fetch("/content/news.json") //to replace with hosted json
 
 
 // agenda data
+var agenda_array = [];
 fetch("/content/agenda.json") //to replace with hosted json
   .then((res) => res.json())
   .then((data) => {
@@ -194,10 +199,12 @@ function sortEvents(arr){
 
 
 
+
+
 function populateCard(tp, item) {
   let itemDivision = "<p class='card-division'>" + item.division + "</p>";
   let itemType = "<p class='card-type'>" + item.type + "</p>";
-  let arrow = '<svg xmlns="http://www.w3.org/2000/svg" width="66" height="51" viewBox="0 0 66 51" fill="none"><path d="M0 25.3613H64M64 25.3613L41.7391 1.36133M64 25.3613L41.7391 49.3613" stroke="#F2F2F2" stroke-width="2"/></svg>';
+  
   
   let itemTitle = "";
   if (item.title.length > 80) {
@@ -242,38 +249,89 @@ function populateCard(tp, item) {
     let itemUrl = item.url;
     box.innerHTML += "<a class='card-box' href='"+ itemUrl +"' target='_blank' onmouseover='animateCardOver(this)' onmouseout='reverseAnimateCard(this)'>"+ itemContentA + arrowDiv +"</a>";
   } else if (tp == "concluded"){
-      box.innerHTML += "<div class='card-box-concluded' onmouseover='animateCardOver(this, \"concluded\")' onmouseout='reverseAnimateCard(this, \"concluded\")' onclick='populateModal("+item.id+")' >"+ itemContentA + arrowDiv +"</div>";
+      box.innerHTML += "<div class='card-box-concluded' onmouseover='animateCardOver(this, \"concluded\")' onmouseout='reverseAnimateCard(this, \"concluded\")' onclick='populateModal("+item.id+", \"concluded\")' >"+ itemContentA + arrowDiv +"</div>";
   } else {
-    box.innerHTML += "<div class='card-box event-box' onmouseover='animateCardOver(this, \"active\")' onmouseout='reverseAnimateCard(this, \"active\")' onclick='populateModal("+item.id+")' >"+ itemContentA + arrowDiv +"</div>";
+    box.innerHTML += "<div class='card-box event-box' onmouseover='animateCardOver(this, \"active\")' onmouseout='reverseAnimateCard(this, \"active\")' onclick='populateModal("+item.id+", \"active\")' >"+ itemContentA + arrowDiv +"</div>";
   }
 };
 
 
-function populateModal(id){
-  var modalContent = document.getElementById("modal-content");
+
+
+
+function populateModal(id, eventStatus){
+
+  let modalContent = document.getElementById("modal-content");
   modalContent.innerHTML = "";
-  var item = agenda_array.find(x => x.id == id);
-  var modalTitleSubtitle = "<div id='modal-t-sbt-cnt'><h4 id='modal-title'>"+item.title+"</h4><p id='modal-sbt'>"+item.subtitle+"</p></div>";
-  if (item.status == "concluded"){
-    var tagGroup = "<div id='modal-tag-group'><div class='modal-tag-cnt' id='tag-concluded'><p>Concluded</p></div><div class='modal-tag-cnt' id='tag-date'><p>"+item.date+"</p></div><div class='modal-tag-cnt' id='tag-division'><p>"+item.division+"</p></div></div>"
-  } else {
-    var tagGroup = "<div id='modal-tag-group'><div class='modal-tag-cnt' id='tag-date'><p>"+item.date+"</p></div><div class='modal-tag-cnt' id='tag-division'><p>"+item.division+"</p></div></div>"
-  }
-  if (item.img){
-    var modalMainContent = "<div id='modal-main-cnt'><div id='modal-img-cnt'><img src='"+item.img+"' alt='event presentation image'></div><p class='modal-text'>"+item.text+"</p><div id='modal-link-group'><a class='boldh-a' target='_blank' href='"+item.url+"'>Go to the news</a></div></div>"
-  } else {
-    var modalMainContent = "<div id='modal-main-cnt'><p class='modal-text'>"+item.text+"</p><div id='modal-link-group'><a class='boldh-a' target='_blank' href='"+item.url+"'>Go to the news</a></div></div>"
-  }
+  let event = agenda_array.find(x => x.id == id);
+  let eventTitle = "<h4 id='modal-title'>"+event.title+"</h4>";
+  let eventSubtitle = "<p id='modal-sbt'>"+event.subtitle+"</p>";
+  var modalTitleSubtitle = "<div id='modal-t-sbt-cnt'>"+ eventTitle + eventSubtitle +"</div>";
+
+  let eventDate = "<p class='modal-tag modal-date-"+eventStatus+"'><span class='bold-text'>Date: </span>"+event.date+"</p>";
+  let eventPlace = "<p class='modal-tag modal-date-"+eventStatus+"'><span class='bold-text'>Place: </span>"+event.place+"</p>";
+  //let datePlace = "<div id='modal-date-place-cnt'>"+ eventDate + eventPlace +"</div>";
+
+  let eventDivision = "<p class='modal-tag'>"+event.division+"</p>"
+  let eventType = "<p class='modal-tag'>"+event.type+"</p>"
+  let divisionType = "<div id='modal-division-type-cnt'>"+ eventDivision + eventType +"</div>";
+  
+  let tagGroup = "<div id='modal-tag-group'>"+ eventDate + eventPlace + divisionType +"</div>";
+
+  
+
+  let mainContent = ""
+  let eventText = "<p class='modal-text'>"+event.text+"</p>";
+
+  mainContent += eventText;
+
+  if (event.img){
+    let eventImg = "<div id='modal-img-cnt'><img src='"+event.img+"' alt='event presentation image'></div>";
+    mainContent += eventImg;
+  };
+
+
+  let eventLinks = "";
+  if (event.downloads){
+    event.downloads.forEach(function (evDwnl){
+      let aTag = '<a class="boldh-a boldh-a-download" target="_blank" href="'+evDwnl.url+'" download><p>'+evDwnl.text+'</p><div class="boldh-a-arrow-cnt">'+arrowDown+'</div></a>';
+      eventLinks += aTag;
+    });
+  };
+  if (event.urls){
+    event.urls.forEach(function (evUrl){
+      let aTag = "<a class='boldh-a' target='_blank' href="+evUrl.url+" onmouseover='animateLinkOver(this)' onmouseout='animateLinkLeave(this)'><p>"+evUrl.text+"</p><div class='boldh-a-arrow-cnt'>"+arrow+"</div></a>";
+      eventLinks += aTag;
+    });
+  };
+
+
+  if (eventLinks != ""){
+    let eventLinksCnt = "<div id='modal-link-group'>"+eventLinks+"</div>";
+    mainContent += eventLinksCnt;
+  };
+
+
+
+  
+
+  let modalMainContent = "<div id='modal-main-cnt'>"+ mainContent +"</div>"
+
   modalContent.innerHTML = modalTitleSubtitle + tagGroup + modalMainContent;
 
   document.getElementById("modal-overlay").style.display = "flex";
   document.getElementById("expansion-container").style.display = "flex";
+  document.body.style.overflow = "hidden";
 }
+
+
+
 
 function closeModal(){
   document.getElementById("modal-overlay").style.display = "none";
   document.getElementById("expansion-container").style.display = "none";
   document.getElementById("modal-content").innerHTML = "";
+  document.body.style.overflow = "auto";
 }
 
 
@@ -300,7 +358,7 @@ function animateCardOver(x, type){
     x.style.backgroundColor = "#292929"
     x.style.borderColor = "transparent"
   }
-  x.childNodes[1].style.paddingLeft = "1.2rem"
+  x.childNodes[1].style.marginLeft = "1.2rem"
 }
 
 function reverseAnimateCard(x, type){
@@ -308,5 +366,19 @@ function reverseAnimateCard(x, type){
     x.style.backgroundColor = "#252525"
     x.style.borderColor = "white"
   }
-  x.childNodes[1].style.paddingLeft = "0"
+  x.childNodes[1].style.marginLeft = "0"
 }
+
+
+
+
+function animateLinkOver(x){
+  x.childNodes[1].style.transition = "transform 0.3s";
+  x.childNodes[1].style.transform = "translateX(0.5rem)"
+}
+
+function animateLinkLeave(x){
+  x.childNodes[1].style.transition = "transform 0.3s";
+  x.childNodes[1].style.transform = "translateX(0rem)"
+}
+
