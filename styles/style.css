@@ -1405,10 +1405,6 @@ text-align: right;
 
 @media screen and (max-width: 1024px), (orientation: portrait){
 
-  html {
-    font-size: 18px;
-  }
-
   #h-menu-div {
     display: flex;
   }
