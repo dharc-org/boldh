@@ -375,7 +375,7 @@ function closeModal(){
 
 
 visualViewport.addEventListener("resize", () => {
-  if(visualViewport.width > 1024){
+  if(visualViewport.width > visualViewport.height || visualViewport.width > 1024){
     document.getElementsByClassName("nav-link-li").style.display = "block";
   }
 });

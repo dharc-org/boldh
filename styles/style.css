@@ -1418,7 +1418,7 @@ text-align: right;
 
 
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1024px), (orientation: portrait){
 
   html {
     font-size: 18px;
