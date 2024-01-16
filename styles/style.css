@@ -98,15 +98,7 @@ nav ul li a:not(.active):before {
   transition: transform 0.4s ease-in-out;
 }
 
-nav ul li a:not(a.active):hover:before {
-  position: absolute;
-  content: "";
-  border-bottom: 2px solid #ffffffcc;
-  bottom: -0.25rem;
-  transform-origin: left;
-  transform:scaleX(1);
-  transition: transform 0.4s ease-in-out;
-}
+
 
 #hamburger {
   position: relative;
@@ -1183,10 +1175,8 @@ transform: scale(1.01);
 }
 
 
-.boldh-a:hover {
-  border: 2px solid transparent;
-  transition: all ease-in-out .3s;
-}
+
+
 
 .boldh-a-arrow-cnt {
   height: 1.5rem;
@@ -1200,11 +1190,6 @@ transform: scale(1.01);
 
 .boldh-a-download {
   text-decoration: none;
-}
-.boldh-a-download:hover {
-  text-decoration: none;
-  background: rgba(0, 225, 171, 0.70);
-  transition: all ease-in-out .3s;
 }
 
 .boldh-a-download svg {
@@ -1447,7 +1432,32 @@ text-align: right;
   .nav-link-li {
     display: none;
   }
+}
 
+
+@media (hover: hover) {
+
+  nav ul li a:not(a.active):hover:before {
+    position: absolute;
+    content: "";
+    border-bottom: 2px solid #ffffffcc;
+    bottom: -0.25rem;
+    transform-origin: left;
+    transform:scaleX(1);
+    transition: transform 0.4s ease-in-out;
+  }
+
+  .boldh-a-download:hover {
+    text-decoration: none;
+    background: rgba(0, 225, 171, 0.70);
+    transition: all ease-in-out .3s;
+  }
+
+  .boldh-a:hover {
+    border: 2px solid transparent;
+    transition: all ease-in-out .3s;
+  }
+  
 
 }
 
