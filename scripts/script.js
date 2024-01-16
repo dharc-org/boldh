@@ -132,7 +132,7 @@ var news_array = [];
 // FETCH DATA FROM JSON
 
 // news data
-fetch("https://raw.githubusercontent.com/tommasobattisti/boldh/restyle/content/news.json") //to replace with hosted json
+fetch("https://raw.githubusercontent.com/dharc-org/boldh/main/content/news.json") //to replace with hosted json
   .then((res) => res.json())
   .then((data) => {
     news_array = data;
@@ -146,7 +146,7 @@ fetch("https://raw.githubusercontent.com/tommasobattisti/boldh/restyle/content/n
 
 // agenda data
 var agenda_array = [];
-fetch("https://raw.githubusercontent.com/tommasobattisti/boldh/restyle/content/agenda.json") //to replace with hosted json
+fetch("https://raw.githubusercontent.com/dharc-org/boldh/main/content/agenda.json") //to replace with hosted json
   .then((res) => res.json())
   .then((data) => {
     agenda_array = data;
