@@ -47,13 +47,26 @@
 
   <header>
     <nav>
-      <a href="#">
+      <a href="#first-section">
         <div id="nav-logo-cnt">
           <img src="./assets/img/SVG/footer-logo.svg" alt="BolDH logo">
         </div>
       </a>
       <ul id="nav-items-group">
-        <li class="nav-burger-li"><div onclick="openMenu()" class="hamburger"></div></li>
+        <li class="nav-burger-li">
+          <div onclick="openMenu()" id="h-menu-div">
+            <p>Menu</p>
+            <div id="hamburger">
+              <div></div>
+              <div></div>
+              <div></div>
+              <!--
+              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="32" viewBox="0 0 48 32" fill="none">
+                <path d="M0 32V30H48V32H0ZM0 17V15H48V17H0ZM0 2V0H24H48V2H0Z" fill="#F2F2F2" stroke="#F2F2F2" stroke-width="2" vector-effect="non-scaling-stroke" />
+              </svg>
+            -->
+            </div>
+          </li>
         <li class="nav-link-li"><a class="nav-item-a active" id="boldh-nav-a" href="#first-section">BolDH</a></li>
         <li class="nav-link-li"><a class="nav-item-a" id="topics-nav-a" href="#third-section">Topics</a></li>
         <li class="nav-link-li"><a class="nav-item-a" id="units-nav-a" href="#fifth-section">Units</a></li>

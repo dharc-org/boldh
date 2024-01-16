@@ -9,7 +9,12 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
           block: 'start',
           behavior: 'smooth'
       });
+
+      if(window.getComputedStyle(document.getElementsByClassName("nav-link-li")[0]).display == "block"){
+        setTimeout(() => { openMenu();; }, 800);
+        };
   });
+
 });
 
 
@@ -369,18 +374,44 @@ function closeModal(){
 
 
 
+visualViewport.addEventListener("resize", () => {
+  if(visualViewport.width > 768){
+    document.getElementsByClassName("nav-link-li").style.display = "block";
+  }
+});
 
 
 function openMenu(){
   let elements = document.getElementsByClassName("nav-link-li");
+
   if(window.getComputedStyle(elements[0]).display == "none"){
     for (let i = 0; i < elements.length; i++) {
       elements[i].style.display = "block";
     };
-  }else{
+  console.log(document.getElementById("hamburger").childNodes)
+    document.getElementById("hamburger").style.display = "block";
+    document.getElementById("hamburger").childNodes[1].style.position = 'absolute'
+    document.getElementById("hamburger").childNodes[1].style.top = '50%'
+    document.getElementById("hamburger").childNodes[1].style.transform = 'rotate(45deg)';
+    document.getElementById("hamburger").childNodes[3].style.position = 'absolute'
+    document.getElementById("hamburger").childNodes[3].style.top = '50%'
+    document.getElementById("hamburger").childNodes[3].style.transform = 'rotate(45deg)';
+    document.getElementById("hamburger").childNodes[5].style.position = 'absolute'
+    document.getElementById("hamburger").childNodes[5].style.top = '50%'
+    document.getElementById("hamburger").childNodes[5].style.transform = 'rotate(-45deg)';
+  } else {
     for (let i = 0; i < elements.length; i++) {
       elements[i].style.display = "none";
     }
+    document.getElementById("hamburger").style.display = "flex";
+    document.getElementById("hamburger").childNodes[1].style.top = '0'
+    document.getElementById("hamburger").childNodes[1].style.transform = 'rotate(0)';
+
+    document.getElementById("hamburger").childNodes[3].style.top = 'calc(50% - 1px)';
+    document.getElementById("hamburger").childNodes[3].style.transform = 'rotate(0)';
+
+    document.getElementById("hamburger").childNodes[5].style.top = 'calc(100% - 2px)'
+    document.getElementById("hamburger").childNodes[5].style.transform = 'rotate(0)';
   }
 }
 
