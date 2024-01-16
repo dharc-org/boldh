@@ -1091,7 +1091,7 @@ transform: scale(1.01);
 .modal-tag {
   padding: 0.375rem 0.75rem;
   color: var(--BolDH-White-Logo-Text, #F2F2F2);
-  font-family: Sequel;
+  font-family: SequelLight;
   font-size: 1.25rem;
   font-style: normal;
   font-weight: 350;
@@ -1140,7 +1140,7 @@ transform: scale(1.01);
 .modal-text {
   color: white;
   /* BolDH/Body - Sequel */
-  font-family: Sequel;
+  font-family: SequelLight;
   font-size: 1.25rem;
   font-style: normal;
   font-weight: 350;
