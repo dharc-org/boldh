@@ -1,5 +1,11 @@
+const links = document.querySelectorAll('.nav-link-li a');
+const sections = document.querySelectorAll('section');
+const arrow = '<svg xmlns="http://www.w3.org/2000/svg" width="66" height="50" viewBox="0 0 66 50" fill="none"><path d="M0 25H64M64 25L41.7391 1M64 25L41.7391 49" stroke="#F2F2F2" stroke-width="2" vector-effect="non-scaling-stroke"/></svg>';
+const arrowDown = '<svg xmlns="http://www.w3.org/2000/svg" width="66" height="50" viewBox="0 0 66 50" fill="none"><path d="M0 25H64M64 25L41.7391 1M64 25L41.7391 49" stroke="#F2F2F2" stroke-width="2" vector-effect="non-scaling-stroke"/></svg>';
+
 // SCROLLING ANIMATIONS
 var oldScrollY = window.scrollY;
+
 
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
@@ -19,8 +25,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 
 // NAVBAR LINKS ACTIVE STATE
-const links = document.querySelectorAll('.nav-link-li a');
-const sections = document.querySelectorAll('section');
 
 function changeLinkState() {
   let index = sections.length;
@@ -39,14 +43,17 @@ window.addEventListener('scroll', changeLinkState);
 
 
 // NEWS AND AGENDA CARDS ANIMATION
-const arrow = '<svg xmlns="http://www.w3.org/2000/svg" width="66" height="50" viewBox="0 0 66 50" fill="none"><path d="M0 25H64M64 25L41.7391 1M64 25L41.7391 49" stroke="#F2F2F2" stroke-width="2" vector-effect="non-scaling-stroke"/></svg>';
-const arrowDown = '<svg xmlns="http://www.w3.org/2000/svg" width="66" height="50" viewBox="0 0 66 50" fill="none"><path d="M0 25H64M64 25L41.7391 1M64 25L41.7391 49" stroke="#F2F2F2" stroke-width="2" vector-effect="non-scaling-stroke"/></svg>';
+
+
 
 window.onscroll = function () {
   // rotating logo animation
   var theta = (document.documentElement.scrollTop / 1000) % Math.PI;
   document.getElementById("giant-logo").style.transform = "rotate(" + theta + "rad)";
 
+
+// Code below contrasts with the scroll ufunction leading to section of clicked nav-li element
+/*
   // moving news on scroll animation
   var element = document.getElementById("news-box-container");
   if (isInViewport(element)) {
@@ -66,6 +73,8 @@ window.onscroll = function () {
     }
   }
   oldScrollY = window.scrollY;
+*/
+
 
   // definition background color change
   
