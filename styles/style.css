@@ -1402,8 +1402,7 @@ text-align: right;
 
 
 
-
-@media screen and (max-width: 1024px), (orientation: portrait){
+@media screen and (max-width: 1024px){
 
   #h-menu-div {
     display: flex;
@@ -1425,9 +1424,8 @@ text-align: right;
     margin-right: 0.75rem;
   }
   
-  .nav-link-li {
-    display: none;
-  }
+
+
 }
 
 
