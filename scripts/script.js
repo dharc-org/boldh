@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () { // wait for page to 
             block: 'start', // start of the section
             behavior: 'smooth' // smooth scroll
         });
-        if(window.getComputedStyle(document.getElementsByClassName("nav-link-li")[0]).display == "block"){ // if nav menu is open
+        if(visualViewport.width < 1024 && window.getComputedStyle(document.getElementsByClassName("nav-link-li")[0]).display == "block"){ // if nav menu is open
           setTimeout(() => { openMenu();; }, 800); // close mobile nav menu after 800ms (time of scroll animation)
           };
     });
@@ -110,7 +110,7 @@ document.addEventListener("DOMContentLoaded", function () { // wait for page to 
 
 // news data
 var news_array = [];
-fetch("https://raw.githubusercontent.com/dharc-org/boldh/main/content/news.json") // JSON on github repo
+fetch("https://raw.githubusercontent.com/tommasobattisti/boldh/main/content/news.json") // JSON on github repo
   .then((res) => res.json()) // get json data from response
   .then((data) => {   
     news_array = data;    // save json data in news_array
@@ -123,7 +123,7 @@ fetch("https://raw.githubusercontent.com/dharc-org/boldh/main/content/news.json"
 
 // agenda data
 var agenda_array = [];
-fetch("https://raw.githubusercontent.com/dharc-org/boldh/main/content/agenda.json") // JSON on github repo
+fetch("https://raw.githubusercontent.com/tommasobattisti/boldh/main/content/agenda.json") // JSON on github repo
   .then((res) => res.json())
   .then((data) => {
     agenda_array = data;
@@ -271,11 +271,11 @@ function populateCard(tp, item) { // tp is the type of card (news, active or con
   // Concluded and active events have different classes that determine the color of the date tag and the card aspect and animation on over and out 
   if (tp == "news") {
     let itemUrl = item.url;
-    box.innerHTML += "<a class='card-box' href='"+ itemUrl +"' target='_blank' onmouseover='animateCardOver(this, \"active\")' onmouseout='animateCardOut(this, \"active\")'>"+ itemContentA + arrowDiv +"</a>";
+    box.innerHTML += "<a class='cb card-box' href='"+ itemUrl +"' target='_blank' onmouseover='animateCardOver(this, \"active\")' onmouseout='animateCardOut(this, \"active\")'>"+ itemContentA + arrowDiv +"</a>";
   } else if (tp == "concluded"){
-      box.innerHTML += "<div class='card-box-concluded' onmouseover='animateCardOver(this, \"concluded\")' onmouseout='animateCardOut(this, \"concluded\")' onclick='populateModal("+item.id+", \"concluded\")' >"+ itemContentA + arrowDiv +"</div>";
+      box.innerHTML += "<div class='cb card-box-concluded' onmouseover='animateCardOver(this, \"concluded\")' onmouseout='animateCardOut(this, \"concluded\")' onclick='populateModal("+item.id+", \"concluded\")' >"+ itemContentA + arrowDiv +"</div>";
   } else {
-    box.innerHTML += "<div class='card-box event-box' onmouseover='animateCardOver(this, \"active\")' onmouseout='animateCardOut(this, \"active\")' onclick='populateModal("+item.id+", \"active\")' >"+ itemContentA + arrowDiv +"</div>";
+    box.innerHTML += "<div class='cb card-box event-box' onmouseover='animateCardOver(this, \"active\")' onmouseout='animateCardOut(this, \"active\")' onclick='populateModal("+item.id+", \"active\")' >"+ itemContentA + arrowDiv +"</div>";
   }
 };
 

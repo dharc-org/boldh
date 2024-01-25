@@ -675,7 +675,7 @@ nav ul li a:not(.active):before {
 }
 
 
-.card-box:first-child {
+.cb:first-child {
   margin-left: 10% !important;
 }
 
