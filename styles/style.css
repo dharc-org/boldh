@@ -1052,16 +1052,16 @@ transform: scale(1.01);
   font-size: 4rem;
   font-style: normal;
   font-weight: 350;
-  line-height: 110%; /* 4.4rem */
+  line-height: 110%; 
 }
 
 #modal-sbt {
   align-self: stretch;
-  color: var(--BolDH-White-Logo-Text, #F2F2F2);
-  font-family: Sequel;
+  color: var(--BolDH-White-Logo-Text, rgba(242, 242, 242, 0.8));
+  font-family: SequelLight;
   font-size: 1.5rem;
   font-style: normal;
-  font-weight: 425;
+  font-weight: 350;
   line-height: 120%; /* 2.4rem */
   letter-spacing: 0.04rem;
 }
@@ -1133,7 +1133,7 @@ transform: scale(1.01);
 
 
 .modal-text {
-  color: white;
+  color: rgba(242, 242, 242, 0.8);
   /* BolDH/Body - Sequel */
   font-family: SequelLight;
   font-size: 1.25rem;
