@@ -1,26 +1,28 @@
 [
     {
-      "title": "New course available now",
-      "division": "DHDK",
-      "type": "conference",
-      "date": "02/02/2024 - 07/02/2024",
-      "place": "Room I, via Zamboni 38, Bologna",
-      "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "title": "Patrimonio culturale e infrastrutture di ricerca: la conservazione e la comunicazione al pubblico",
+      "division": "BolDH",
+      "type": "Presentations and meetings",
+      "date": "25/01/2024",
+      "time": "from 15:00 to 18:00",
+      "place": "Sala VIII Centenario, Rettorato, Via Zamboni 33, Bologna",
+      "subtitle": "Condivisione di esperienze e prospettive di valorizzazione del patrimonio culturale all’interno delle infrastrutture Digitali di ricerca.",
+      "text": "Building on the experience of the European project (H2020) Una.Resin, where methodologies and tools for creating research and innovation ecosystems in transnational research networks were developed, the aim is to analyze the impact of digital transformation and the interconnection of data and interdependent ecosystems on the preservation and communication of cultural heritage.</br>The inquiry will explore how digital research infrastructures interact with cultural heritage, as well as with the data aggregations and digital assets of libraries, archives, and museums. The scope extends beyond the materials of university libraries and museums, delving into the galaxy of research initiatives and materials preserved by both university and non-university institutions made available through specific thematic/disciplinary projects.</br>The purpose of this reflection is to initiate a dialogue on forms of cultural heritage sharing that are compatible and interoperable with research infrastructures, fostering fruitful exchanges between cultural institutions and heritage communities with scientific research institutions. This transition into digital infrastructures carries with it a complex experience and activity of integrating semantic relationships from diverse scientific and educational fields preceding the digital era.</br>Discussions will revolve around how universities can facilitate the valorization of cultural heritage through digital research infrastructures, not only limited to their own heritage but also stimulating interoperability with other local and international initiatives. It will encourage synergies on common interests such as long-term preservation, innovative forms of participation, citizen science, storytelling, open licenses, etc.</br>Further reflections will focus on the flexibility of conceptual models for integrating content and metadata, ensuring the potential for interaction with digital research infrastructures structured internationally across various disciplinary domains. This includes the development of new ways to share delivery data and the provision of services, especially in Knowledge Discovery.",
       "urls": [{
-          "text": "Link to the course",
-          "url": "https://google.com"
+          "text": "Registration form",
+          "url": "https://site.unibo.it/una-europa/en/agenda/una-resin-conference/una-resin-conference"
         }, {
-          "text": "Link to the website",
-          "url": "https://google.com"
+          "text": "Follow the event on Teams",
+          "url": "https://teams.microsoft.com/l/meetup-join/19%3ameeting_M2NhZjc0ZDItMDNiMC00NWFjLWE4YjItY2E4Y2UxMTJjYmQz%40thread.v2/0?context=%7b%22Tid%22%3a%22e99647dc-1b08-454a-bf8c-699181b389ab%22%2c%22Oid%22%3a%221476aa80-f5e7-4c3e-9097-3587ba543d60%22%7d"
+        },
+        {
+          "text": "The Una.Resin project",
+          "url": "https://www.una-europa.eu/about/una.resin"
         }
       ],
       "downloads": [{
           "text": "Download the program",
-          "url": "/assets/img/JPG/logo.jpg"
-        }, {
-          "text": "Download the brochure",
-          "url": "/assets/img/JPG/logo.jpg"
+          "url": "../assets/pdfs/unaresin-patrimonio-culturale-e-infrastrutture-di-ricerca-programma.pdf"
         }
       ]
      },

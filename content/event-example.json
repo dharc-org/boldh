@@ -1,0 +1,23 @@
+{
+    "title": "Annual conference. Sign in now!",
+    "division": "DHARC",
+    "type": "conference",
+    "date": "05/02/2024",
+    "place": "Room I, via Zamboni 38, Bologna",
+    "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "text": "Mauris vel mattis libero. Ut varius metus non ipsum rhoncus rhoncus. In consectetur laoreet bibendum. Vestibulum placerat, augue suscipit viverra viverra, neque leo.",
+    "img": "https://raw.githubusercontent.com/dharc-org/boldh/main/assets/img/JPG/logo.jpg",
+    "urls": [{
+        "text": "Link to the course",
+        "url": "https://google.com"
+      }, {
+        "text": "Link to the website",
+        "url": "https://google.com"
+      }
+    ],
+    "downloads": [{
+        "text": "Download the program",
+        "url": "/assets/img/JPG/logo.jpg"
+      }
+    ]
+}

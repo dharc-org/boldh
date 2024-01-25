@@ -288,7 +288,7 @@ function populateModal(id, eventStatus){ // eventStatus is the status of the eve
   let eventSubtitle = "<p id='modal-sbt'>"+event.subtitle+"</p>";
   var modalTitleSubtitle = "<div id='modal-t-sbt-cnt'>"+ eventTitle + eventSubtitle +"</div>"; 
   // create date and place tags of the event in the modal
-  let eventDate = "<p class='modal-tag modal-date-"+eventStatus+"'><span class='bold-text'>Date: </span>"+event.date+"</p>";
+  let eventDate = "<p class='modal-tag modal-date-"+eventStatus+"'><span class='bold-text'>Date: </span>"+event.date+" "+event.time+"</p>";
   let eventPlace = "<p class='modal-tag modal-date-"+eventStatus+"'><span class='bold-text'>Place: </span>"+event.place+"</p>";
   // create division and type tags of the event in the modal
   let eventDivision = "<p class='modal-tag'>"+event.division+"</p>"
