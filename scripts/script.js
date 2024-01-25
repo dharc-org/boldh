@@ -228,8 +228,8 @@ function populateCard(tp, item) { // tp is the type of card (news, active or con
   let itemType = "<p class='card-type'>" + item.type + "</p>";
   // Manage title lenght avoiding too long content and breaking after a specific number of characters
   let itemTitle = "";
-  if (item.title.length > 80) {
-    let newTitle = item.title.substring(0, 80) + "...";
+  if (item.title.length > 120) {
+    let newTitle = item.title.substring(0, 120) + "...";
     itemTitle = "<h3 class='card-title'>" + newTitle + "</h3>";;
   } else {
     itemTitle = "<h3 class='card-title'>" + item.title + "</h3>";
