@@ -756,6 +756,7 @@ nav ul li a:not(.active):before {
   font-weight: 350;
   font-size: 2rem;
   line-height: 110%; /* 2.75rem */
+  padding-bottom: 4px; /*This is done since the overflow:hidden used in the previous block to hide log titles hides also parts of some lowercase letters going under the x-height line */
 }
 
 .card-text {
