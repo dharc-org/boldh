@@ -1,12 +1,11 @@
 [
     {
-      "id": 1,
-      "title": "New course available now",
+      "title": "The new version of ODI ontology is public",
       "division": "DHDK",
       "date": "24/03/2023",
-      "type": "Course",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sit amet tincidunt sapien.",
-      "url": "https://www.google.com/"
+      "type": "Research",
+      "text": "Discover more about the study of Italo Calvino's <i>macchina narrativa combinatoria<i> of the first collection of <i>Il castello dei destini incrociati<i> with our web application!",
+      "url": "https://projects.dharc.unibo.it/odi"
      },
     {
       "id": 2,
