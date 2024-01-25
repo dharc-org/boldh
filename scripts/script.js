@@ -110,7 +110,7 @@ document.addEventListener("DOMContentLoaded", function () { // wait for page to 
 
 // news data
 var news_array = [];
-fetch("https://raw.githubusercontent.com/tommasobattisti/boldh/main/content/news.json") // JSON on github repo
+fetch("https://raw.githubusercontent.com/tommasobattisti/boldh/main/content/news.json", {cache: "no-store"}) // JSON on github repo
   .then((res) => res.json()) // get json data from response
   .then((data) => {   
     news_array = data;    // save json data in news_array
@@ -123,7 +123,7 @@ fetch("https://raw.githubusercontent.com/tommasobattisti/boldh/main/content/news
 
 // agenda data
 var agenda_array = [];
-fetch("https://raw.githubusercontent.com/tommasobattisti/boldh/main/content/agenda.json") // JSON on github repo
+fetch("https://raw.githubusercontent.com/tommasobattisti/boldh/main/content/agenda.json", {cache: "no-store"}) // JSON on github repo
   .then((res) => res.json())
   .then((data) => {
     agenda_array = data;
@@ -289,7 +289,7 @@ function populateModal(id, eventStatus){ // eventStatus is the status of the eve
   var modalTitleSubtitle = "<div id='modal-t-sbt-cnt'>"+ eventTitle + eventSubtitle +"</div>"; 
   // create date and place tags of the event in the modal
   let eventDate = "<p class='modal-tag modal-date-"+eventStatus+"'><span class='bold-text'>Date: </span>"+event.date+" "+event.time+"</p>";
-  let eventPlace = "<p class='modal-tag modal-date-"+eventStatus+"'><span class='bold-text'>Place: </span>"+event.place+"</p>";
+  let eventPlace = "<p class='modal-tag modal-date-"+eventStatus+"'><span class='bold-text'>Place: </span>"+event.place_extended+"</p>";
   // create division and type tags of the event in the modal
   let eventDivision = "<p class='modal-tag'>"+event.division+"</p>"
   let eventType = "<p class='modal-tag'>"+event.type+"</p>"

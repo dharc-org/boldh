@@ -1096,10 +1096,12 @@ transform: scale(1.01);
 
 .modal-date-active {
   border-left: 2px solid var(--BolDH-Accent-1, #00E1AB);
+  text-transform: none !important;
 }
 
 .modal-date-concluded {
   border-left: 2px solid var(--BolDH-Accent-2, #E03800);
+  text-transform: none !important;
 }
 
 .bold-text {
