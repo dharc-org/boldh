@@ -7,7 +7,8 @@ This repository contains the source code for the BolDH website, a platform dedic
 ## Credits
 
 - **Development and Design**: [Marco Grasso](https://github.com/marcograsso)
-- **Maintenance**: [Tommaso Battisti](https://github.com/marcograsso)
+- **Maintenance**: [Tommaso Battisti](https://github.com/tommasobattisti)
+- **Coordinators**: [Francesca Tomasi](https://www.unibo.it/sitoweb/francesca.tomasi)
 - **Organization/Institution**: [/DH.arc Digital Humanities Advanced Research Centre](https://centri.unibo.it/dharc/en), Department of Classical Philology and Italian Studies (FICLIT), University of Bologna
 
 ## Reuse and License
