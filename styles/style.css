@@ -8,6 +8,26 @@
   --Boldh-red: #FA3005;
 }
 
+
+.chefcookie__box h1, .chefcookie__button {
+  text-transform: lowercase;
+  font-family: Sequel;
+}
+
+.chefcookie__box h1::first-letter, .chefcookie__button::first-letter {
+  text-transform: capitalize!important;
+}
+
+.chefcookie__message p {
+  font-family: SequelLight;
+  line-height: 150%; 
+  letter-spacing: 0.025rem;
+}
+
+
+
+
+
 html {
   font-size: 16px;
 }
