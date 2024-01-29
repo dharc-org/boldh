@@ -11,7 +11,7 @@ This repository contains the source code for the BolDH website, a platform dedic
  
 ## Reuse and License
  
-- The content and code of the BolDH website are licensed under <img alt="Licenza Creative Commons" style="border-width:0; max-height: 5rem;margin-right: auto; margin-left: auto; display:block" src="http://i.creativecommons.org/l/by-nc-nd/3.0/88x31.png">.
+- The content and code of the BolDH website are licensed under <a target="_blank" href="http://creativecommons.org/licenses/by-nc-nd/4.0/?ref=chooser-v1" rel="license noopener noreferrer"><img alt="Creative Commons license image" src="./assets/img/SVG/license.svg"></a>.
 - Reuse of code or content must adhere to the terms of the specified license.
  
 For any inquiries or further information, please refer to the contact details provided on the website.

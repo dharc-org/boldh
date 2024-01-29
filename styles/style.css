@@ -8,6 +8,26 @@
   --Boldh-red: #FA3005;
 }
 
+
+.chefcookie__box h1, .chefcookie__button {
+  text-transform: lowercase!important;
+  font-family: Sequel;
+}
+
+.chefcookie__box h1::first-letter, .chefcookie__button::first-letter {
+  text-transform: capitalize!important;
+}
+
+.chefcookie__message p {
+  font-family: SequelLight;
+  line-height: 150%; 
+  letter-spacing: 0.025rem;
+}
+
+
+
+
+
 html {
   font-size: 16px;
 }
@@ -662,7 +682,6 @@ nav ul li a:not(.active):before {
 .card-box-concluded {
   transition: all .4s ease-in-out;
   cursor: pointer;
-
   display: flex;
   min-width: 27rem;
   max-width: 27rem;
@@ -698,11 +717,12 @@ nav ul li a:not(.active):before {
   flex-wrap: wrap;
 }
 
+/*
 .card-type, .card-division, .card-place, .agenda-concluded, .agenda-active {
   color: white;
   font-family: SequelLight;
   font-size: 1rem;
-  line-height: 150%; /* 1.5rem */
+  line-height: 150%; 
   letter-spacing: 0.02rem;
   text-transform: capitalize;
   display: flex;
@@ -713,14 +733,30 @@ nav ul li a:not(.active):before {
   border-radius: 0.5rem;
   border: 2px solid white;
 }
+*/
+
+
+.card-type, .card-division, .card-place, .agenda-concluded, .agenda-active {
+  color: white;
+  font-family: Sequel;
+  font-size: 1rem;
+  line-height: 150%; 
+  letter-spacing: 0.05rem;
+  text-transform: capitalize;
+  padding: 0.375rem 0.75rem;
+  border-left: 2px solid white;
+}
+
+
+
 
 .agenda-concluded {
-  border: 2px solid #E03800;
+  border-left: 2px solid #E03800;
   font-family: Sequel;
 }
 
 .agenda-active {
-  border: 2px solid #00E1AB;
+  border-left: 2px solid #00E1AB;
   font-family: Sequel;
 }
 
@@ -772,7 +808,6 @@ nav ul li a:not(.active):before {
 
 .card-arrow-div {
   height: 3rem;
-
   transition: all ease-in-out .4s;
 }
 
@@ -981,7 +1016,7 @@ transform: scale(1.01);
 
 #modal-close-container {
   display: flex;
-  padding: 2rem 2rem;
+  padding: 3rem 3rem;
   justify-content: flex-end;
   align-items: center;
   align-self: stretch;
@@ -990,8 +1025,8 @@ transform: scale(1.01);
 #modal-close-icon {
   cursor: pointer;
   display: inline-block;
-  width: 2rem;
-  height: 2rem;
+  width: 3rem;
+  height: 3rem;
 }
 
 #modal-close-icon:hover {
@@ -1011,7 +1046,7 @@ transform: scale(1.01);
   top: 50%;
   left: 50%;
   width: 2px;
-  height: 2rem;
+  height: 3rem;
   background-color: white;
 }
 
@@ -1105,6 +1140,7 @@ transform: scale(1.01);
 }
 
 .bold-text {
+  letter-spacing: 0.05rem;
   font-family: Sequel;
 }
 
@@ -1169,11 +1205,11 @@ transform: scale(1.01);
 .boldh-a p {
   color: #F2F2F2;
   font-family: Sequel;
-  font-size: 1.25rem;
+  font-size: 1rem;
   font-style: normal;
   font-weight: 425;
   line-height: 150%; /* 1.875rem */
-  letter-spacing: 0.025rem;
+  letter-spacing: 0.05rem;
   text-decoration: none;
 }
 
@@ -1286,18 +1322,18 @@ text-align: right;
 }
 
 .contacts-title {
-    font-family: 'SequelLight';
-    font-size: 30px;
-    color: white;
-    font-weight: normal;
-    margin: 0;
-    cursor: pointer;
-    width: 100%;
-    text-align: left;
+  font-family: SequelLight;
+  font-size: 30px;
+  color: white;
+  font-weight: normal;
+  margin: 0;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
 }
 
 .contacts-body {
-  font-family: 'SequelLight';
+  font-family: SequelLight;
   font-size: 30px;
   color: white;
   font-weight: normal;
@@ -1308,30 +1344,42 @@ text-align: right;
   text-align: right;
 }
 
+.credits-arrow-div {
+  height: 30px;
+  transition: all ease-in-out .4s;
+}
+
+.credits-arrow-div svg {
+  height: 100%;
+  width: auto;
+}
+
 .contacts-box {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    border-top: 1px solid white;
-    padding: 30px 10px 30px 10px;
-    text-decoration: inherit;
-    color: inherit;
-    cursor: pointer;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  border-top: 2px solid white;
+  padding: 30px 10px 30px 10px;
+  text-decoration: inherit;
+  color: inherit;
+  cursor: pointer;
+  transition: all ease-in-out .3s;
 }
 
-.contacts-box:hover {
-  background-color: white;
+
+.contacts-box .credits-arrow-div svg path {
+  transition: all ease-in-out .3s;
 }
 
-.contacts-box:hover p{
-  color: #7EE787;
+.contacts-box p {
+  transition: all ease-in-out .3s;
 }
 
 .contacts-box:last-child {
   display: flex;
   justify-content: center;
   width: 100%;
-  border-bottom: 1px solid white;
+  border-bottom: 2px solid white;
 }
 
 
@@ -1350,37 +1398,41 @@ text-align: right;
   padding: 30px;
 }
 
-.footer-copy {
+
+
+.footer-copy-container p, .footer-copy-container a{
   color:white;
-  font-size: 13px;
+  font-size: 1.25rem;
+  line-height: 150%;
+  letter-spacing: 0.025rem;
   font-family: SequelLight;
   font-weight: normal !important;
   padding-bottom: 50px;
-    
 }
 
-.footer-copy a {
-  margin-left: 12px;
-  text-decoration: underline;
+.footer-copy-container a {
+  text-decoration: underline 2px #00E1AB;
   cursor: pointer;
-  color: white;
+  transition: all ease-in-out .3s;
 }
 
-.footer-copy a:visited {
-  color: grey;
+.footer-copy-container a:hover {
+  text-decoration: none;
+  color: #00E1AB;
+  transition: all ease-in-out .3s;
 }
 
-.footer-copy a:link,
-.footer-copy a:hover,
-.footer-copy a:active {
-  color: white;
+.footer-copy-container img {
+  margin-bottom: 0.5rem;
 }
+
 
 
 .footer-copy-container {
   background-color: rgb(12, 12, 12);
   width: 50%;
   padding: 30px;
+  text-align: end;
 }
 
 
@@ -1452,6 +1504,22 @@ text-align: right;
 
   .boldh-a:hover {
     border: 2px solid transparent;
+    transition: all ease-in-out .3s;
+  }
+
+  .contacts-box:hover {
+    transition: all ease-in-out .3s;
+    background-color: white;
+  }
+
+  .contacts-box:hover p{
+    color: #00E1AB;
+    transition: all ease-in-out .3s;
+  }
+  
+  
+  .contacts-box:hover .credits-arrow-div svg path {
+    stroke: #00E1AB!important;
     transition: all ease-in-out .3s;
   }
   
