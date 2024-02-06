@@ -1,11 +1,13 @@
 :root {
-  --BolDH-black: #121212;
-  --BolDH-white: #f5f5f5;
-  --BolDH-white-800: #f5f5f5cc;
-  --BolDH-white-400: #f5f5f566;
-  --BolDH-neutral-800: rgba(18, 18, 18, 0.8);
-  --BolDH-neutral-640: #121212a3;
-  --Boldh-red: #FA3005;
+  --BolDH-Black-Black: #181616;
+  --BolDH-Black-Dark1: #212121;
+  --BolDH-Black-Dark2: #252525;
+  --BolDH-Black-Dark3: #272727;
+  --BolDH-White-White: #F2F2F2;
+  --BolDH-White-Pure: #FFFFFF;
+  --BolDH-Accent-1: #32C3A0;
+  --BolDH-Accent-2: #DD5423;
+  --BolDH-Text-Grey: rgba(242, 242, 242, 0.76);
 }
 
 
