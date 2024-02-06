@@ -271,11 +271,11 @@ function populateCard(tp, item) { // tp is the type of card (news, active or con
   // Concluded and active events have different classes that determine the color of the date tag and the card aspect and animation on over and out 
   if (tp == "news") {
     let itemUrl = item.url;
-    box.innerHTML += "<a class='cb card-box' href='"+ itemUrl +"' target='_blank' onmouseover='animateCardOver(this, \"active\")' onmouseout='animateCardOut(this, \"active\")'>"+ itemContentA + arrowDiv +"</a>";
+    box.innerHTML += "<a class='cb card-box' href='"+ itemUrl +"' target='_blank'>"+ itemContentA + arrowDiv +"</a>";
   } else if (tp == "concluded"){
-      box.innerHTML += "<div class='cb card-box-concluded' onmouseover='animateCardOver(this, \"concluded\")' onmouseout='animateCardOut(this, \"concluded\")' onclick='populateModal("+item.id+", \"concluded\")' >"+ itemContentA + arrowDiv +"</div>";
+      box.innerHTML += "<div class='cb card-box-concluded' onclick='populateModal("+item.id+", \"concluded\")' >"+ itemContentA + arrowDiv +"</div>";
   } else {
-    box.innerHTML += "<div class='cb card-box event-box' onmouseover='animateCardOver(this, \"active\")' onmouseout='animateCardOut(this, \"active\")' onclick='populateModal("+item.id+", \"active\")' >"+ itemContentA + arrowDiv +"</div>";
+    box.innerHTML += "<div class='cb card-box event-box' onclick='populateModal("+item.id+", \"active\")' >"+ itemContentA + arrowDiv +"</div>";
   }
 };
 
@@ -315,7 +315,7 @@ function populateModal(id, eventStatus){ // eventStatus is the status of the eve
   };
   if (event.urls){ // if event has external links, create the external links tags and add them to the main content
     event.urls.forEach(function (evUrl){
-      let aTag = "<a class='boldh-a' target='_blank' href="+evUrl.url+" onmouseover='animateLinkOver(this)' onmouseout='animateLinkOut(this)'><p>"+evUrl.text+"</p><div class='boldh-a-arrow-cnt'>"+arrow+"</div></a>";
+      let aTag = "<a class='boldh-a' target='_blank' href="+evUrl.url+"><p>"+evUrl.text+"</p><div class='boldh-a-arrow-cnt'>"+arrow+"</div></a>";
       eventLinks += aTag;
     });
   };
@@ -408,35 +408,4 @@ function openMenu(){
     document.getElementById("hamburger").childNodes[5].style.top = 'calc(100% - 2px)'
     document.getElementById("hamburger").childNodes[5].style.transform = 'rotate(0)';
   }
-}
-
-// ________________________________________________________
-// CARD ANIMATION ON OVER AND OUT
-function animateCardOver(x, type){
-  if (type == "active"){
-    x.style.backgroundColor = "#292929"
-    x.style.borderColor = "transparent"
-  }
-  x.childNodes[1].style.marginLeft = "1.2rem"
-}
-
-function animateCardOut(x, type){
-  if (type == "active"){
-    x.style.backgroundColor = "#252525"
-    x.style.borderColor = "white"
-  }
-  x.childNodes[1].style.marginLeft = "0"
-}
-
-
-// ________________________________________________________
-// LINK ANIMATION ON OVER AND OUT
-function animateLinkOver(x){
-  x.childNodes[1].style.transition = "transform 0.3s";
-  x.childNodes[1].style.transform = "translateX(0.5rem)"
-}
-
-function animateLinkOut(x){
-  x.childNodes[1].style.transition = "transform 0.3s";
-  x.childNodes[1].style.transform = "translateX(0rem)"
 }

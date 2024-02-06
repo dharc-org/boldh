@@ -389,21 +389,7 @@ nav ul li a:not(.active):before {
     padding-left: 50px;
 }
 
-.research-topic-title:hover {
-    color: black;
-    background-color: white;
-    position: relative;
-}
 
-.research-topic:hover .research-topic-title {
-  color: black;
-  background-color: white;
-  position: relative;
-}
-
-.research-topic:hover .research-topic-description {
-  display: block;
-}
 
 .research-topic-description {
   background-color: black;
@@ -641,10 +627,7 @@ nav ul li a:not(.active):before {
     font-family: SequelLight;
 }
 
-.division-call-to-action:hover {
-  border: 20px solid black;
-  border-radius: 50px;
-}
+
 
 
 /* --------------- SIXTH SECTION ----------------*/
@@ -710,7 +693,7 @@ nav ul li a:not(.active):before {
 
 .card-box {
   text-decoration: none;
-  transition: all .4s ease-in-out;
+  transition: all .3s ease-in-out;
   cursor: pointer;
 
   display: flex;
@@ -724,13 +707,17 @@ nav ul li a:not(.active):before {
   align-items: flex-start;
 
   border-radius: 0.5rem;
-  border: 2px solid var(--BolDH-White-Logo-Text, #F2F2F2);
-  background: var(--BolDH-Black-Grey-card-1, #252525);
+  border: 2px solid var(--BolDH-White-White, #F2F2F2);
+  background: var(--BolDH-Black-Dark2, #252525);
 }
 
+
+
 .card-box-concluded {
-  transition: all .4s ease-in-out;
+  text-decoration: none;
+  transition: all .3s ease-in-out;
   cursor: pointer;
+
   display: flex;
   min-width: 27rem;
   max-width: 27rem;
@@ -740,7 +727,13 @@ nav ul li a:not(.active):before {
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
+
+  border-radius: 0.5rem;
+  border: 2px solid transparent;
 }
+
+
+
 
 
 .cb:first-child {
@@ -940,9 +933,7 @@ nav ul li a:not(.active):before {
   /*cursor: pointer; */
 }
 
-.agenda-box:hover {
-transform: scale(1.01);
-}
+
 
 .agenda-box-anchor:first-child {
   margin-left: 10% !important;
@@ -1013,19 +1004,6 @@ transform: scale(1.01);
   border-radius: 10px;
 }
 
-.concluded p, .concluded h3, .concluded a {
-  color: #FA3005;
-}
-
-.concluded .boldh-a:hover {
-  color: #fa3205bb;
-}
-
-.concluded .agenda-type, .concluded .agenda-date {
-  border-color: #FA3005;
-  color: #FA3005;
-}
-
 
 
 
@@ -1078,33 +1056,21 @@ transform: scale(1.01);
   height: 3rem;
 }
 
-#modal-close-icon:hover {
-  transform: scale(1.05);
-  transition: all 0.3s ease-in-out;
-
-}
-
-#modal-close-icon:not(:hover) {
-  transform: scale(1);
-  transition: all 0.3s ease-in-out;
-}
 
 #modal-close-icon::before, #modal-close-icon::after {
   content: '';
   position: absolute;
-  top: 50%;
-  left: 50%;
   width: 2px;
   height: 3rem;
   background-color: white;
 }
 
 #modal-close-icon::before {
-  transform: translate(-50%, -50%) rotate(45deg);
+  transform: rotate(45deg);
 }
 
 #modal-close-icon::after {
-  transform: translate(-50%, -50%) rotate(-45deg);
+  transform: rotate(-45deg);
 }
 
 
@@ -1261,6 +1227,7 @@ transform: scale(1.01);
   letter-spacing: 0.05rem;
   text-decoration: none;
 }
+
 
 
 
@@ -1465,11 +1432,6 @@ text-align: right;
   transition: all ease-in-out .3s;
 }
 
-.footer-copy-container a:hover {
-  text-decoration: none;
-  color: #00E1AB;
-  transition: all ease-in-out .3s;
-}
 
 .footer-copy-container img {
   margin-bottom: 0.5rem;
@@ -1533,8 +1495,63 @@ text-align: right;
 }
 
 
+
 @media (hover: hover) {
 
+  .research-topic-title:hover {
+    color: black;
+    background-color: white;
+    position: relative;
+}
+
+  .research-topic:hover .research-topic-title {
+    color: black;
+    background-color: white;
+    position: relative;
+  }
+
+  .research-topic:hover .research-topic-description {
+    display: block;
+  }
+
+  .division-call-to-action:hover {
+    border: 20px solid black;
+    border-radius: 50px;
+  }
+
+  .card-box:hover {
+    transition: all .3s ease-in-out;
+    background-color: var(--BolDH-Black-Dark3, #272727);
+    border-color: var(--BolDH-Accent-1, #00E1AB);
+  }
+  
+  .card-box-concluded:hover {
+    transition: all .3s ease-in-out;
+    border-color: var(--BolDH-Accent-2, #DD5423);
+  }
+  
+  .card-box-concluded:hover .card-arrow-div, .card-box:hover .card-arrow-div {
+    margin-left: 1.2rem;
+    transition: all .3s ease-in-out;
+  }
+  
+  .agenda-box:hover {
+    transform: scale(1.01);
+    }
+  
+  .boldh-a:hover {
+    transition: all ease-in-out .3s;
+    padding-right: 1.5rem;
+    border-color: var(--BolDH-White-White, #F2F2F2);
+  }
+
+  .footer-copy-container a:hover {
+    text-decoration: none;
+    color: #00E1AB;
+    transition: all ease-in-out .3s;
+  }
+
+  
   nav ul li a:not(a.active):hover:before {
     position: absolute;
     content: "";
@@ -1545,16 +1562,7 @@ text-align: right;
     transition: transform 0.4s ease-in-out;
   }
 
-  .boldh-a-download:hover {
-    text-decoration: none;
-    background: rgba(0, 225, 171, 0.70);
-    transition: all ease-in-out .3s;
-  }
-
-  .boldh-a:hover {
-    border: 2px solid transparent;
-    transition: all ease-in-out .3s;
-  }
+ 
 
   .contacts-box:hover {
     transition: all ease-in-out .3s;
