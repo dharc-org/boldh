@@ -1,5 +1,5 @@
 :root {
-  --BolDH-Black-Black: #181616;
+  --BolDH-Black-Black: #131313;
   --BolDH-Black-Dark1: #212121;
   --BolDH-Black-Dark2: #252525;
   --BolDH-Black-Dark3: #272727;
@@ -27,7 +27,7 @@ body {
   width: 100%;
   margin: 0;
   padding: 0;
-  background-color: var(--BolDH-Black-Black, #181616);
+  background-color: var(--BolDH-Black-Black, #131313);
 }
 
 
@@ -102,7 +102,7 @@ header {
   top: 0;
   width: 100%;
   border-bottom: 2px solid white;
-  background: black;
+  background: var(--BolDH-Black-Black, #131313);
   z-index: 99;
 }
 
