@@ -10,6 +10,74 @@
   --BolDH-Text-Grey: rgba(242, 242, 242, 0.76);
 }
 
+html {
+  font-size: 16px;
+}
+
+html * {
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, .subtitle, p, a {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: var(--BolDH-Black-Black, #181616);
+}
+
+
+/* TYPOGRAPHY */
+
+h2 {
+  /* BolDH/H2 */
+  font-family: SequelMedium, sans-serif;
+  font-size: 6rem;
+  line-height: 110%; /* 6.6rem */
+  color: var(--BolDH-White-White, #F2F2F2);
+}
+
+h3 {
+  /* BolDH/H3 */
+  font-family: SequelBold, sans-serif;
+  font-size: 3rem;
+  line-height: 110%; /* 3.3rem */
+  color: var(--BolDH-White-White, #F2F2F2);
+}
+
+h4 {
+  /* BolDH/H4 */
+  font-family: SequelBold, sans-serif;
+  font-size: 2rem;
+  line-height: 110%; /* 2.2rem */
+  letter-spacing: 0.04rem;
+  color: var(--BolDH-White-White, #F2F2F2);
+}
+
+.subtitle {
+  /* BolDH/Subtitle */
+  font-family: SequelSemiBold, sans-serif;
+  font-size: 1.5rem;
+  line-height: 120%; /* 1.8rem */
+  letter-spacing: 0.045rem;
+  color: var(--BolDH-White-White, #F2F2F2);
+}
+
+p {
+  /* BolDH/Body */
+  font-family: SequelLight, sans-serif;
+  font-size: 1.25rem;
+  line-height: 150%; /* 1.875rem */
+  letter-spacing: 0.05rem;
+  color: var(--BolDH-Text-Grey, rgba(242, 242, 242, 0.76));
+}
+
+
+
 
 .chefcookie__box h1, .chefcookie__button {
   text-transform: lowercase!important;
@@ -28,27 +96,6 @@
 
 
 
-
-
-html {
-  font-size: 16px;
-}
-
-html * {
-  box-sizing: border-box;
-}
-
-h1, h2, h3, h4, h5, h6, p, a {
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  background-color: black;
-}
 
 header {
   position: sticky;
