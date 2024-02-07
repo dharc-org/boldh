@@ -14,7 +14,6 @@ document.addEventListener("DOMContentLoaded", function () { // wait for page to 
     });
   });
 
-
   // MANAGE MENU ON RESIZE (MOBILE-MEDIUM SCREENS VS LARGE DEVICES)
   // The menu in mobile version is a hamburger menu that opens and closes the nav menu on click and should be closed every time the user resizes the screen
   visualViewport.addEventListener("resize", () => { // add event listener for resize
@@ -309,13 +308,13 @@ function populateModal(id, eventStatus){ // eventStatus is the status of the eve
   let eventLinks = "";
   if (event.downloads){ // if event has download links, create the download links tags and add them to the main content
     event.downloads.forEach(function (evDwnl){
-      let aTag = '<a class="boldh-a boldh-a-download" target="_blank" href="'+evDwnl.url+'" download><p>'+evDwnl.text+'</p><div class="boldh-a-arrow-cnt">'+arrowDown+'</div></a>';
+      let aTag = '<a class="boldh-btn boldh-btn-download" target="_blank" href="'+evDwnl.url+'" download>'+evDwnl.text+'</a>';
       eventLinks += aTag; 
     });
   };
   if (event.urls){ // if event has external links, create the external links tags and add them to the main content
     event.urls.forEach(function (evUrl){
-      let aTag = "<a class='boldh-a' target='_blank' href="+evUrl.url+"><p>"+evUrl.text+"</p><div class='boldh-a-arrow-cnt'>"+arrow+"</div></a>";
+      let aTag = "<a class='boldh-btn' target='_blank' href="+evUrl.url+"><p>"+evUrl.text+"</p><div class='boldh-btn-arrow-cnt'>"+arrow+"</div></a>";
       eventLinks += aTag;
     });
   };
