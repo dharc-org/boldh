@@ -10,6 +10,7 @@
   --BolDH-Text-Grey: rgba(242, 242, 242, 0.76);
 }
 
+
 html {
   font-size: 16px;
 }
@@ -30,12 +31,32 @@ body {
   background-color: var(--BolDH-Black-Black, #131313);
 }
 
+/* COOKIES */
+.chefcookie__box h1, .chefcookie__button {
+  text-transform: lowercase!important;
+  font-family: SequelMedium;
+}
 
-/* TYPOGRAPHY */
+.chefcookie__box h1::first-letter, .chefcookie__button::first-letter {
+  text-transform: capitalize!important;
+}
 
+.chefcookie__message p {
+  font-family: SequelLight, sans-serif;
+  font-size: 1rem;
+  line-height: 150%; /* 1.875rem */
+  letter-spacing: 0.05rem;
+  color: var(--BolDH-Black-Dark3, #272727);
+}
+
+.chefcookie__button {
+  font-size: 1rem;
+}
+
+/* GENERAL TYPOGRAPHY */
 h2 {
   /* BolDH/H2 */
-  font-family: SequelMedium, sans-serif;
+  font-family: SequelMedium !important;
   font-size: 6rem;
   line-height: 110%; /* 6.6rem */
   color: var(--BolDH-White-White, #F2F2F2);
@@ -79,20 +100,6 @@ p {
 
 
 
-.chefcookie__box h1, .chefcookie__button {
-  text-transform: lowercase!important;
-  font-family: Sequel;
-}
-
-.chefcookie__box h1::first-letter, .chefcookie__button::first-letter {
-  text-transform: capitalize!important;
-}
-
-.chefcookie__message p {
-  font-family: SequelLight;
-  line-height: 150%; 
-  letter-spacing: 0.025rem;
-}
 
 
 
