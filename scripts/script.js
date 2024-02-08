@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function () { // wait for page to 
     changeLinkState(); 
     // rotating logo animation
     var theta = (document.documentElement.scrollTop / 1000) % Math.PI; // theta is the angle of rotation of the logo (it is a function of the scroll position)
-    document.getElementById("giant-logo").style.transform = "rotate(" + theta + "rad)"; // rotate logo by theta radians
+    document.getElementById("logo-rotate").style.transform = "rotate(" + theta + "rad)"; // rotate logo by theta radians
 
     // definition background color change
     var elem = document.querySelector("p#definition-text"); // get definition text element
@@ -263,7 +263,7 @@ function populateCard(tp, item) { // tp is the type of card (news, active or con
   };
   // Create html elements containing main content and link arrow
   let itemContentA = "<div class='card-box-content-a'>"+ infoDiv + itemTextDiv +"</div>";
-  let arrowDiv = "<div class='card-arrow-div'>"+ arrow +"</div></div>";
+  let arrowDiv = "<div class='card-arrow-cnt'>"+ arrow +"</div></div>";
   // Depending on the type of card, create the card box with the corresponding class and populate it with the content
   // Insert url link directly in the card of news and treat it as an anchor card
   // Insert onclick function in the card of events to populate the modal with the corresponding event data and content
