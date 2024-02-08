@@ -77,7 +77,7 @@ h3 {
 
 h4 {
   /* BolDH/H4 */
-  font-family: SequelBold, sans-serif;
+  font-family: SequelSemiBold, sans-serif;
   font-size: 2rem;
   line-height: 110%; /* 2.2rem */
   letter-spacing: 0.04rem;
@@ -169,38 +169,38 @@ p {
   align-items: center;
   border-radius: 0.5rem;
   text-decoration: none;
-  transition: all ease-in-out .3s;
+  transition: all ease-in .3s;
   text-decoration: none;
 }
 
 .dark-boldh-btn {
   border: 2px solid var(--BolDH-Accent-1, #32C3A0);
   color: var(--BolDH-White-White, #F2F2F2);
-  transition: all ease-in-out .3s;
+  transition: all ease-in .3s;
 }
 
 .light-boldh-btn {
   border: 2px solid var(--BolDH-Black-Dark3, #272727);
   color: var(--BolDH-Black-Dark3, #272727);
   align-self: stretch;
-  transition: all ease-in-out .3s;
+  transition: all ease-in .3s;
 }
 
 .light-boldh-btn svg path {
   stroke: var(--BolDH-Black-Dark3, #272727);
-  transition: all ease-in-out .3s;
+  transition: all ease-in .3s;
 }
 
 .boldh-btn-arrow-cnt {
   height: 1.5rem;
   width: auto;
-  transition: all ease-in-out .3s;
+  transition: all ease-in .3s;
 }
 
 .boldh-btn-arrow-cnt svg {
   height: 100%;
   width: auto;
-  transition: all ease-in-out .3s;
+  transition: all ease-in .3s;
 }
 
 .boldh-btn-download {
@@ -554,13 +554,11 @@ nav ul li a:not(.active):before {
   background: var(--BolDH-White-Pure, #FFFFFF);
 }
 
-
 .division-scroll-composition {
   width: 50%;
   display: flex;
   flex-direction: column;
 }
-
 
 .division-logo-container {
   display: flex;
@@ -586,7 +584,7 @@ nav ul li a:not(.active):before {
   justify-content: center;
   align-items: flex-start;
   gap: 1.5rem;
-  padding: 0 7.5vw 0 5rem;
+  padding: 0 15vw 0 5rem;
 }
 
 .division-hp {
@@ -609,147 +607,103 @@ nav ul li a:not(.active):before {
   align-self: stretch;
 }
 
-#division-logo-0 {
+#division-logo-1 {
   z-index: 8 !important;
 }
 
-#division-logo-1 {
+#division-logo-2 {
   z-index: 7 !important;
 }
 
-#division-logo-2 {
+#division-logo-3 {
   z-index: 6 !important;
 }
 
-#division-logo-3 {
+#division-logo-4 {
   z-index: 5 !important;
 }
 
-#division-logo-4 {
+#division-logo-5 {
   z-index: 4 !important;
 }
 
-#division-logo-5 {
+#division-logo-6 {
   z-index: 3 !important;
 }
 
-#division-logo-6 {
+#division-logo-7 {
   z-index: 2 !important;
 }
 
 
-
-
-/* --------------- SIXTH SECTION ----------------*/
-
-#news-section {
+/* --------------- NEWS & AGENDA SECTION ----------------*/
+#news-section, #agenda-section {
   width: 100%;
-  margin: 0;
-  padding: 0;
-  align-items: center;
-  background-color: black;
+  padding: 16rem 0;
   display: flex;
-  flex-wrap: wrap;
-  padding-bottom: 60px;
-  padding-top: 200px;
-  padding-bottom: 200px;
-  transition: all 1s linear;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4rem;
+  align-self: stretch;
+  border-bottom: 2px solid var(--BolDH-White-White, #F2F2F2);
 }
 
-.news-container {
+#news-title-container, #agenda-title-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 0.5rem;
+  padding-left: 7.5vw;
+}
+
+.news-box-container, .agenda-box-container {
   width: 100%;
-}
-
-.news-title-container {
-    margin-left: 10%;
-    margin-right: 10%;
-    display: flex;
-    width: 80%;
-    flex-wrap: wrap;
-    padding-bottom: 50px;
-}
-
-.news-subtitle {
-  color: white;
-  margin:0;
-  font-size: 30px;
-  font-family: Founders;
-  font-weight: normal;
-  cursor:default;
-}
-
-.news-main-title {
-  color: white;
-  font-family: Sequel;
-  font-size: 150px;  
-  margin: 0;
-  width: 100%;
-  font-weight: normal;
-  cursor: default;
-  margin-bottom: 50px;
-}
-
-.news-box-container {
   display: flex;
   flex-direction: row;
   align-items: stretch;
-  gap: 2rem;
-  gap: 2rem;
+  gap: 2.5rem;
   overflow: auto;
   padding-bottom: 2rem;
 }
 
+.cb:first-child {
+  margin-left: 7.5vw;
+}
 
-
+/* ------------- CARDS ------------- */
 .card-box {
   text-decoration: none;
-  transition: all .3s ease-in-out;
+  transition: all .3s ease-in;
   cursor: pointer;
-
   display: flex;
-  min-width: 27rem;
-  max-width: 27rem;
+  width: 25rem;
   min-height: min-content;
   max-height: 90vh;
   padding: 2rem 1.5rem;
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
-
   border-radius: 0.5rem;
   border: 2px solid var(--BolDH-White-White, #F2F2F2);
   background: var(--BolDH-Black-Dark2, #252525);
 }
 
-
-
 .card-box-concluded {
   text-decoration: none;
-  transition: all .3s ease-in-out;
+  transition: all .3s ease-in;
   cursor: pointer;
-
   display: flex;
-  min-width: 27rem;
-  max-width: 27rem;
+  width: 27rem;
   min-height: min-content;
   max-height: 90vh;
   padding: 2rem 1.5rem;
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
-
   border-radius: 0.5rem;
   border: 2px solid transparent;
 }
-
-
-
-
-
-.cb:first-child {
-  margin-left: 10% !important;
-}
-
 
 .card-box-content-a {
   display: flex;
@@ -769,56 +723,31 @@ nav ul li a:not(.active):before {
   flex-wrap: wrap;
 }
 
-/*
 .card-type, .card-division, .card-place, .agenda-concluded, .agenda-active {
-  color: white;
-  font-family: SequelLight;
+  color: var(--BolDH-White-White, #F2F2F2);
   font-size: 1rem;
-  line-height: 150%; 
-  letter-spacing: 0.02rem;
-  text-transform: capitalize;
-  display: flex;
-  padding: 0.375rem 0.75rem;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5rem;
-  border-radius: 0.5rem;
-  border: 2px solid white;
-}
-*/
-
-
-.card-type, .card-division, .card-place, .agenda-concluded, .agenda-active {
-  color: white;
-  font-family: Sequel;
-  font-size: 1rem;
-  line-height: 150%; 
+  font-family: SequelSemiBold;
+  line-height: 150%; /* 1.5rem */
   letter-spacing: 0.05rem;
   text-transform: capitalize;
   padding: 0.375rem 0.75rem;
-  border-left: 2px solid white;
+  border-left: 2px solid var(--BolDH-White-White, #F2F2F2);
 }
-
-
-
 
 .agenda-concluded {
   border-left: 2px solid #E03800;
-  font-family: Sequel;
 }
 
 .agenda-active {
   border-left: 2px solid #32C3A0;
-  font-family: Sequel;
 }
-
 
 .card-text-div {
   display: flex;
   width: 100%;
   flex-direction: column;
   align-items: flex-start;
-  gap: 0.5rem;
+  gap: 0.75rem;
 }
 
 .card-text {
@@ -834,186 +763,19 @@ nav ul li a:not(.active):before {
   -webkit-box-orient: vertical; 
   -webkit-line-clamp: 4; 
   overflow: hidden; 
-  text-overflow: ellipsis; 
-}
-
-.card-title {
-  align-self: stretch;
-  color: white;
-  font-family: SequelLight;
-  font-weight: 350;
-  font-size: 2rem;
-  line-height: 110%; /* 2.75rem */
-  padding-bottom: 4px; /*This is done since the overflow:hidden used in the previous block to hide log titles hides also parts of some lowercase letters going under the x-height line */
-}
-
-.card-text {
-  align-self: stretch;
-  color: rgba(255, 255, 255, 0.75);
-  font-family: SequelLight;
-  font-size: 1.25rem;
-  font-style: normal;
-  font-weight: 350;
-  line-height: 150%; /* 1.875rem */
-  letter-spacing: 0.025rem;
+  text-overflow: ellipsis;
+  padding-bottom: 4px;
 }
 
 .card-arrow-cnt {
   height: 3rem;
-  transition: all ease-in-out .4s;
+  transition: all ease-in .3s;
 }
 
 .card-arrow-cnt svg {
   height: 100%;
   width: auto;
 }
-
-
-
-/* --------------- SEVENTH SECTION ----------------*/
-
-#agenda-section {
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  align-items: center;
-  background-color: black;
-  display: flex;
-  flex-wrap: wrap;
-  padding-bottom: 60px;
-  padding-top: 200px;
-  padding-bottom: 200px;
-  transition: all 1s linear;
-}
-
-.agenda-container {
-  width: 100%;
-}
-
-.agenda-title-container {
-    margin-left: 10%;
-    margin-right: 10%;
-    display: flex;
-    width: 80%;
-    flex-wrap: wrap;
-    padding-bottom: 50px;
-    justify-content: flex-end;
-}
-
-.agenda-subtitle {
-  color: white;
-    margin:0;
-    font-size: 30px;
-    font-family: Founders;
-    font-weight: normal;
-    cursor:default;
-}
-
-.agenda-main-title {
-  color: white;
-  font-family: Sequel;
-  font-size: 150px;  
-  margin: 0;
-  width: 100%;
-  font-weight: normal;
-  cursor:default;
-  margin-bottom: 50px;
-  text-align: right;
-}
-
-.agenda-box-container {
-    display: flex;
-    flex-direction: row;
-    align-items: stretch;
-    gap: 2rem;
-    gap: 2rem;
-    overflow: auto;
-    padding-bottom: 2rem;
-}
-
-
-
-.agenda-box {
-  min-width: 400px;
-  margin: 20px;
-  display: inline-block;
-  padding: 30px;
-  transition: all 0.5s ease;
-  cursor: default;
-  /*cursor: pointer; */
-}
-
-
-
-.agenda-box-anchor:first-child {
-  margin-left: 10% !important;
-}
-
-.agenda-division {
-  color: white;
-  font-family: SequelLight;
-  font-size: 15px;  
-  /*cursor: pointer; */
-  margin: 0;
-  display: inline-block;
-  text-decoration: underline;
-}
-
-.agenda-type {
-  color: white;
-  font-family: SequelLight;
-  font-size: 15px;  
-  /*cursor: pointer; */
-  margin: 0;
-  letter-spacing: 2px;
-  white-space:normal;
-  border: 1px solid white;
-  padding: 4px 7px 4px 7px;
-  border-radius: 4px;
-  margin-right: 10px;
-  text-transform: uppercase;
-  margin-top: 0.75rem;
-}
-
-.agenda-date {
-  color: white;
-  font-family: SequelLight;
-  font-size: 15px;  
-  /*cursor: pointer; */
-  white-space:normal;
-  display: inline-block;
-  border: 1px solid white;
-  padding: 4px 7px 4px 7px;
-  border-radius: 4px;
-  margin-right: 10px;
-}
-
-.agenda-title {
-  color: white;
-  font-family: Sequel;
-  font-size: 30px;  
-  /*cursor: pointer; */
-  white-space:normal;
-  margin: 0;
-  font-weight: normal;
-  padding-top: 20px;
-}
-
-.agenda-text {
-  color: white;
-  font-family: SequelLight;
-  font-size: 20px;  
-  /*cursor: pointer; */
-  white-space:normal;
-  margin: 0;
-  margin-top: 5px;
-}
-
-.concluded {
-  background-color: white;
-  border-radius: 10px;
-}
-
 
 
 
@@ -1326,7 +1088,7 @@ text-align: right;
 
 .credits-arrow-cnt {
   height: 30px;
-  transition: all ease-in-out .4s;
+  transition: all ease-in .3s;
 }
 
 .credits-arrow-cnt svg {
@@ -1343,16 +1105,16 @@ text-align: right;
   text-decoration: inherit;
   color: inherit;
   cursor: pointer;
-  transition: all ease-in-out .3s;
+  transition: all ease-in .3s;
 }
 
 
 .contacts-box .credits-arrow-cnt svg path {
-  transition: all ease-in-out .3s;
+  transition: all ease-in .3s;
 }
 
 .contacts-box p {
-  transition: all ease-in-out .3s;
+  transition: all ease-in .3s;
 }
 
 .contacts-box:last-child {
@@ -1393,7 +1155,7 @@ text-align: right;
 .footer-copy-container a {
   text-decoration: underline 2px #32C3A0;
   cursor: pointer;
-  transition: all ease-in-out .3s;
+  transition: all ease-in .3s;
 }
 
 
@@ -1481,18 +1243,18 @@ text-align: right;
 
   .dark-boldh-btn:hover {
     border-color: var(--BolDH-White-White, #F2F2F2);
-    transition: all ease-in-out .3s;
+    transition: all ease-in .3s;
   }
 
   .light-boldh-btn:hover {
     background-color: var(--BolDH-Black-Dark3, #272727);
     color: var(--BolDH-White-Pure, #FFFFFF);
-    transition: all ease-in-out .3s;
+    transition: all ease-in .3s;
   }
 
   .light-boldh-btn:hover svg path {
     stroke: var(--BolDH-White-Pure, #FFFFFF);
-    transition: all ease-in-out .3s;
+    transition: all ease-in .3s;
   }
 
   .hero-boldh-btn:hover {
@@ -1547,19 +1309,19 @@ text-align: right;
   }
 
   .card-box:hover {
-    transition: all .3s ease-in-out;
+    transition: all .3s ease-in;
     background-color: var(--BolDH-Black-Dark3, #272727);
     border-color: var(--BolDH-Accent-1, #32C3A0);
   }
   
   .card-box-concluded:hover {
-    transition: all .3s ease-in-out;
+    transition: all .3s ease-in;
     border-color: var(--BolDH-Accent-2, #DD5423);
   }
   
   .card-box-concluded:hover .card-arrow-cnt, .card-box:hover .card-arrow-cnt {
     margin-left: 1.2rem;
-    transition: all .3s ease-in-out;
+    transition: all .3s ease-in;
   }
   
   .agenda-box:hover {
@@ -1571,23 +1333,23 @@ text-align: right;
   .footer-copy-container a:hover {
     text-decoration: none;
     color: #32C3A0;
-    transition: all ease-in-out .3s;
+    transition: all ease-in .3s;
   }
 
   .contacts-box:hover {
-    transition: all ease-in-out .3s;
+    transition: all ease-in .3s;
     background-color: white;
   }
 
   .contacts-box:hover p{
     color: #32C3A0;
-    transition: all ease-in-out .3s;
+    transition: all ease-in .3s;
   }
   
   
   .contacts-box:hover .credits-arrow-cnt svg path {
     stroke: #32C3A0!important;
-    transition: all ease-in-out .3s;
+    transition: all ease-in .3s;
   }
   
 

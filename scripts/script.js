@@ -229,9 +229,9 @@ function populateCard(tp, item) { // tp is the type of card (news, active or con
   let itemTitle = "";
   if (item.title.length > 120) {
     let newTitle = item.title.substring(0, 120) + "...";
-    itemTitle = "<h3 class='card-title'>" + newTitle + "</h3>";;
+    itemTitle = "<h4 class='card-title'>" + newTitle + "</h4>";;
   } else {
-    itemTitle = "<h3 class='card-title'>" + item.title + "</h3>";
+    itemTitle = "<h4 class='card-title'>" + item.title + "</h4>";
   }
   // Manage card text lenght avoiding too long content and breaking after a specific number of characters
   let itemText = ""; // !!! It could be changed with subtitle for events
