@@ -284,17 +284,17 @@ function populateModal(id, eventStatus){ // eventStatus is the status of the eve
   modalContent.innerHTML = ""; // reset modal content 
   let event = agenda_array.find(x => x.id == id);  // find event in agenda_array with id equal to the id of the event clicked in the card
   let eventTitle = "<h4 id='modal-title'>"+event.title+"</h4>"; // create title and subtitle of the event in the modal
-  let eventSubtitle = "<p id='modal-sbt'>"+event.subtitle+"</p>";
+  let eventSubtitle = "<p class='subtitle' id='modal-sbt'>"+event.subtitle+"</p>";
   var modalTitleSubtitle = "<div id='modal-t-sbt-cnt'>"+ eventTitle + eventSubtitle +"</div>"; 
   // create date and place tags of the event in the modal
-  let eventDate = "<p class='modal-tag modal-date-"+eventStatus+"'><span class='bold-text'>Date: </span>"+event.date+" "+event.time+"</p>";
-  let eventPlace = "<p class='modal-tag modal-date-"+eventStatus+"'><span class='bold-text'>Place: </span>"+event.place_extended+"</p>";
+  let eventDate = "<p class='modal-tag modal-date-"+eventStatus+"'><span class='keyword'>Date: </span>"+event.date+" "+event.time+"</p>";
+  let eventPlace = "<p class='modal-tag modal-date-"+eventStatus+"'><span class='keyword'>Place: </span>"+event.place_extended+"</p>";
   // create division and type tags of the event in the modal
   let eventDivision = "<p class='modal-tag'>"+event.division+"</p>"
   let eventType = "<p class='modal-tag'>"+event.type+"</p>"
   let divisionType = "<div id='modal-division-type-cnt'>"+ eventDivision + eventType +"</div>";
   // compose the group of tags of the event in the modal
-  let tagGroup = "<div id='modal-tag-group'>"+ eventDate + eventPlace + divisionType +"</div>";
+  let tagGroup = "<div id='modal-tag-group'>"+ divisionType + eventDate + eventPlace +"</div>";
   // Set the main content variable and populate it with the text, image and links of the event
   let mainContent = ""
   let eventText = "<p class='modal-text'>"+event.text+"</p>";
@@ -308,13 +308,13 @@ function populateModal(id, eventStatus){ // eventStatus is the status of the eve
   let eventLinks = "";
   if (event.downloads){ // if event has download links, create the download links tags and add them to the main content
     event.downloads.forEach(function (evDwnl){
-      let aTag = '<a class="boldh-btn boldh-btn-download" target="_blank" href="'+evDwnl.url+'" download>'+evDwnl.text+'</a>';
+      let aTag = '<a class="boldh-btn secondary-btn" target="_blank" href="'+evDwnl.url+'" download>'+evDwnl.text+'</a>';
       eventLinks += aTag; 
     });
   };
   if (event.urls){ // if event has external links, create the external links tags and add them to the main content
     event.urls.forEach(function (evUrl){
-      let aTag = "<a class='boldh-btn' target='_blank' href="+evUrl.url+"><p>"+evUrl.text+"</p><div class='boldh-btn-arrow-cnt'>"+arrow+"</div></a>";
+      let aTag = "<a class='boldh-btn dark-btn link-btn target='_blank' href="+evUrl.url+">"+evUrl.text+"<div class='boldh-btn-arrow-cnt'>"+arrow+"</div></a>";
       eventLinks += aTag;
     });
   };
