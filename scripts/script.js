@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", function () { // wait for page to 
     });
   });
 
+
   // MANAGE MENU ON RESIZE (MOBILE-MEDIUM SCREENS VS LARGE DEVICES)
   // The menu in mobile version is a hamburger menu that opens and closes the nav menu on click and should be closed every time the user resizes the screen
   visualViewport.addEventListener("resize", () => { // add event listener for resize
@@ -40,46 +41,6 @@ document.addEventListener("DOMContentLoaded", function () { // wait for page to 
     var theta = (document.documentElement.scrollTop / 1000) % Math.PI; // theta is the angle of rotation of the logo (it is a function of the scroll position)
     document.getElementById("logo-rotate").style.transform = "rotate(" + theta + "rad)"; // rotate logo by theta radians
 
-    // definition background color change
-    var elem = document.querySelector("p#definition-text"); // get definition text element
-    if (isInViewport(elem)) { // if definition text is in viewport (look at isInViewport function below)
-      document.getElementById("fourth-section").style.backgroundColor = "black";
-      document.getElementsByClassName("text-highlight")[0].style.backgroundColor = "white";
-      document.getElementsByClassName("text-highlight")[1].style.backgroundColor = "white";
-    }
-  
-    var reset = document.querySelector("span#reset-viewport"); // get reset viewport element (it is a span element at the end of the section)
-    if (isInViewport(reset)) { // if reset viewport element is in viewport (look at isInViewport function below)
-      document.getElementById("fourth-section").style.backgroundColor = "white";
-      document.getElementsByClassName("text-highlight")[0].style.backgroundColor = "white";
-      document.getElementsByClassName("text-highlight")[1].style.backgroundColor = "white";
-    }
-
-    // Code below contrasts with the scroll function leading to section of clicked nav-li element
-    /*
-    // moving news on scroll animation
-  
-    var oldScrollY = window.scrollY;
-  
-    var element = document.getElementById("news-box-container");
-    if (isInViewport(element)) {
-      if (oldScrollY < window.scrollY) {
-        document.getElementById("news-box-container").scrollLeft += theta + 10;
-      } else {
-        document.getElementById("news-box-container").scrollLeft -= theta + 10;
-      }
-    }
-    // moving events agenda on scroll animation
-    var element = document.getElementById("agenda-box-container");
-    if (isInViewport(element)) {
-      if (oldScrollY < window.scrollY) {
-        document.getElementById("agenda-box-container").scrollLeft += theta + 10;
-      } else {
-        document.getElementById("agenda-box-container").scrollLeft -= theta + 10;
-      }
-    }
-    oldScrollY = window.scrollY;
-    */
   };
 
 
@@ -92,6 +53,22 @@ document.addEventListener("DOMContentLoaded", function () { // wait for page to 
   document.getElementById("modal-close-icon").addEventListener("click", function(){
     closeModal();
   });
+
+  // OPEN/CLOSE TOPIC DESCRIPTION
+  document.querySelectorAll(".research-topic").forEach(topic => {
+    topic.addEventListener("click", function(){
+      let box = this.querySelector('p');
+      let arr = this.querySelector('.topic-arrow-cnt')
+      // Toggle the display property of the 'p' element
+      if (box.style.display === 'none' || box.style.display == '') {
+        box.style.display = 'block';
+        arr.classList.add('arrow-rotate')
+      } else {
+        box.style.display = 'none';
+        arr.classList.remove('arrow-rotate')
+      }
+    })
+  })
 
 
 

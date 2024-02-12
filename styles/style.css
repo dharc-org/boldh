@@ -69,7 +69,7 @@ h2 {
 
 h3 {
   /* BolDH/H3 */
-  font-family: SequelBold, sans-serif;
+  font-family: SequelSemiBold, sans-serif;
   font-size: 3rem;
   line-height: 110%; /* 3.3rem */
   color: var(--BolDH-White-White, #F2F2F2);
@@ -126,7 +126,7 @@ p {
   bottom: -0.2rem;
   transform-origin: left;
   transform: scaleX(1);
-  transition: transform .3s ease-in;
+  transition: transform .2s ease-in;
 }
 
 .boldh-btn {
@@ -142,7 +142,7 @@ p {
   align-items: center;
   border-radius: 0.5rem;
   text-decoration: none;
-  transition: all ease-in .3s;
+  transition: all ease-in .2s;
   text-decoration: none;
 }
 
@@ -150,26 +150,26 @@ p {
   width: fit-content;
   border: 2px solid var(--BolDH-Accent-1, #32C3A0);
   color: var(--BolDH-White-White, #F2F2F2);
-  transition: all ease-in .3s;
+  transition: all ease-in .2s;
 }
 
 .dark-btn {
   min-width: 25rem;
   border: 2px solid var(--BolDH-Accent-1, #32C3A0);
   color: var(--BolDH-White-White, #F2F2F2);
-  transition: all ease-in .3s;
+  transition: all ease-in .2s;
 }
 
 .light-btn {
   border: 2px solid var(--BolDH-Black-Dark3, #272727);
   color: var(--BolDH-Black-Dark3, #272727);
   align-self: stretch;
-  transition: all ease-in .3s;
+  transition: all ease-in .2s;
 }
 
 .light-btn svg path {
   stroke: var(--BolDH-Black-Dark3, #272727);
-  transition: all ease-in .3s;
+  transition: all ease-in .2s;
 }
 
 .hero-btn {
@@ -183,7 +183,7 @@ p {
   border-radius: 0.5rem;
   border: 2px solid var(--BolDH-Accent-1, #32C3A0);
   background: var(--BolDH-Black-Black, #131313);
-  transition: all ease-in .3s;
+  transition: all ease-in .2s;
   text-decoration: none;
   color: var(--BolDH-White-White, #F2F2F2);
   font-family: SequelSemiBold;
@@ -193,19 +193,19 @@ p {
 }
 
 .hero-btn svg {
-  transition: all ease-in .3s;
+  transition: all ease-in .2s;
 }
 
 .boldh-btn-arrow-cnt {
   height: 1.5rem;
   width: auto;
-  transition: all ease-in .3s;
+  transition: all ease-in .2s;
 }
 
 .boldh-btn-arrow-cnt svg, .mini-boldh-btn-arrow-cnt svg {
   height: 100%;
   width: auto;
-  transition: all ease-in .3s;
+  transition: all ease-in .2s;
 }
 
 .mini-btn {
@@ -215,14 +215,14 @@ p {
   justify-content: space-between;
   align-items: center;
   color: var(--BolDH-White-White, #F2F2F2);
-  transition: all ease-in .3s;
+  transition: all ease-in .2s;
   border: 2px solid var(--BolDH-Accent-1, #32C3A0);
 }
 
 .mini-boldh-btn-arrow-cnt {
-  height: 1rem;
+  height: 1.15rem;
   width: auto;
-  transition: all ease-in .3s;
+  transition: all ease-in .2s;
 }
 
 
@@ -292,7 +292,7 @@ nav ul li a:not(.active):before {
   bottom: -0.2rem;
   transform-origin: right;
   transform: scaleX(0);
-  transition: transform .3s ease-in;
+  transition: transform .2s ease-in;
 }
 
 /* HAMBURGER MENU */
@@ -304,7 +304,7 @@ nav ul li a:not(.active):before {
 }
 /* Hamburger composition */
 #hamburger div {
-  transition: all ease-in .3s;
+  transition: all ease-in .2s;
   height: 2px;
   width: 100%;
   background-color: var(--BolDH-White-White, #F2F2F2);
@@ -455,11 +455,10 @@ nav ul li a:not(.active):before {
 /* ----------- BolDH — Topics SECTION ----------- */
 #boldh-topics-section {
   display: flex;
+  flex-direction: column;
+  gap: 16rem;
   width: 100%;
   padding-top: 16rem;
-  justify-content: flex-end;
-  align-items: flex-start;
-  gap: 10rem;
   padding-bottom: 16rem;
 }
 
@@ -471,19 +470,17 @@ nav ul li a:not(.active):before {
   height: 80vh;
 }
 
-#bt-scroll {
+#boldh-def {
   display: flex;
-  width: 55%;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-end;
+  width: 100%;
+  justify-content: flex-end;
+  align-items: flex-start;
   gap: 16rem;
-  flex-shrink: 0;
+  padding-right: 7.5vw;
 }
 
 #boldh-dscr {
   display: flex;
-  padding-right: 7.5vw;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
@@ -522,12 +519,18 @@ nav ul li a:not(.active):before {
 
 .research-topic {
   display: flex;
-  padding: 4rem 2rem 4rem 0rem;
+  padding: 4rem 7.5vw;
   flex-direction: column;
   justify-content: center;
   align-items: flex-end;
   align-self: stretch;
   border-bottom: 2px solid var(--BolDH-White-White, #F2F2F2);
+  transition: all ease-in .2s;
+  cursor: pointer;
+}
+
+.research-topic:first-child {
+  border-top: 2px solid var(--BolDH-White-White, #F2F2F2);
 }
 
 .rt-content {
@@ -540,7 +543,8 @@ nav ul li a:not(.active):before {
 }
 
 .rt-content p {
-  padding-right: 7.5vw;
+  padding-right: 25%;
+  display: none;
 }
 
 .rt-title-cnt {
@@ -551,13 +555,20 @@ nav ul li a:not(.active):before {
 }
 
 .topic-arrow-cnt {
-  width: 2.75rem;
-  height: 2.75rem;
+  width: 3rem;
+  height: 3rem;
+  transform: rotate(0deg);
+  transition: all ease-in .2s;
 }
 
 .topic-arrow-cnt svg {
   width: 100%;
   height: 100%;
+}
+
+.arrow-rotate {
+  transform: rotate(45deg);
+  transition: all ease-in .2s;
 }
 
 /* --------------- UNITS SECTION ----------------*/
@@ -687,10 +698,11 @@ nav ul li a:not(.active):before {
 /* ------------- CARDS ------------- */
 .card-box {
   text-decoration: none;
-  transition: all .3s ease-in;
+  transition: all .2s ease-in;
   cursor: pointer;
   display: flex;
-  width: 25rem;
+  min-width: 25rem;
+  max-width: 25rem;
   min-height: min-content;
   max-height: 90vh;
   padding: 2rem 1.5rem;
@@ -704,7 +716,7 @@ nav ul li a:not(.active):before {
 
 .card-box-concluded {
   text-decoration: none;
-  transition: all .3s ease-in;
+  transition: all .2s ease-in;
   cursor: pointer;
   display: flex;
   width: 27rem;
@@ -782,7 +794,7 @@ nav ul li a:not(.active):before {
 
 .card-arrow-cnt {
   height: 3rem;
-  transition: all ease-in .3s;
+  transition: all ease-in .2s;
 }
 
 .card-arrow-cnt svg {
@@ -1004,7 +1016,7 @@ nav ul li a:not(.active):before {
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
-  transition: all ease-in .3s;
+  transition: all ease-in .2s;
   text-decoration: none;
   border-top: 2px solid var(--BolDH-White-White, #F2F2F2);
 }
@@ -1015,7 +1027,7 @@ nav ul li a:not(.active):before {
 
 .credits-arrow-cnt {
   height: 2rem;
-  transition: all ease-in .3s;
+  transition: all ease-in .2s;
 }
 
 .credits-arrow-cnt svg {
@@ -1024,18 +1036,18 @@ nav ul li a:not(.active):before {
 }
 
 .contacts-box .credits-arrow-cnt svg path {
-  transition: all ease-in .3s;
+  transition: all ease-in .2s;
 }
 
 .contacts-box .contacts-body {
   text-align: right;
   font-size: 1.5rem;
-  transition: all ease-in .3s;
+  transition: all ease-in .2s;
 }
 
 .contacts-box .subtitle {
   color: var(--BolDH-White-White, #F2F2F2);
-  transition: all ease-in .3s;
+  transition: all ease-in .2s;
 }
 
 #footer-copy-container {
@@ -1081,50 +1093,52 @@ nav ul li a:not(.active):before {
     bottom: -0.2rem;
     transform-origin: left;
     transform:scaleX(1);
-    transition: transform .3s ease-in;
+    transition: transform .2s ease-in;
   }
 
   /* ------- BTNS and LINKS ------- */
   .secondary-btn:hover {
+    background-color: var(--BolDH-Black-Dark2, #252525);
     border-color: var(--BolDH-White-White, #F2F2F2);
-    transition: all ease-in .3s;
+    transition: all ease-in .2s;
   }
 
   .dark-btn:hover {
     background-color: var(--BolDH-Accent-1, #32C3A0);
-    transition: all ease-in .3s;
+    transition: all ease-in .2s;
   }
 
   .light-btn:hover {
     background-color: var(--BolDH-Black-Dark3, #272727);
     color: var(--BolDH-White-Pure, #FFFFFF);
-    transition: all ease-in .3s;
+    transition: all ease-in .2s;
   }
 
   .light-btn:hover svg path {
     stroke: var(--BolDH-White-Pure, #FFFFFF);
-    transition: all ease-in .3s;
+    transition: all ease-in .2s;
   }
 
   .scroll-btn:hover svg {
     transform: rotate(45deg);
-    transition: all ease-in .3s;
+    transition: all ease-in .2s;
   }
 
   .link-btn:hover {
     padding-right: 1.5rem;
-    transition: all ease-in .3s;
+    transition: all ease-in .2s;
   }
 
   .mini-btn:hover {
+    background-color: var(--BolDH-Black-Dark1, #212121);
     border: 2px solid var(--BolDH-White-White, #F2F2F2);
     padding-right: 0.8rem;
-    transition: all ease-in .3s;
+    transition: all ease-in .2s;
   }
 
   .boldh-a-inline:hover {
     color: var(--BolDH-Accent-1, #32C3A0);
-    transition: transform .3s ease-in;
+    transition: transform .2s ease-in;
   }
 
   .boldh-a-inline:hover:before {
@@ -1135,23 +1149,35 @@ nav ul li a:not(.active):before {
     bottom: -0.2rem;
     transform-origin: right;
     transform: scaleX(0);
-    transition: transform .3s ease-in;
+    transition: transform .2s ease-in;
   }
+
+  /* ------ Topics ------ */
+  .research-topic:hover {
+    background-color: var(--BolDH-Black-Dark1);
+    transition: all ease-in .2s;
+  }
+
+  .research-topic:hover .topic-arrow-cnt {
+    transform: rotate(45deg);
+    transition: all ease-in .2s;
+  }
+
   /* ------ Cards ------ */
   .card-box:hover {
-    transition: all .3s ease-in;
+    transition: all .2s ease-in;
     background-color: var(--BolDH-Black-Dark3, #272727);
     border-color: var(--BolDH-Accent-1, #32C3A0);
   }
   
   .card-box-concluded:hover {
-    transition: all .3s ease-in;
+    transition: all .2s ease-in;
     border-color: var(--BolDH-Accent-2, #DD5423);
   }
   
   .card-box-concluded:hover .card-arrow-cnt, .card-box:hover .card-arrow-cnt {
     margin-left: 1.2rem;
-    transition: all .3s ease-in;
+    transition: all .2s ease-in;
   }
   
   .agenda-box:hover {
@@ -1159,18 +1185,18 @@ nav ul li a:not(.active):before {
   }
 
   .contacts-box:hover {
-    transition: all ease-in .3s;
+    transition: all ease-in .2s;
     background-color: var(--BolDH-White-White, #F2F2F2);
   }
 
   .contacts-box:hover p {
     color: var(--BolDH-Accent-1, #32C3A0);
-    transition: all ease-in .3s;
+    transition: all ease-in .2s;
   }
   
   .contacts-box:hover .credits-arrow-cnt svg path {
     stroke: var(--BolDH-Accent-1, #32C3A0);
-    transition: all ease-in .3s;
+    transition: all ease-in .2s;
   }
 
 }
