@@ -1,23 +1,30 @@
 [
   {
-    "title": "The new version of the ODI ontology is public",
+    "title": "DEBUG",
     "division": "/DH.arc",
-    "type": "Research",
-    "text": "Discover more about the study of Italo Calvino's <i>macchina narrativa combinatoria</i> of the first collection of <i>Il castello dei destini incrociati</i> with our web application!",
-    "url": "https://projects.dharc.unibo.it/odi"
-   },
-   {
-    "title": "'BolDH — Le Digital Humanities dalla scuola al lavoro' is now on YouTube",
-    "division": "BolDH",
-    "type": "Digital resources",
-    "text": "You can now revive the study day held on 27th September 2023 on the YouTube channel of the Department of Classical Philology and Italian Studies.",
-    "url": "https://www.youtube.com/watch?v=1HEcsAH4qm0&list=PLHbRjD1KlyrQDXdseNR2bGH6V2v03_Ec6&ab_channel=DipartimentodiFilologiaClassicaeItalianistica"
-   },
-   {
+    "type": "Conference",
+    "text": "DEBUG",
+    "url": "www.debug-boldh.it"
+  },
+  {
     "title": "Vadipac - Digital Valorization of UNIBO's Cultural Heritage",
     "division": "DL",
     "type": "Digitization",
     "text": "Announcing 'Vadipac', a project that aims to survey, digitize, catalog, preserve, and make more easily accessible the cultural heritage preserved in the university's institutions, starting from that of the BUB and other libraries of UNIBO.",
     "url": "https://site.unibo.it/ficlit-fondo-cultura/it"
-   }
+  },
+  {
+    "title": "BolDH \u2014 Le Digital Humanities dalla scuola al lavoro' is now on YouTube",
+    "division": "BolDH",
+    "type": "Digital resources",
+    "text": "You can now revive the study day held on 27th September 2023 on the YouTube channel of the Department of Classical Philology and Italian Studies.",
+    "url": "https://www.youtube.com/watch?v=1HEcsAH4qm0&list=PLHbRjD1KlyrQDXdseNR2bGH6V2v03_Ec6&ab_channel=DipartimentodiFilologiaClassicaeItalianistica"
+  },
+  {
+    "title": "The new version of the ODI ontology is public",
+    "division": "/DH.arc",
+    "type": "Research",
+    "text": "Discover more about the study of Italo Calvino's <i>macchina narrativa combinatoria</i> of the first collection of <i>Il castello dei destini incrociati</i> with our web application!",
+    "url": "https://projects.dharc.unibo.it/odi"
+  }
 ]
