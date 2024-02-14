@@ -4,17 +4,11 @@ import pandas as pd
 import requests
 import json
 import re
+import sys
 import os
-import datetime
 
-# Load credentials and authorize the Google Sheets API
-scope = ['https://spreadsheets.google.com/feeds']
-creds = ServiceAccountCredentials.from_json_keyfile_name('boldh-412810-18a2c29d988c.json', scope)
-client = gspread.authorize(creds)
-
-# Open the Google Sheet using its ID
-sheet_id = '1WKRWIkQ5qqr5caCEl5yaeHHuzDv_yF0fGpQs9dvBTgk'
-document = client.open_by_key(sheet_id)
+# debug
+sys.stderr.write("Debug: This is a debug statement\n")
 
 # PROCESSES THE CONTENTS OF MULTIVALUE CELLS
 def agenda_json_builder(entries_list):
@@ -55,20 +49,33 @@ def get_data_from_sheet(document, sheet, file_name):
     if 'agenda' in file_name:
         output_list = agenda_json_builder(output_list)
 
+    # sort elements from latest to oldest
+    output_list.reverse()
+
     # Convert list to JSON format
     json_el = json.dumps(output_list, indent=2)
-
+    
     with open(f'content/{file_name}', 'w') as file:
         file.write(json_el)
 
+    return json_el
+
+# Load credentials and authorize the Google Sheets API
+scope = ['https://spreadsheets.google.com/feeds']
+creds_json_str = os.environ.get('GOOGLE_SHEETS_CREDS')
+creds_dict = json.loads(creds_json_str)
+creds = ServiceAccountCredentials.from_json_keyfile_dict(creds_dict, scope)
+client = gspread.authorize(creds)
+
+# Open the Google Sheet using its ID
+sheet_id = '1WKRWIkQ5qqr5caCEl5yaeHHuzDv_yF0fGpQs9dvBTgk'
+document = client.open_by_key(sheet_id)
+
 news = document.get_worksheet(0)
-get_data_from_sheet(document, news, 'news.json')
+news_json = get_data_from_sheet(document, news, 'news.json')
 
 agenda = document.get_worksheet(1)
-get_data_from_sheet(document, agenda, 'agenda.json')
-
-# Add this at the end of your script to print the end time
-print(f"Script finished at: {datetime.datetime.now()}")
+agenda_json = get_data_from_sheet(document, agenda, 'agenda.json')
 
 # Clear existing data in the Google Sheet
 #sheet.clear()
