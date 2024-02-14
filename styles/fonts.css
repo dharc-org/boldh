@@ -1,15 +1,22 @@
 @font-face {
-    font-family: Sequel;
+    font-family: SequelBold;
     src: url(../assets/fonts/Sequel/SequelSansBoldDisp.woff2);
 }
 
 @font-face {
-    font-family: SequelLight;
-    src: url(../assets/fonts/Sequel/SequelSansLightHead.woff2);
+    font-family: SequelSemiBold;
+    src: url(../assets/fonts/Sequel/SequelSansSemiBoldDisp.woff2);
 }
 
 @font-face {
-    font-family: Founders;
-    src: url(../assets/fonts/Founders/FoundersGroteskCondensedBold.woff2);
+    font-family: SequelMedium;
+    src: url(../assets/fonts/Sequel/SequelSansMediumDisp.woff2);
 }
+
+@font-face {
+    font-family: SequelLight;
+    src: url(../assets/fonts/Sequel/SequelSansLightDisp.woff2);
+}
+
+
 
