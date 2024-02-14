@@ -39,48 +39,8 @@ document.addEventListener("DOMContentLoaded", function () { // wait for page to 
     changeLinkState(); 
     // rotating logo animation
     var theta = (document.documentElement.scrollTop / 1000) % Math.PI; // theta is the angle of rotation of the logo (it is a function of the scroll position)
-    document.getElementById("giant-logo").style.transform = "rotate(" + theta + "rad)"; // rotate logo by theta radians
+    document.getElementById("logo-rotate").style.transform = "rotate(" + theta + "rad)"; // rotate logo by theta radians
 
-    // definition background color change
-    var elem = document.querySelector("p#definition-text"); // get definition text element
-    if (isInViewport(elem)) { // if definition text is in viewport (look at isInViewport function below)
-      document.getElementById("fourth-section").style.backgroundColor = "black";
-      document.getElementsByClassName("text-highlight")[0].style.backgroundColor = "white";
-      document.getElementsByClassName("text-highlight")[1].style.backgroundColor = "white";
-    }
-  
-    var reset = document.querySelector("span#reset-viewport"); // get reset viewport element (it is a span element at the end of the section)
-    if (isInViewport(reset)) { // if reset viewport element is in viewport (look at isInViewport function below)
-      document.getElementById("fourth-section").style.backgroundColor = "white";
-      document.getElementsByClassName("text-highlight")[0].style.backgroundColor = "white";
-      document.getElementsByClassName("text-highlight")[1].style.backgroundColor = "white";
-    }
-
-    // Code below contrasts with the scroll function leading to section of clicked nav-li element
-    /*
-    // moving news on scroll animation
-  
-    var oldScrollY = window.scrollY;
-  
-    var element = document.getElementById("news-box-container");
-    if (isInViewport(element)) {
-      if (oldScrollY < window.scrollY) {
-        document.getElementById("news-box-container").scrollLeft += theta + 10;
-      } else {
-        document.getElementById("news-box-container").scrollLeft -= theta + 10;
-      }
-    }
-    // moving events agenda on scroll animation
-    var element = document.getElementById("agenda-box-container");
-    if (isInViewport(element)) {
-      if (oldScrollY < window.scrollY) {
-        document.getElementById("agenda-box-container").scrollLeft += theta + 10;
-      } else {
-        document.getElementById("agenda-box-container").scrollLeft -= theta + 10;
-      }
-    }
-    oldScrollY = window.scrollY;
-    */
   };
 
 
@@ -93,6 +53,22 @@ document.addEventListener("DOMContentLoaded", function () { // wait for page to 
   document.getElementById("modal-close-icon").addEventListener("click", function(){
     closeModal();
   });
+
+  // OPEN/CLOSE TOPIC DESCRIPTION
+  document.querySelectorAll(".research-topic").forEach(topic => {
+    topic.addEventListener("click", function(){
+      let box = this.querySelector('p');
+      let arr = this.querySelector('.topic-arrow-cnt')
+      // Toggle the display property of the 'p' element
+      if (box.style.display === 'none' || box.style.display == '') {
+        box.style.display = 'block';
+        arr.classList.add('arrow-rotate')
+      } else {
+        box.style.display = 'none';
+        arr.classList.remove('arrow-rotate')
+      }
+    })
+  })
 
 
 
@@ -230,9 +206,9 @@ function populateCard(tp, item) { // tp is the type of card (news, active or con
   let itemTitle = "";
   if (item.title.length > 120) {
     let newTitle = item.title.substring(0, 120) + "...";
-    itemTitle = "<h3 class='card-title'>" + newTitle + "</h3>";;
+    itemTitle = "<h4 class='card-title'>" + newTitle + "</h4>";;
   } else {
-    itemTitle = "<h3 class='card-title'>" + item.title + "</h3>";
+    itemTitle = "<h4 class='card-title'>" + item.title + "</h4>";
   }
   // Manage card text lenght avoiding too long content and breaking after a specific number of characters
   let itemText = ""; // !!! It could be changed with subtitle for events
@@ -264,18 +240,18 @@ function populateCard(tp, item) { // tp is the type of card (news, active or con
   };
   // Create html elements containing main content and link arrow
   let itemContentA = "<div class='card-box-content-a'>"+ infoDiv + itemTextDiv +"</div>";
-  let arrowDiv = "<div class='card-arrow-div'>"+ arrow +"</div></div>";
+  let arrowDiv = "<div class='card-arrow-cnt'>"+ arrow +"</div></div>";
   // Depending on the type of card, create the card box with the corresponding class and populate it with the content
   // Insert url link directly in the card of news and treat it as an anchor card
   // Insert onclick function in the card of events to populate the modal with the corresponding event data and content
   // Concluded and active events have different classes that determine the color of the date tag and the card aspect and animation on over and out 
   if (tp == "news") {
     let itemUrl = item.url;
-    box.innerHTML += "<a class='cb card-box' href='"+ itemUrl +"' target='_blank' onmouseover='animateCardOver(this, \"active\")' onmouseout='animateCardOut(this, \"active\")'>"+ itemContentA + arrowDiv +"</a>";
+    box.innerHTML += "<a class='cb card-box' href='"+ itemUrl +"' target='_blank'>"+ itemContentA + arrowDiv +"</a>";
   } else if (tp == "concluded"){
-      box.innerHTML += "<div class='cb card-box-concluded' onmouseover='animateCardOver(this, \"concluded\")' onmouseout='animateCardOut(this, \"concluded\")' onclick='populateModal("+item.id+", \"concluded\")' >"+ itemContentA + arrowDiv +"</div>";
+      box.innerHTML += "<div class='cb card-box-concluded' onclick='populateModal("+item.id+", \"concluded\")' >"+ itemContentA + arrowDiv +"</div>";
   } else {
-    box.innerHTML += "<div class='cb card-box event-box' onmouseover='animateCardOver(this, \"active\")' onmouseout='animateCardOut(this, \"active\")' onclick='populateModal("+item.id+", \"active\")' >"+ itemContentA + arrowDiv +"</div>";
+    box.innerHTML += "<div class='cb card-box event-box' onclick='populateModal("+item.id+", \"active\")' >"+ itemContentA + arrowDiv +"</div>";
   }
 };
 
@@ -285,17 +261,17 @@ function populateModal(id, eventStatus){ // eventStatus is the status of the eve
   modalContent.innerHTML = ""; // reset modal content 
   let event = agenda_array.find(x => x.id == id);  // find event in agenda_array with id equal to the id of the event clicked in the card
   let eventTitle = "<h4 id='modal-title'>"+event.title+"</h4>"; // create title and subtitle of the event in the modal
-  let eventSubtitle = "<p id='modal-sbt'>"+event.subtitle+"</p>";
+  let eventSubtitle = "<p class='subtitle' id='modal-sbt'>"+event.subtitle+"</p>";
   var modalTitleSubtitle = "<div id='modal-t-sbt-cnt'>"+ eventTitle + eventSubtitle +"</div>"; 
   // create date and place tags of the event in the modal
-  let eventDate = "<p class='modal-tag modal-date-"+eventStatus+"'><span class='bold-text'>Date: </span>"+event.date+" "+event.time+"</p>";
-  let eventPlace = "<p class='modal-tag modal-date-"+eventStatus+"'><span class='bold-text'>Place: </span>"+event.place_extended+"</p>";
+  let eventDate = "<p class='modal-tag modal-date-"+eventStatus+"'><span class='keyword'>Date: </span>"+event.date+" "+event.time+"</p>";
+  let eventPlace = "<p class='modal-tag modal-date-"+eventStatus+"'><span class='keyword'>Place: </span>"+event.place_extended+"</p>";
   // create division and type tags of the event in the modal
   let eventDivision = "<p class='modal-tag'>"+event.division+"</p>"
   let eventType = "<p class='modal-tag'>"+event.type+"</p>"
   let divisionType = "<div id='modal-division-type-cnt'>"+ eventDivision + eventType +"</div>";
   // compose the group of tags of the event in the modal
-  let tagGroup = "<div id='modal-tag-group'>"+ eventDate + eventPlace + divisionType +"</div>";
+  let tagGroup = "<div id='modal-tag-group'>"+ divisionType + eventDate + eventPlace +"</div>";
   // Set the main content variable and populate it with the text, image and links of the event
   let mainContent = ""
   let eventText = "<p class='modal-text'>"+event.text+"</p>";
@@ -309,13 +285,13 @@ function populateModal(id, eventStatus){ // eventStatus is the status of the eve
   let eventLinks = "";
   if (event.downloads){ // if event has download links, create the download links tags and add them to the main content
     event.downloads.forEach(function (evDwnl){
-      let aTag = '<a class="boldh-a boldh-a-download" target="_blank" href="'+evDwnl.url+'" download><p>'+evDwnl.text+'</p><div class="boldh-a-arrow-cnt">'+arrowDown+'</div></a>';
+      let aTag = '<a class="boldh-btn secondary-btn" target="_blank" href="'+evDwnl.url+'" download>'+evDwnl.text+'</a>';
       eventLinks += aTag; 
     });
   };
   if (event.urls){ // if event has external links, create the external links tags and add them to the main content
     event.urls.forEach(function (evUrl){
-      let aTag = "<a class='boldh-a' target='_blank' href="+evUrl.url+" onmouseover='animateLinkOver(this)' onmouseout='animateLinkOut(this)'><p>"+evUrl.text+"</p><div class='boldh-a-arrow-cnt'>"+arrow+"</div></a>";
+      let aTag = "<a class='boldh-btn dark-btn link-btn target='_blank' href="+evUrl.url+">"+evUrl.text+"<div class='boldh-btn-arrow-cnt'>"+arrow+"</div></a>";
       eventLinks += aTag;
     });
   };
@@ -408,35 +384,4 @@ function openMenu(){
     document.getElementById("hamburger").childNodes[5].style.top = 'calc(100% - 2px)'
     document.getElementById("hamburger").childNodes[5].style.transform = 'rotate(0)';
   }
-}
-
-// ________________________________________________________
-// CARD ANIMATION ON OVER AND OUT
-function animateCardOver(x, type){
-  if (type == "active"){
-    x.style.backgroundColor = "#292929"
-    x.style.borderColor = "transparent"
-  }
-  x.childNodes[1].style.marginLeft = "1.2rem"
-}
-
-function animateCardOut(x, type){
-  if (type == "active"){
-    x.style.backgroundColor = "#252525"
-    x.style.borderColor = "white"
-  }
-  x.childNodes[1].style.marginLeft = "0"
-}
-
-
-// ________________________________________________________
-// LINK ANIMATION ON OVER AND OUT
-function animateLinkOver(x){
-  x.childNodes[1].style.transition = "transform 0.3s";
-  x.childNodes[1].style.transform = "translateX(0.5rem)"
-}
-
-function animateLinkOut(x){
-  x.childNodes[1].style.transition = "transform 0.3s";
-  x.childNodes[1].style.transform = "translateX(0rem)"
 }
