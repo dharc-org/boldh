@@ -86,7 +86,7 @@ document.addEventListener("DOMContentLoaded", function () { // wait for page to 
 
 // news data
 var news_array = [];
-fetch("https://raw.githubusercontent.com/tommasobattisti/boldh/main/content/news.json", {cache: "no-store"}) // JSON on github repo
+fetch("../content/news.json", {cache: "no-store"}) // JSON on github repo
   .then((res) => res.json()) // get json data from response
   .then((data) => {   
     news_array = data;    // save json data in news_array
@@ -99,7 +99,7 @@ fetch("https://raw.githubusercontent.com/tommasobattisti/boldh/main/content/news
 
 // agenda data
 var agenda_array = [];
-fetch("https://raw.githubusercontent.com/tommasobattisti/boldh/main/content/agenda.json", {cache: "no-store"}) // JSON on github repo
+fetch("../content/agenda.json", {cache: "no-store"}) // JSON on github repo
   .then((res) => res.json())
   .then((data) => {
     agenda_array = data;
