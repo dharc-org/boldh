@@ -32,7 +32,7 @@ jobs:
 
       - name: commit files
         run: |
-          git config --local user.email "valentine.pasqual2@unibo.it"
+          git config --local user.email "valentina.pasqual2@unibo.it"
           git config --local user.name "ValentinaPasqual"
           git add -A
           git diff-index --quiet HEAD || (git commit -a -m "updated logs" --allow-empty)
