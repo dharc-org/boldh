@@ -364,6 +364,7 @@ nav ul li a:not(.active):before {
 
 #top-title-container {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: flex-end;
   align-self: stretch;
@@ -396,7 +397,7 @@ nav ul li a:not(.active):before {
   width: 100%;
   height: fit-content;
   display: flex;
-  padding: 6.5rem 0;
+  margin: 6.5rem 0;
   justify-content: center;
   align-items: center;
 }
@@ -463,9 +464,6 @@ nav ul li a:not(.active):before {
 }
 
 #logo-rotate {
-  position: -webkit-sticky;
-  position: sticky;
-  top: 15%;
   width: 80vh;
   height: 80vh;
 }
@@ -474,7 +472,7 @@ nav ul li a:not(.active):before {
   display: flex;
   width: 100%;
   justify-content: flex-end;
-  align-items: flex-start;
+  align-items: center;
   gap: 16rem;
   padding-right: 7.5vw;
 }
@@ -789,7 +787,7 @@ nav ul li a:not(.active):before {
   -webkit-line-clamp: 4; 
   overflow: hidden; 
   text-overflow: ellipsis;
-  padding-bottom: 4px;
+  padding-bottom: 0.25rem;
 }
 
 .card-arrow-cnt {
@@ -1059,29 +1057,6 @@ nav ul li a:not(.active):before {
 
 /* --------------- MEDIA QUERIES --------------- */
 
-@media screen and (max-width: 1024px){
-
-  #h-menu-div {
-    display: flex;
-  }
-  
-  nav {
-    align-items: flex-start;
-  }
-
-  nav ul {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    align-items: flex-end;
-  }
-
-  nav ul li:not(:nth-child(1)) {
-    margin-right: 0.75rem;
-  }
-
-}
-
 
 
 @media (hover: hover) {
@@ -1200,3 +1175,4 @@ nav ul li a:not(.active):before {
   }
 
 }
+

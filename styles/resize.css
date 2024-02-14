@@ -1,0 +1,67 @@
+@media screen and (max-width: 1280px){
+  .hero-btn {
+    min-width: 20rem;
+    width: fit-content;
+    gap: 2rem;
+  }
+}
+
+@media screen and (max-width: 1024px){
+  html {
+    font-size: 14px;
+  }
+  /* HERE GOES SPECIFICATIONS FOR HAMBURGER MENU */
+  #h-menu-div {
+    display: flex;
+  }
+  
+  nav {
+    padding: 1rem 7.5vw;
+    align-items: flex-start;
+  }
+
+  #nav-logo-cnt {
+    margin: 0;
+    width: 2.875rem;
+  }
+
+  nav ul {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: flex-end;
+  }
+
+  nav ul li:not(:nth-child(1)) {
+    display: none;
+    margin-right: 0.75rem;
+  }
+  /* ------------ end hamburger menu ----------- */
+
+  /* ----------- HERO ----------- */
+  #hero-section {
+    height: calc(100vh - 4.875rem); /* 78px -> the height of the navbar */
+    justify-content: space-around;
+  }
+
+  #top-title-container {
+    flex-direction: column;
+    gap: 2rem;
+    align-items: flex-start;
+  }
+
+  .hero-btn {
+    width: 100%;
+  }
+
+  #bottom-title-container {
+    margin: 0;
+  }
+
+  /* ----------- TOPICS ----------- */
+
+  #boldh-def {
+    gap: 8rem;
+  }
+}
