@@ -28,7 +28,7 @@ jobs:
           GOOGLE_SHEET_ID: 1WKRWIkQ5qqr5caCEl5yaeHHuzDv_yF0fGpQs9dvBTgk
           API_KEY: ${{ secrets.GOOGLE_SHEETS_API_KEY }}
           GOOGLE_SHEETS_CREDS: ${{ secrets.GOOGLE_SHEETS_CREDS }}
-        run: python update_sheet.py
+        run: python news_and_events_update.py
 
       - name: commit files
         run: |
