@@ -164,8 +164,13 @@
     width: 6.5rem;
     height: 6.5rem;
   }
+
   #top-title {
     font-size: 2rem;
+  }
+
+  .hero-btn {
+    gap: 0.5rem;
   }
 
   /* --------- DIVISION --------- */
@@ -191,4 +196,11 @@
       flex-grow: 1;
       min-width: fit-content;
     }
+}
+
+@media screen and (max-width: 400px){
+  /* --------- HERO --------- */
+  #dh-mib {
+    gap: 0.5rem;
+  }
 }
