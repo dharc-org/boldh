@@ -179,6 +179,10 @@
   }
 
     /* ------- MODAL ------ */
+    #expansion-container {
+      height: 97.5vh;
+    }
+
     #modal-close-container {
       padding: 1.5rem 0.75rem;
     }

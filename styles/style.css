@@ -36,6 +36,11 @@ body {
   text-transform: lowercase!important;
   font-family: SequelMedium;
 }
+
+.chefcookie__box {
+  padding-top: 4rem !important;
+  }
+
 .chefcookie__box h1 {
   margin-bottom: 0.75rem;
 }
