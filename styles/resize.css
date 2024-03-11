@@ -183,6 +183,10 @@
     margin-bottom: 8rem;
   }
 
+  .division-text-container, .division-logo-container {
+    min-height: 80vh;
+  }
+
     /* ------- MODAL ------ */
     #expansion-container {
       height: 97.5vh;
@@ -202,5 +206,11 @@
   /* --------- HERO --------- */
   #dh-mib {
     gap: 0.5rem;
+  }
+
+  /*   NEWS AND EVENTS */
+  .cb {
+    min-width: 21rem;
+    max-width: 21rem;
   }
 }
