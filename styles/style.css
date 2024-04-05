@@ -1118,9 +1118,10 @@ nav ul li a:not(.active):before {
 .credit-line {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   align-items: baseline;
   justify-content: flex-start;
-  gap: 1.5rem;
+  gap: 0 1.5rem;
 }
 
 #main-credits .boldh-a-inline {

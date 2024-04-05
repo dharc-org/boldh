@@ -151,6 +151,17 @@
     padding: 0 10vw 4rem 10vw;
   }
 
+
+  /* -------- CREDIRS ------- */
+
+  #credits-logo {
+    width: 40%;
+  }
+
+  #main-credits ul {
+    gap: 1.5rem;
+  }
+
 }
 
 
@@ -199,6 +210,20 @@
     #modal-link-group .dark-btn {
       flex-grow: 1;
       min-width: fit-content;
+    }
+
+
+    .credits-title {
+      font-size: 4rem !important;
+    }
+    .credit-line p {
+      font-size: 2rem !important;
+    }
+    .credit-line a {
+      font-size: 1.5rem !important;
+    }
+    .credit-line .boldh-btn-arrow-cnt {
+      height: 1.25rem !important;
     }
 }
 
