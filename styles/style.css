@@ -1163,13 +1163,14 @@ nav ul li a:not(.active):before {
     border-color: var(--BolDH-Accent-2, #DD5423);
   }
   
-  .card-box-concluded:hover .card-arrow-cnt, .card-box:hover .card-arrow-cnt {
+  .news-box:hover .card-arrow-cnt {
     margin-left: 1.2rem;
     transition: all .2s ease-in;
   }
   
-  .agenda-box:hover {
-    transform: scale(1.01);
+  .event-box:hover .card-arrow-cnt {
+    transform: rotate(-30deg);
+    transition: transform .2s ease-in;
   }
 
   .contacts-box:hover {

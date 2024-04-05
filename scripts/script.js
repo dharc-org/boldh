@@ -1,17 +1,21 @@
 document.addEventListener("DOMContentLoaded", function () { // wait for page to load
 
   // NAVBAR LINKS ACTIVE STATE
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => { // for each link that starts with #
-    anchor.addEventListener('click', function (e) { // add event listener for click
-        e.preventDefault(); // prevent default action
-        document.querySelector(this.getAttribute('href')).scrollIntoView({  // scroll to section with id equal to href
-            block: 'start', // start of the section
-            behavior: 'smooth' // smooth scroll
-        });
-        if(visualViewport.width < 1024 && window.getComputedStyle(document.getElementsByClassName("nav-link-li")[0]).display == "block"){ // if nav menu is open
-          setTimeout(() => { openMenu();; }, 800); // close mobile nav menu after 800ms (time of scroll animation)
-          };
-    });
+  const anchors = document.querySelectorAll('a[href^="#"]');
+  const navLinkLi = document.getElementsByClassName("nav-link-li")[0];
+  
+  anchors.forEach(anchor => {
+      anchor.addEventListener('click', e => {
+          e.preventDefault();
+          const href = anchor.getAttribute('href');
+          document.querySelector(href).scrollIntoView({
+              block: 'start',
+              behavior: 'smooth'
+          });
+          if (visualViewport.width < 1024 && window.getComputedStyle(navLinkLi).display === "block") {
+              setTimeout(openMenu, 800);
+          }
+      });
   });
 
 
@@ -69,9 +73,6 @@ document.addEventListener("DOMContentLoaded", function () { // wait for page to 
       }
     })
   })
-
-
-
 
 });
 
@@ -196,7 +197,6 @@ function sortEvents(arr){
 // _________________________________________________________________________________________________________________________
 // POPULATE CARDS WITH DATA FROM JSON AND ADD THEM TO THE WEBSITE
 const arrow = '<svg xmlns="http://www.w3.org/2000/svg" width="66" height="50" viewBox="0 0 66 50" fill="none"><path d="M0 25H64M64 25L41.7391 1M64 25L41.7391 49" stroke="#F2F2F2" stroke-width="2" vector-effect="non-scaling-stroke"/></svg>';
-const arrowDown = '<svg xmlns="http://www.w3.org/2000/svg" width="66" height="50" viewBox="0 0 66 50" fill="none"><path d="M0 25H64M64 25L41.7391 1M64 25L41.7391 49" stroke="#F2F2F2" stroke-width="2" vector-effect="non-scaling-stroke"/></svg>';
 
 function populateCard(tp, item) { // tp is the type of card (news, active or concluded event), item is the object containing the data
   // Create html elements for shared content among the different types of cards
@@ -224,11 +224,11 @@ function populateCard(tp, item) { // tp is the type of card (news, active or con
   let box = "";
   let infoDiv = "";
   // depending on the type of card, create the card box and the info div containing news or events tags
-  if (tp == "news") {
+  if (tp === "news") {
     box = document.getElementById("news-box-container");
     infoDiv = "<div class='card-info-div'>" + itemDivision + itemType +"</div>"; // I put division tag and type of news in the tag info div for news
   } else {
-    if(tp == "concluded") {
+    if(tp === "concluded") {
     box = document.getElementById("agenda-box-container");
     itemDate = "<p class='agenda-"+tp+"'>" + item.date + "</p>"; // I define the date tag for concluded events 
     } else {
@@ -245,11 +245,11 @@ function populateCard(tp, item) { // tp is the type of card (news, active or con
   // Insert url link directly in the card of news and treat it as an anchor card
   // Insert onclick function in the card of events to populate the modal with the corresponding event data and content
   // Concluded and active events have different classes that determine the color of the date tag and the card aspect and animation on over and out 
-  if (tp == "news") {
+  if (tp === "news") {
     let itemUrl = item.url;
-    box.innerHTML += "<a class='cb card-box' href='"+ itemUrl +"' target='_blank'>"+ itemContentA + arrowDiv +"</a>";
-  } else if (tp == "concluded"){
-      box.innerHTML += "<div class='cb card-box-concluded' onclick='populateModal("+item.id+", \"concluded\")' >"+ itemContentA + arrowDiv +"</div>";
+    box.innerHTML += "<a class='cb card-box news-box' href='"+ itemUrl +"' target='_blank'>"+ itemContentA + arrowDiv +"</a>";
+  } else if (tp === "concluded"){
+      box.innerHTML += "<div class='cb card-box-concluded event-box' onclick='populateModal("+item.id+", \"concluded\")' >"+ itemContentA + arrowDiv +"</div>";
   } else {
     box.innerHTML += "<div class='cb card-box event-box' onclick='populateModal("+item.id+", \"active\")' >"+ itemContentA + arrowDiv +"</div>";
   }
@@ -259,7 +259,7 @@ function populateCard(tp, item) { // tp is the type of card (news, active or con
 function populateModal(id, eventStatus){ // eventStatus is the status of the event (active or concluded) and it is used to define the color of the date tag
   let modalContent = document.getElementById("modal-content"); // get modal content element 
   modalContent.innerHTML = ""; // reset modal content 
-  let event = agenda_array.find(x => x.id == id);  // find event in agenda_array with id equal to the id of the event clicked in the card
+  let event = agenda_array.find(x => x.id === id);  // find event in agenda_array with id equal to the id of the event clicked in the card
   let eventTitle = "<h4 id='modal-title'>"+event.title+"</h4>"; // create title and subtitle of the event in the modal
   let eventSubtitle = "<p class='subtitle' id='modal-sbt'>"+event.subtitle+"</p>";
   var modalTitleSubtitle = "<div id='modal-t-sbt-cnt'>"+ eventTitle + eventSubtitle +"</div>"; 
@@ -356,7 +356,7 @@ function closeModal(){
 // Dpending on the display property of the nav menu links, the function opens or closes the menu
 function openMenu(){
   let elements = document.getElementsByClassName("nav-link-li");
-  if(window.getComputedStyle(elements[0]).display == "none"){ // if nav menu links are not displayed
+  if(window.getComputedStyle(elements[0]).display === "none"){ // if nav menu links are not displayed
     for (let i = 0; i < elements.length; i++) {
       elements[i].style.display = "block"; // display nav menu links
     };
