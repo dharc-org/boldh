@@ -100,7 +100,7 @@ fetch("content/news.json", {cache: "no-store"}) // JSON on github repo
 
 // agenda data
 var agenda_array = [];
-fetch("https://raw.githubusercontent.com/dharc-org/boldh/main/content/agenda.json", {cache: "no-store"}) // JSON on github repo
+fetch("content/agenda.json", {cache: "no-store"}) // JSON on github repo
   .then((res) => res.json())
   .then((data) => {
     agenda_array = data;
@@ -283,8 +283,8 @@ function populateModal(id, eventStatus){ // eventStatus is the status of the eve
   let eventText = event.text;
   mainContent += eventText;
   // if event has an image, create the image tag and add it to the main content
-  if (event.img){
-    let eventImg = "<div id='modal-img-cnt'><img src='"+event.img+"' alt='event presentation image'></div>"; 
+  if (event.image){
+    let eventImg = "<div id='modal-img-cnt'><img src='"+event.image.url+"' alt='"+event.image.alt+"'></div>"; 
     mainContent += eventImg;
   };
   // if event has links, create the links tags and add them to the main content
