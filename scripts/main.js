@@ -5,17 +5,19 @@ document.addEventListener("DOMContentLoaded", function () { // wait for page to 
   const navLinkLi = document.getElementsByClassName("nav-link-li")[0];
   
   anchors.forEach(anchor => {
+    if (!anchor.getAttribute('href').includes('cookie') || !anchor.getAttribute('href') === "#"){
       anchor.addEventListener('click', e => {
-          e.preventDefault();
-          const href = anchor.getAttribute('href');
-          document.querySelector(href).scrollIntoView({
-              block: 'start',
-              behavior: 'smooth'
-          });
-          if (visualViewport.width < 1024 && window.getComputedStyle(navLinkLi).display === "block") {
-              setTimeout(openMenu, 800);
-          }
+        e.preventDefault();
+        const href = anchor.getAttribute('href');
+        document.querySelector(href).scrollIntoView({
+            block: 'start',
+            behavior: 'smooth'
+        });
+        if (visualViewport.width < 1024 && window.getComputedStyle(navLinkLi).display === "block") {
+            setTimeout(openMenu, 800);
+        }
       });
+    }
   });
 
 
