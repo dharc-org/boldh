@@ -101,7 +101,7 @@ h4 {
   color: var(--BolDH-Accent-1, #32C3A0);
 }
 
-p {
+p, ul, ol {
   /* BolDH/Body */
   font-family: SequelLight, sans-serif;
   font-size: 1.25rem;
@@ -800,7 +800,7 @@ nav ul li a:not(.active):before {
 .card-title {
   display: -webkit-box; 
   -webkit-box-orient: vertical; 
-  -webkit-line-clamp: 4; 
+  -webkit-line-clamp: 5; 
   overflow: hidden; 
   text-overflow: ellipsis;
   padding-bottom: 0.25rem;
@@ -949,7 +949,20 @@ nav ul li a:not(.active):before {
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 2rem;
+}
+
+#modal-main-cnt ul, #modal-main-cnt ol {
+  /* BolDH/Body */
+  font-family: SequelLight, sans-serif;
+  font-size: 1.15rem;
+  line-height: 150%; /* 1.875rem */
+  letter-spacing: 0.05rem;
+  color: var(--BolDH-Text-Grey, rgba(242, 242, 242, 0.76));
+  margin: -1rem 0 0.5rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
 }
 
 #modal-img-cnt {
@@ -962,6 +975,7 @@ nav ul li a:not(.active):before {
 }
 
 #modal-link-group {
+  margin-top: 2rem;
   display: flex;
   align-items: flex-start;
   align-content: flex-start;

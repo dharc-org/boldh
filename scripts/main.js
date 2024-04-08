@@ -48,7 +48,6 @@ document.addEventListener("DOMContentLoaded", function () { // wait for page to 
   };
 
 
-
   // OPEN/CLOSE MENU AND CLOSE MODAL
   document.getElementById("h-menu-div").addEventListener("click", function(){
     openMenu(); // Handles menu opening and closing
@@ -58,6 +57,7 @@ document.addEventListener("DOMContentLoaded", function () { // wait for page to 
     closeModal();
   });
 
+  
   // OPEN/CLOSE TOPIC DESCRIPTION
   document.querySelectorAll(".research-topic").forEach(topic => {
     topic.addEventListener("click", function(){
@@ -100,7 +100,7 @@ fetch("content/news.json", {cache: "no-store"}) // JSON on github repo
 
 // agenda data
 var agenda_array = [];
-fetch("content/agenda.json", {cache: "no-store"}) // JSON on github repo
+fetch("https://raw.githubusercontent.com/dharc-org/boldh/main/content/agenda.json", {cache: "no-store"}) // JSON on github repo
   .then((res) => res.json())
   .then((data) => {
     agenda_array = data;
@@ -212,11 +212,17 @@ function populateCard(tp, item) { // tp is the type of card (news, active or con
   }
   // Manage card text lenght avoiding too long content and breaking after a specific number of characters
   let itemText = ""; // !!! It could be changed with subtitle for events
-  if (item.text.length > 200) {
-    let newText = item.text.substring(0, 200) + "...";
+  let textToGet; 
+  if (tp === 'news'){
+    textToGet = item.text
+  } else {
+    textToGet = item.subtitle
+  }
+  if (textToGet.length > 200) {
+    let newText = textToGet.substring(0, 200) + "...";
     itemText = "<p class='card-text'>" + newText + "</p>";
   } else {
-    itemText = "<p class='card-text'>" + item.text + "</p>";
+    itemText = "<p class='card-text'>" + textToGet + "</p>";
   }
   // Create html element containing title and text of the card
   let itemTextDiv = "<div class='card-text-div'>"+ itemTitle + itemText +"</div>";
@@ -249,7 +255,7 @@ function populateCard(tp, item) { // tp is the type of card (news, active or con
     let itemUrl = item.url;
     box.innerHTML += "<a class='cb card-box news-box' href='"+ itemUrl +"' target='_blank'>"+ itemContentA + arrowDiv +"</a>";
   } else if (tp === "concluded"){
-      box.innerHTML += "<div class='cb card-box-concluded event-box' onclick='populateModal("+item.id+", \"concluded\")' >"+ itemContentA + arrowDiv +"</div>";
+    box.innerHTML += "<div class='cb card-box-concluded event-box' onclick='populateModal("+item.id+", \"concluded\")' >"+ itemContentA + arrowDiv +"</div>";
   } else {
     box.innerHTML += "<div class='cb card-box event-box' onclick='populateModal("+item.id+", \"active\")' >"+ itemContentA + arrowDiv +"</div>";
   }
@@ -274,7 +280,7 @@ function populateModal(id, eventStatus){ // eventStatus is the status of the eve
   let tagGroup = "<div id='modal-tag-group'>"+ divisionType + eventDate + eventPlace +"</div>";
   // Set the main content variable and populate it with the text, image and links of the event
   let mainContent = ""
-  let eventText = "<p class='modal-text'>"+event.text+"</p>";
+  let eventText = event.text;
   mainContent += eventText;
   // if event has an image, create the image tag and add it to the main content
   if (event.img){
