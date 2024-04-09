@@ -74,7 +74,7 @@
 @media screen and (max-width: 640px){
 
   h2 {
-    font-size: 4.75rem;
+    font-size: 4rem;
   }
 
   h3 {
@@ -137,6 +137,12 @@
     width: 60%;
   }
 
+
+  /* ------- CARDS ------ */
+  .card-arrow-cnt {
+    height: 2.5rem;
+  }
+
   /* ------- MODAL ------ */
   #modal-title {
     font-size: 2rem;
@@ -166,6 +172,10 @@
 
 
 @media screen and (max-width: 480px){
+
+  h4 {
+    font-size: 1.5rem;
+  }
   /* --------- HERO --------- */
   #dh-mib {
     gap: 1.5rem;
@@ -182,6 +192,11 @@
 
   .hero-btn {
     gap: 0.5rem;
+  }
+
+  /* --------- CARD --------- */
+  .card-text {
+    font-size: 1.2rem;
   }
 
   /* --------- DIVISION --------- */
@@ -212,6 +227,11 @@
       min-width: fit-content;
     }
 
+    /* ----- FOOTER and CREDITS ------ */
+
+    .contacts-box .contacts-body {
+      font-size: 1.25rem;
+    }
 
     .credits-title {
       font-size: 4rem !important;

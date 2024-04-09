@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () { // wait for page to 
   
   anchors.forEach(anchor => {
 
-    if (!anchor.getAttribute('href').includes('cookie') && !anchor.getAttribute('href') === "#"){
+    if (!(anchor.getAttribute('href').includes('cookie') || anchor.getAttribute('href') === "#")){
       anchor.addEventListener('click', e => {
         e.preventDefault();
         const href = anchor.getAttribute('href');
@@ -273,8 +273,8 @@ function populateModal(id, eventStatus){ // eventStatus is the status of the eve
   let eventSubtitle = "<p class='subtitle' id='modal-sbt'>"+event.subtitle+"</p>";
   var modalTitleSubtitle = "<div id='modal-t-sbt-cnt'>"+ eventTitle + eventSubtitle +"</div>"; 
   // create date and place tags of the event in the modal
-  let eventDate = "<p class='modal-tag modal-date-"+eventStatus+"'><span class='keyword'>Date: </span>"+event.date+" "+event.time+"</p>";
-  let eventPlace = "<p class='modal-tag modal-date-"+eventStatus+"'><span class='keyword'>Place: </span>"+event.place_extended+"</p>";
+  let eventDate = "<p class='modal-tag modal-date-"+eventStatus+"'>"+event.date+" "+event.time+"</p>";
+  let eventPlace = "<p class='modal-tag modal-date-"+eventStatus+"'>"+event.place_extended+"</p>";
   // create division and type tags of the event in the modal
   let eventDivision = "<p class='modal-tag'>"+event.division+"</p>"
   let eventType = "<p class='modal-tag'>"+event.type+"</p>"
