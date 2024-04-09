@@ -5,7 +5,8 @@ document.addEventListener("DOMContentLoaded", function () { // wait for page to 
   const navLinkLi = document.getElementsByClassName("nav-link-li")[0];
   
   anchors.forEach(anchor => {
-    if (!anchor.getAttribute('href').includes('cookie') || !anchor.getAttribute('href') === "#"){
+
+    if (!anchor.getAttribute('href').includes('cookie') && !anchor.getAttribute('href') === "#"){
       anchor.addEventListener('click', e => {
         e.preventDefault();
         const href = anchor.getAttribute('href');
