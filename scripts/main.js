@@ -1,4 +1,4 @@
-import { divideEvents, populateCard, sortEvents } from "./modules/populator.js";
+import { divideEvents, populateCard, sortEvents, populateModal } from "./modules/populator.js";
 import { changeLinkState, handleMenu, closeModal } from "./modules/elements.js";
 
 
@@ -97,7 +97,8 @@ fetch("content/news.json", {cache: "no-store"})
   })
   .then(() => {
     newsArray.forEach(function (newsItem) {
-      populateCard("news", newsItem); // populate card with news item data
+      let [box, element] = populateCard("news", newsItem); // populate card with news item data
+      box.innerHTML += element;
     })
   })
   .catch(error => {
@@ -119,10 +120,24 @@ fetch("content/agenda.json", {cache: "no-store"}) // JSON on github repo
     concludedEvents = sortEvents(concludedEvents); // next first
 
     activeEvents.forEach(function (event){
-      populateCard("active", event); // populate card with active event data
+      let [container, card] = populateCard("active", event); // populate card with active event data
+      let newElement = document.createElement('div')
+      newElement.innerHTML = card;
+      container.appendChild(newElement)
+      newElement.querySelector('.event-box').addEventListener('click', function(){
+        populateModal(event.id, 'active', agendaArray)
+      })
     });
+
     concludedEvents.forEach(function (event){
-      populateCard("concluded", event); // populate card with concluded event data
+      let [container, card] = populateCard("concluded", event); // populate card with active event data
+      let newElement = document.createElement('div')
+      newElement.innerHTML = card;
+      container.appendChild(newElement)
+      newElement.querySelector('.event-box').addEventListener('click', function(){
+        populateModal(event.id, 'concluded', agendaArray)
+      })
+      
     });
   })
   .catch(error => {

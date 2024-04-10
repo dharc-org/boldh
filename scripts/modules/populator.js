@@ -1,7 +1,4 @@
 
-
-
-// _________________________________________________________________________________________________________________________
 // DIVIDE EVENTS IN ACTIVE AND CONCLUDED EVENTS AND SORT THEM BY DATE
 export function divideEvents(agendaArray){
   let activeArr = [];
@@ -119,8 +116,8 @@ export function populateCard(tp, item) { // tp is the type of card (news, active
   } else {
     let itemDate;
     if(tp === "concluded") {
-    box = document.getElementById("agenda-box-container");
-    itemDate = "<p class='agenda-"+tp+"'>" + item.date + "</p>"; // I define the date tag for concluded events 
+      box = document.getElementById("agenda-box-container");
+      itemDate = "<p class='agenda-"+tp+"'>" + item.date + "</p>"; // I define the date tag for concluded events 
     } else {
       box = document.getElementById("agenda-box-container");
       itemDate = "<p class='agenda-"+tp+"'>" + item.date + "</p>";  // I define the date tag for active events
@@ -137,19 +134,22 @@ export function populateCard(tp, item) { // tp is the type of card (news, active
   // Concluded and active events have different classes that determine the color of the date tag and the card aspect and animation on over and out 
   if (tp === "news") {
     let itemUrl = item.url;
-    box.innerHTML += "<a class='cb card-box news-box' href='"+ itemUrl +"' target='_blank'>"+ itemContentA + arrowDiv +"</a>";
+    let newElement = "<a class='cb card-box news-box' href='"+ itemUrl +"' target='_blank'>"+ itemContentA + arrowDiv +"</a>"
+    return [box, newElement]
   } else if (tp === "concluded"){
-    box.innerHTML += "<div class='cb card-box-concluded event-box' onclick='populateModal("+item.id+", \"concluded\")' >"+ itemContentA + arrowDiv +"</div>";
+    let newElement = "<div class='cb card-box-concluded event-box'>"+ itemContentA + arrowDiv +"</div>";
+    return [box, newElement]
   } else {
-    box.innerHTML += "<div class='cb card-box event-box' onclick='populateModal("+item.id+", \"active\")' >"+ itemContentA + arrowDiv +"</div>";
+    let newElement = "<div class='cb card-box event-box'>"+ itemContentA + arrowDiv +"</div>";
+    return [box, newElement]
   }
 };
 
 
-export function populateModal(id, eventStatus){ // eventStatus is the status of the event (active or concluded) and it is used to define the color of the date tag
+export function populateModal(id, eventStatus, agendaArray){ // eventStatus is the status of the event (active or concluded) and it is used to define the color of the date tag
   let modalContent = document.getElementById("modal-content"); // get modal content element 
   modalContent.innerHTML = ""; // reset modal content 
-  let event = agenda_array.find(x => x.id === id);  // find event in agenda_array with id equal to the id of the event clicked in the card
+  let event = agendaArray.find(x => x.id === id);  // find event in agendaArray with id equal to the id of the event clicked in the card
   let eventTitle = "<h4 id='modal-title'>"+event.title+"</h4>"; // create title and subtitle of the event in the modal
   let eventSubtitle = "<p class='subtitle' id='modal-sbt'>"+event.subtitle+"</p>";
   var modalTitleSubtitle = "<div id='modal-t-sbt-cnt'>"+ eventTitle + eventSubtitle +"</div>"; 
