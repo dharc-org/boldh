@@ -1,50 +1,22 @@
-// _________________________________________________________________________________________________________________________
-// FETCH DATA FROM JSON
-// News data are simpler than agenda data, so I fetch them first and populate the cards with them before fetching and populating the cards with agenda data.
-// Agenda data fetching and populating is more complex because I have to divide the events in active and concluded events and sort them by date via callback functions.
-// News data are in turn organized in a single array of objects, so the first in the JSON is the first visible in the website.
-
-// news data
-var news_array = [];
-fetch("content/news.json", {cache: "no-store"}) // JSON on github repo
-  .then((res) => res.json()) // get json data from response
-  .then((data) => {   
-    news_array = data;    // save json data in news_array
-  })
-  .then(() => {
-    news_array.forEach(function (news_item) {  // for each news item in news_array
-      populateCard("news", news_item); // populate card with news item data
-    });
-  });
-
-// agenda data
-var agenda_array = [];
-fetch("content/agenda.json", {cache: "no-store"}) // JSON on github repo
-  .then((res) => res.json())
-  .then((data) => {
-    agenda_array = data;
-  })
-  .then(() => {
-      divideEvents(agenda_array); // divide events in active and concluded events and sort them by date
-  });
 
 
 
 // _________________________________________________________________________________________________________________________
 // DIVIDE EVENTS IN ACTIVE AND CONCLUDED EVENTS AND SORT THEM BY DATE
-function divideEvents(agendaArray){
+export function divideEvents(agendaArray){
   let activeArr = [];
   let concludedArr = [];
   // for each event in agendaArray check if it is concluded or active and push it in the corresponding array
   agendaArray.forEach(function (item) { 
-    let itemIndex = agendaArray.indexOf(item); 
+    let itemIndex = agendaArray.indexOf(item);
+    let endDate; 
     item.id = itemIndex;
     if (item.date.includes("-")){ // if event is a range of dates, take the last date of the range as the end date
       let dateRange = item.date.split("-");
-      let endDate = dateRange[1].trim();
+      endDate = dateRange[1].trim();
       var parts = endDate.split("/");
     } else {
-      let endDate = item.date.trim();
+      endDate = item.date.trim();
       var parts = endDate.split("/");
     }
     endDate =  new Date(parts[2], parts[1] - 1, parts[0]); // create a date object from the end date of the event
@@ -58,22 +30,14 @@ function divideEvents(agendaArray){
       activeArr.push(item);
     };
   });
-  // sort active and concluded events by date (look at sortEvents function below) and reverse them so that the most recent event is the first in the array
-  activeArr = sortEvents(activeArr).reverse();
-  concludedArr = sortEvents(concludedArr); // cocluded events do not need to be reversed since I want the most recent concluded event to be the first in the array
-  // populate cards with events data (look at populateCard function below)
-  activeArr.forEach(function (item){
-    populateCard("active", item); // populate card with active event data
-  });
-  concludedArr.forEach(function (item){
-    populateCard("concluded", item); // populate card with concluded event data
-  });
+
+  return [activeArr, concludedArr]
 };
 
 
 // _________________________________________________________________________________________________________________________
 // SORT EVENTS BY DATE
-function sortEvents(arr){
+export function sortEvents(arr){
   arr.sort(function(a, b){ // sort events by date with a and b being two events in the array (look at MDN Array.prototype.sort() for more info)
     if (!a.date.includes("-") && !b.date.includes("-")){ // if both events are single dates (not ranges of dates)
       var partsA = a.date.split("/"); // split date string in day, month and year
@@ -117,7 +81,7 @@ function sortEvents(arr){
 // POPULATE CARDS WITH DATA FROM JSON AND ADD THEM TO THE WEBSITE
 const arrow = '<svg xmlns="http://www.w3.org/2000/svg" width="66" height="50" viewBox="0 0 66 50" fill="none"><path d="M0 25H64M64 25L41.7391 1M64 25L41.7391 49" stroke="#F2F2F2" stroke-width="2" vector-effect="non-scaling-stroke"/></svg>';
 
-function populateCard(tp, item) { // tp is the type of card (news, active or concluded event), item is the object containing the data
+export function populateCard(tp, item) { // tp is the type of card (news, active or concluded event), item is the object containing the data
   // Create html elements for shared content among the different types of cards
   let itemDivision = "<p class='card-division'>" + item.division + "</p>";
   let itemType = "<p class='card-type'>" + item.type + "</p>";
@@ -153,6 +117,7 @@ function populateCard(tp, item) { // tp is the type of card (news, active or con
     box = document.getElementById("news-box-container");
     infoDiv = "<div class='card-info-div'>" + itemDivision + itemType +"</div>"; // I put division tag and type of news in the tag info div for news
   } else {
+    let itemDate;
     if(tp === "concluded") {
     box = document.getElementById("agenda-box-container");
     itemDate = "<p class='agenda-"+tp+"'>" + item.date + "</p>"; // I define the date tag for concluded events 
@@ -181,7 +146,7 @@ function populateCard(tp, item) { // tp is the type of card (news, active or con
 };
 
 
-function populateModal(id, eventStatus){ // eventStatus is the status of the event (active or concluded) and it is used to define the color of the date tag
+export function populateModal(id, eventStatus){ // eventStatus is the status of the event (active or concluded) and it is used to define the color of the date tag
   let modalContent = document.getElementById("modal-content"); // get modal content element 
   modalContent.innerHTML = ""; // reset modal content 
   let event = agenda_array.find(x => x.id === id);  // find event in agenda_array with id equal to the id of the event clicked in the card
