@@ -861,51 +861,46 @@ nav ul li a:not(.active):before {
 /* --------------------- EVENT MODAL ----------------------*/
 #modal-overlay {
   opacity: 0;
-  width: 0; 
+  width: 100vw; 
   height: 0;
   position: fixed;
-  top: 50%; 
+  bottom: 0; 
   left: 50%;
-  transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) ;
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 999;
   background: rgba(242, 242, 242, 0.16);
   backdrop-filter: blur(12.5px);
- 
 }
 
 .modal-overlay-show {
   opacity: 1!important;
-  width: 100vw!important; 
   height: 100vh!important;
-
 }
 
 #expansion-container {
   opacity: 0;
   display: flex;
   position: absolute;
-  top: 50%;
+  bottom: 0;
   left: 50%;
-  transform: translateX(-50%) translateY(calc(-50% + 2.5vh));
+  transform: translateX(-50%);
   height: 0;
-  width: 0;
+  width: 100vw;
   flex-direction: column;
   align-items: flex-start;
   flex-shrink: 0;
   border-radius: 1rem 1rem 0 0;
   background-color: var(--BolDH-Black-Dark1, #212121);
   z-index: 9999;
-  transition: all 0.2s ease-out; 
+  transition: all 0.3s ease-out; 
 }
 
 .expansion-container-show {
   opacity: 1!important;
   height: 95vh!important;
-  width: 100vw!important;
-
 }
 
 #modal-close-container {
