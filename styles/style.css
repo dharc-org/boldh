@@ -309,6 +309,7 @@ nav ul li a:not(.active):before {
 }
 
 /* HAMBURGER MENU */
+
 #hamburger {
   position: relative;
   display: flex;
@@ -369,8 +370,6 @@ nav ul li a:not(.active):before {
   top: 50%;
   transform: rotate(-45deg);
 }
-
-
 
 
 
@@ -582,7 +581,7 @@ nav ul li a:not(.active):before {
   border-top: 2px solid var(--BolDH-White-White, #F2F2F2);
 }
 
-.rt-content {
+.topic-content {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -591,12 +590,23 @@ nav ul li a:not(.active):before {
   align-self: stretch;
 }
 
-.rt-content p {
+.topic-content p {
+  opacity: 0;
+  transform: translateY(-5px) translateX(20px);
   padding-right: 25%;
-  display: none;
+  max-height: 0; 
+  transition: all 0.2s ease-in-out;
 }
 
-.rt-title-cnt {
+.show-topic-text {
+  opacity: 1!important;
+  transform: translateY(0) translateX(0)!important;
+  max-height: 1000px!important;  
+  transition: all 0.2s ease-in-out; 
+}
+
+
+.topic-title-cnt {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
@@ -620,6 +630,8 @@ nav ul li a:not(.active):before {
   transform: rotate(45deg);
   transition: all ease-in .2s;
 }
+
+
 
 /* --------------- UNITS SECTION ----------------*/
 #units-section {
@@ -866,7 +878,6 @@ nav ul li a:not(.active):before {
   bottom: 0;
   height: 92.5vh;
   width: 100vw;
-  display: none;
   flex-direction: column;
   align-items: flex-start;
   flex-shrink: 0;
@@ -1263,10 +1274,7 @@ nav ul li a:not(.active):before {
     transition: all ease-in .2s;
   }
 
-  .research-topic:hover .topic-arrow-cnt {
-    transform: rotate(45deg);
-    transition: all ease-in .2s;
-  }
+
 
   /* ------ Cards ------ */
   .card-box:hover {

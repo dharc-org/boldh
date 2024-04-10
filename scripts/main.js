@@ -74,13 +74,8 @@ document.addEventListener('DOMContentLoaded', function () {
       let box = this.querySelector('p')
       let arr = this.querySelector('.topic-arrow-cnt')
       // Toggle the display property of the 'p' element
-      if (box.style.display === 'none' || box.style.display == '') {
-        box.style.display = 'block'
-        arr.classList.add('arrow-rotate')
-      } else {
-        box.style.display = 'none'
-        arr.classList.remove('arrow-rotate')
-      }
+      box.classList.toggle('show-topic-text') 
+      arr.classList.toggle('arrow-rotate')
     })
   })
 })

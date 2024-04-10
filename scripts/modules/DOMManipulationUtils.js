@@ -1,9 +1,9 @@
-
 // NAVBAR LINKS STATE CHANGE
 export function changeLinkState() {
   const links = document.querySelectorAll('.nav-link-li a')
   const sections = document.querySelectorAll('section')
   let index = sections.length
+  // iterate to decrement and reassign the index variable dependnding on the position in the page
   while (--index && window.scrollY + 50 < sections[index].offsetTop) {}
   links.forEach((link) => link.classList.remove('active'))
   links[index].classList.add('active')
@@ -12,7 +12,7 @@ export function changeLinkState() {
 // CLOSE MODAL FUNCTION TRIGGERD BY CLOSE ICON IN MODAL CONTENT
 export function closeModal() {
   document.getElementById('modal-overlay').style.display = 'none'
-  document.getElementById('expansion-container').style.display = 'none'
+
   document.getElementById('modal-content').innerHTML = ''
   document.body.style.overflow = 'auto'
 }
