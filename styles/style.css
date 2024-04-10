@@ -311,32 +311,69 @@ nav ul li a:not(.active):before {
 /* HAMBURGER MENU */
 #hamburger {
   position: relative;
+  display: flex;
   justify-content: space-between;
   height: 1rem;
   width: 1.5rem;
 }
+
+#hamburger-x {
+  position: relative;
+  display: block;
+  height: 1rem;
+  width: 1.5rem;
+}
+
+
 /* Hamburger composition */
-#hamburger div {
+#hamburger div, #hamburger-x div {
   transition: all ease-in .2s;
   height: 2px;
   width: 100%;
   background-color: var(--BolDH-White-White, #F2F2F2);
 }
 
-#hamburger div:nth-child(0) {
-  position: absolute;
-  top: -2px;
-}
-
 #hamburger div:nth-child(1) {
   position: absolute;
-  top: calc(50% - 1px);
+  top: 0;
+  transform: rotate(0);
 }
+
+#hamburger-x div:nth-child(1) {
+  position: absolute;
+  top: 50%;
+  transform: rotate(45deg);
+}
+
 
 #hamburger div:nth-child(2) {
   position: absolute;
-  top: calc(100% - 2px);
+  top: calc(50% - 1px);
+  transform: rotate(0);
 }
+
+#hamburger-x div:nth-child(2) {
+  position: absolute;
+  top: 50%;
+  transform: rotate(45deg);
+}
+
+#hamburger div:nth-child(3) {
+  position: absolute;
+  top: calc(100% - 2px);
+  transform: rotate(0);
+}
+
+#hamburger-x div:nth-child(3) {
+  position: absolute;
+  top: 50%;
+  transform: rotate(-45deg);
+}
+
+
+
+
+
 /* End hamburger composition */
 #h-menu-div {
   display: none;
