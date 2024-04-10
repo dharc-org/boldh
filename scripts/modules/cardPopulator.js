@@ -132,7 +132,7 @@ export function populateModal(id, eventStatus, agendaArray) {
   modalContent.innerHTML = eventTitleSubtitle + tagGroup + modalMainContent;
 
   // open modal and display modal content and overlay. Finally disable scroll of the body
-  document.getElementById('modal-overlay').style.display = 'flex'
-  document.getElementById('expansion-container').style.display = 'flex'
+  document.getElementById('modal-overlay').classList.add('modal-overlay-show');
+  document.getElementById('expansion-container').classList.add('expansion-container-show');
   document.body.style.overflow = 'hidden'
 }

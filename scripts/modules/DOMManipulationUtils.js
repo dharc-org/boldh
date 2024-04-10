@@ -11,8 +11,8 @@ export function changeLinkState() {
 
 // CLOSE MODAL FUNCTION TRIGGERD BY CLOSE ICON IN MODAL CONTENT
 export function closeModal() {
-  document.getElementById('modal-overlay').style.display = 'none'
-
+  document.getElementById('modal-overlay').classList.remove('modal-overlay-show');
+  document.getElementById('expansion-container').classList.remove('expansion-container-show');
   document.getElementById('modal-content').innerHTML = ''
   document.body.style.overflow = 'auto'
 }
