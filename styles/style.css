@@ -861,15 +861,16 @@ nav ul li a:not(.active):before {
 /* --------------------- EVENT MODAL ----------------------*/
 #modal-overlay {
   opacity: 0;
-  width: 100vw; 
-  height: 100vh;
+  width: 0; 
+  height: 0;
   position: fixed;
-  bottom: 0; 
-  left: 0; 
+  top: 50%; 
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: -1;
+  z-index: 999;
   background: rgba(242, 242, 242, 0.16);
   backdrop-filter: blur(12.5px);
   transition: all 0.2s ease-out; 
@@ -877,7 +878,8 @@ nav ul li a:not(.active):before {
 
 .modal-overlay-show {
   opacity: 1!important;
-  z-index: 999!important;
+  width: 100vw!important; 
+  height: 100vh!important;
   transition: all 0.2s ease-out; 
 }
 
@@ -885,8 +887,9 @@ nav ul li a:not(.active):before {
   opacity: 0;
   display: flex;
   position: absolute;
-  bottom: 0;
-  left: 0;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(calc(-50% + 2.5vh));
   height: 0;
   width: 0;
   flex-direction: column;
@@ -900,7 +903,7 @@ nav ul li a:not(.active):before {
 
 .expansion-container-show {
   opacity: 1!important;
-  height: 92.5vh!important;
+  height: 95vh!important;
   width: 100vw!important;
   transition: all 0.2s ease-out; 
 }
