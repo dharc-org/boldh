@@ -873,14 +873,14 @@ nav ul li a:not(.active):before {
   z-index: 999;
   background: rgba(242, 242, 242, 0.16);
   backdrop-filter: blur(12.5px);
-  transition: all 0.2s ease-out; 
+ 
 }
 
 .modal-overlay-show {
   opacity: 1!important;
   width: 100vw!important; 
   height: 100vh!important;
-  transition: all 0.2s ease-out; 
+
 }
 
 #expansion-container {
@@ -905,7 +905,7 @@ nav ul li a:not(.active):before {
   opacity: 1!important;
   height: 95vh!important;
   width: 100vw!important;
-  transition: all 0.2s ease-out; 
+
 }
 
 #modal-close-container {
