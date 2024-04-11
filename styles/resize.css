@@ -74,7 +74,7 @@
 @media screen and (max-width: 640px){
 
   h2 {
-    font-size: 4.75rem;
+    font-size: 4rem;
   }
 
   h3 {
@@ -137,6 +137,12 @@
     width: 60%;
   }
 
+
+  /* ------- CARDS ------ */
+  .card-arrow-cnt {
+    height: 2.5rem;
+  }
+
   /* ------- MODAL ------ */
   #modal-title {
     font-size: 2rem;
@@ -151,10 +157,25 @@
     padding: 0 10vw 4rem 10vw;
   }
 
+
+  /* -------- CREDITS ------- */
+
+  #credits-logo {
+    width: 40%;
+  }
+
+  #main-credits ul {
+    gap: 1.5rem;
+  }
+
 }
 
 
 @media screen and (max-width: 480px){
+
+  h4 {
+    font-size: 1.5rem;
+  }
   /* --------- HERO --------- */
   #dh-mib {
     gap: 1.5rem;
@@ -171,6 +192,11 @@
 
   .hero-btn {
     gap: 0.5rem;
+  }
+
+  /* --------- CARD --------- */
+  .card-text {
+    font-size: 1.2rem;
   }
 
   /* --------- DIVISION --------- */
@@ -199,6 +225,25 @@
     #modal-link-group .dark-btn {
       flex-grow: 1;
       min-width: fit-content;
+    }
+
+    /* ----- FOOTER and CREDITS ------ */
+
+    .contacts-box .contacts-body {
+      font-size: 1.25rem;
+    }
+
+    .credits-title {
+      font-size: 4rem !important;
+    }
+    .credit-line p {
+      font-size: 2rem !important;
+    }
+    .credit-line a {
+      font-size: 1.5rem !important;
+    }
+    .credit-line .boldh-btn-arrow-cnt {
+      height: 1.25rem !important;
     }
 }
 
