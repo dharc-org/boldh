@@ -3,11 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <!--
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <link rel="stylesheet" href="styles/fonts.css">
-  <link rel="stylesheet" href="styles/credits-style.css">
+  <link rel="stylesheet" href="styles/style.css">
+  <link rel="stylesheet" href="styles/resize.css">
+  
   <script src="scripts/stats.js"></script>
   <script src="scripts/matomo.js"></script>
   <script src="https://www.unibo.it/++resource++unibo.cookiebanner/unibo-cookies.min.js?v=20"></script>
@@ -19,27 +20,159 @@
 
 </head>
 <body>
-  <section>
-    <div class="credits-banner">
-        <a href="./index.html"><img src="assets/img/SVG/footer-logo.svg" class="credits-logo"  id="credits-logo"alt="logo in half"></img></a>
+    <div id="credits-banner">
+      <a href="./index.html"><img id="credits-logo" src="./assets/img/SVG/logo/default-white.svg" alt="BolDH logo"></a>
     </div>
-    <div>
+    <div id="main-credits">
       <h1 class="credits-title">Credits</h1>
-      <p class="credits-paragraph"><span class="title-credits">Scientific Committee</span>
-                                                <br>Francesca Tomasi <span class="email-credits"> ⇢ <a href="mailto:francesca.tomasi@unibo.it">francesca.tomasi@unibo.it</a></span>
-                                                <br>Marilena Daquino <span class="email-credits"> ⇢ <a href="mailto:marilena.daquino2@unibo.it">marilena.daquino2@unibo.it</a>, <a href="https://marilenadaquino.github.io/">website</a></span>
-                                                <br>Paola Italia <span class="email-credits"> ⇢ <a href="mailto:paola.italia@unibo.it"> paola.italia@unibo.it</a></span>
-                                                <br>Maddalena Modesti <span class="email-credits"> ⇢ <a href="mailto:maddalena.modesti3@unibo.it"> maddalena.modesti3@unibo.it</a></span>
-                                                <br>Silvio Peroni <span class="email-credits"> ⇢ <a href="mailto:silvio.peroni@unibo.it"> silvio.peroni@unibo.it</a></span></p>
-      <p class="credits-paragraph"><span class="title-credits">Web Design</span>
-                                                <br>Marco Grasso <span class="email-credits"> ⇢ <a href="mailto:marco.grasso7@unibo.it"> marco.grasso7@unibo.it</a></span>
-                                                <br>Tommaso Battisti <span class="email-credits"> ⇢ <a href="mailto:tommaso.battisti5@unibo.it"> tommaso.battisti5@unibo.it</a></span></p>
-      <p class="credits-paragraph"><span class="title-credits">Collaborators</span>
-                                                <br>Martina Dello Buono<span class="email-credits"> ⇢ <a href="mailto:martina.dellobuono2@unibo.it"> martina.dellobuono2@unibo.it</a></span>
-                                                <br>Lucia Giagnolini<span class="email-credits"> ⇢ <a href="mailto:lucia.giagnolini2@unibo.it"> lucia.giagnolini2@unibo.it</a></span>
-                                                <br>Valentina Pasqual<span class="email-credits"> ⇢ <a href="mailto: valentina.pasqual2@unibo.it"> valentina.pasqual2@unibo.it </a></span>
-                                                <br>Giulia Renda<span class="email-credits"> ⇢ <a href="mailto:giulia.renda3@unibo.it"> giulia.renda3@unibo.it</a></span></p>
+      <div class="credits-section">
+        <h2 class="subtitle dark-sbt">Scientific Committee</h2>
+        <ul>
+          <li>
+            <div class="credit-line">
+              <p>Francesca Tomasi</p>
+              <div class='boldh-btn-arrow-cnt'>
+                <svg xmlns="http://www.w3.org/2000/svg" width="66" height="50" viewBox="0 0 66 50" fill="none"><path d="M0 25H64M64 25L41.7391 1M64 25L41.7391 49" stroke="#F2F2F2" stroke-width="2" vector-effect="non-scaling-stroke"/></svg>
+              </div>
+              <p>
+                <a class="boldh-a-inline" href="mailto:francesca.tomasi@unibo.it">francesca.tomasi@unibo.it</a>
+              </p>
+            </div>
+          </li>
+          <li>
+            <div class="credit-line">
+              <p>Marilena Daquino</p>
+              <div class='boldh-btn-arrow-cnt'>
+                <svg xmlns="http://www.w3.org/2000/svg" width="66" height="50" viewBox="0 0 66 50" fill="none"><path d="M0 25H64M64 25L41.7391 1M64 25L41.7391 49" stroke="#F2F2F2" stroke-width="2" vector-effect="non-scaling-stroke"/></svg>
+              </div>
+              <p>
+                <a class="boldh-a-inline" href="mailto:marilena.daquino2@unibo.it">marilena.daquino2@unibo.it</a>, <a class="boldh-a-inline" href="https://marilenadaquino.github.io/">website</a></span>
+              </p>
+            </div>
+          </li>
+          <li>
+            <div class="credit-line">
+              <p>Paola Italia</p>
+              <div class='boldh-btn-arrow-cnt'>
+                <svg xmlns="http://www.w3.org/2000/svg" width="66" height="50" viewBox="0 0 66 50" fill="none"><path d="M0 25H64M64 25L41.7391 1M64 25L41.7391 49" stroke="#F2F2F2" stroke-width="2" vector-effect="non-scaling-stroke"/></svg>
+              </div>
+              <p>
+                <a class="boldh-a-inline" href="mailto:paola.italia@unibo.it">paola.italia@unibo.it</a>
+              </p>
+            </div>
+          </li>
+          <li>
+            <div class="credit-line">
+              <p>Maddalena Modesti</p>
+              <div class='boldh-btn-arrow-cnt'>
+                <svg xmlns="http://www.w3.org/2000/svg" width="66" height="50" viewBox="0 0 66 50" fill="none"><path d="M0 25H64M64 25L41.7391 1M64 25L41.7391 49" stroke="#F2F2F2" stroke-width="2" vector-effect="non-scaling-stroke"/></svg>
+              </div>
+              <p>
+                <a class="boldh-a-inline" href="mailto:maddalena.modesti3@unibo.it">maddalena.modesti3@unibo.it</a>
+              </p>
+            </div>
+          </li>
+          <li>
+            <div class="credit-line">
+              <p>Silvio Peroni</p>
+              <div class='boldh-btn-arrow-cnt'>
+                <svg xmlns="http://www.w3.org/2000/svg" width="66" height="50" viewBox="0 0 66 50" fill="none"><path d="M0 25H64M64 25L41.7391 1M64 25L41.7391 49" stroke="#F2F2F2" stroke-width="2" vector-effect="non-scaling-stroke"/></svg>
+              </div>
+              <p>
+                <a class="boldh-a-inline" href="mailto:silvio.peroni@unibo.it">silvio.peroni@unibo.it</a>
+              </p>
+            </div>
+          </li>
+        </ul> 
+      </div>
+
+      <div class="credits-section">
+        <h2 class="subtitle dark-sbt">Web Design & Development</h2>
+        <ul>
+          <li>
+            <div class="credit-line">
+              <p>Marco Grasso</p>
+              <div class='boldh-btn-arrow-cnt'>
+                <svg xmlns="http://www.w3.org/2000/svg" width="66" height="50" viewBox="0 0 66 50" fill="none"><path d="M0 25H64M64 25L41.7391 1M64 25L41.7391 49" stroke="#F2F2F2" stroke-width="2" vector-effect="non-scaling-stroke"/></svg>
+              </div>
+              <p>
+                <a class="boldh-a-inline" href="mailto:marco.grasso7@unibo.it">marco.grasso7@unibo.it</a>
+              </p>
+            </div>
+          </li>
+          <li>
+            <div class="credit-line">
+              <p>Tommaso Battisti</p>
+              <div class='boldh-btn-arrow-cnt'>
+                <svg xmlns="http://www.w3.org/2000/svg" width="66" height="50" viewBox="0 0 66 50" fill="none"><path d="M0 25H64M64 25L41.7391 1M64 25L41.7391 49" stroke="#F2F2F2" stroke-width="2" vector-effect="non-scaling-stroke"/></svg>
+              </div>
+              <p>
+                <a class="boldh-a-inline" href="mailto:tommaso.battisti5@unibo.it">tommaso.battisti5@unibo.it</a></span>
+              </p>
+            </div>
+          </li>
+        </ul> 
+      </div>
+
+      <div class="credits-section">
+        <h2 class="subtitle dark-sbt">Collaborators</h2>
+        <ul>
+          <li>
+            <div class="credit-line">
+              <p>Martina Dello Buono</p>
+              <div class='boldh-btn-arrow-cnt'>
+                <svg xmlns="http://www.w3.org/2000/svg" width="66" height="50" viewBox="0 0 66 50" fill="none"><path d="M0 25H64M64 25L41.7391 1M64 25L41.7391 49" stroke="#F2F2F2" stroke-width="2" vector-effect="non-scaling-stroke"/></svg>
+              </div>
+              <p>
+                <a class="boldh-a-inline" href="mailto:martina.dellobuono2@unibo.it">martina.dellobuono2@unibo.it</a>
+              </p>
+            </div>
+          </li>
+          <li>
+            <div class="credit-line">
+              <p>Lucia Giagnolini</p>
+              <div class='boldh-btn-arrow-cnt'>
+                <svg xmlns="http://www.w3.org/2000/svg" width="66" height="50" viewBox="0 0 66 50" fill="none"><path d="M0 25H64M64 25L41.7391 1M64 25L41.7391 49" stroke="#F2F2F2" stroke-width="2" vector-effect="non-scaling-stroke"/></svg>
+              </div>
+              <p>
+                <a class="boldh-a-inline" href="mailto:lucia.giagnolini2@unibo.it">lucia.giagnolini2@unibo.it</a></span>
+              </p>
+            </div>
+          </li>
+          <li>
+            <div class="credit-line">
+              <p>Valentina Pasqual</p>
+              <div class='boldh-btn-arrow-cnt'>
+                <svg xmlns="http://www.w3.org/2000/svg" width="66" height="50" viewBox="0 0 66 50" fill="none"><path d="M0 25H64M64 25L41.7391 1M64 25L41.7391 49" stroke="#F2F2F2" stroke-width="2" vector-effect="non-scaling-stroke"/></svg>
+              </div>
+              <p>
+                <a class="boldh-a-inline" href="mailto:valentina.pasqual2@unibo.it">valentina.pasqual2@unibo.it</a></span>
+              </p>
+            </div>
+          </li>
+          <li>
+            <div class="credit-line">
+              <p>Giulia Renda</p>
+              <div class='boldh-btn-arrow-cnt'>
+                <svg xmlns="http://www.w3.org/2000/svg" width="66" height="50" viewBox="0 0 66 50" fill="none"><path d="M0 25H64M64 25L41.7391 1M64 25L41.7391 49" stroke="#F2F2F2" stroke-width="2" vector-effect="non-scaling-stroke"/></svg>
+              </div>
+              <p>
+                <a class="boldh-a-inline" href="mailto:giulia.renda3@unibo.it">giulia.renda3@unibo.it</a></span>
+              </p>
+            </div>
+          </li>
+        </ul> 
+      </div>
     </div>
-  </section>
+
+  
+      <a href="./index.html" class="contacts-box back-home-box">
+        <div class="credits-arrow-cnt back-home-arrow-cnt">
+          <svg xmlns="http://www.w3.org/2000/svg" width="66" height="50" viewBox="0 0 66 50" fill="none"><path d="M0 25H64M64 25L41.7391 1M64 25L41.7391 49" stroke="#F2F2F2" stroke-width="2" vector-effect="non-scaling-stroke"/></svg>
+        </div>
+        <p class="subtitle back-home">Back to BolDH</p>
+      </a>
+
+
   </body>
 </html>
