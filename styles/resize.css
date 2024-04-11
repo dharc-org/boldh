@@ -214,9 +214,6 @@
   }
 
     /* ------- MODAL ------ */
-    #expansion-container {
-      height: 97.5vh;
-    }
 
     #modal-close-container {
       padding: 1.5rem 0.75rem;
@@ -257,5 +254,9 @@
   .cb {
     min-width: 21rem;
     max-width: 21rem;
+  }
+
+  #modal-content {
+    padding-bottom:  8rem;
   }
 }
