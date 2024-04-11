@@ -873,11 +873,13 @@ nav ul li a:not(.active):before {
   z-index: 999;
   background: rgba(242, 242, 242, 0.16);
   backdrop-filter: blur(12.5px);
+  transition: all .2s ease-out; 
 }
 
 .modal-overlay-show {
   opacity: 1!important;
   height: 100vh!important;
+  transition: all .2s ease-out; 
 }
 
 #expansion-container {
@@ -895,12 +897,13 @@ nav ul li a:not(.active):before {
   border-radius: 1rem 1rem 0 0;
   background-color: var(--BolDH-Black-Dark1, #212121);
   z-index: 9999;
-  transition: all 0.3s ease-out; 
+  transition: all .2s ease-out; 
 }
 
 .expansion-container-show {
   opacity: 1!important;
   height: 95vh!important;
+  transition: all .2s ease-out; 
 }
 
 #modal-close-container {
