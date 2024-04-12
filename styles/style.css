@@ -902,7 +902,7 @@ nav ul li a:not(.active):before {
 
 .expansion-container-show {
   opacity: 1!important;
-  height: 95vh!important;
+  height: 95dvh!important;
   transition: all .2s ease-out; 
 }
 
