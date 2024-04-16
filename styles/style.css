@@ -31,6 +31,29 @@ body {
   background-color: var(--BolDH-Black-Black, #131313);
 }
 
+/* SCROLLBARS */
+/* Set scrollbar style for firefox */
+.news-box-container, .agenda-box-container, #modal-content, html {
+  scrollbar-color: rgba(255, 255, 255, 0.5) transparent;
+  scrollbar-width: medium;
+}
+/* Set scrollbat style for Chrome and Safari */
+/* Here I do not want to change dimensions of main content's scrollbar to avoid layout changes, so i use selectors to target specific scrollbars */
+.news-box-container::-webkit-scrollbar, .agenda-box-container::-webkit-scrollbar, #modal-content::-webkit-scrollbar {
+  height: 0.45rem;
+  width: 0.45rem;
+}
+/* For colors I target all scrollbars */
+::-webkit-scrollbar-thumb {
+  border-radius: 1rem;
+  background-color: rgba(255, 255, 255, 0.5); 
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+
 /* ------------- COOKIES ------------- */
 .chefcookie__box h1, .chefcookie__button {
   text-transform: lowercase!important;
@@ -753,6 +776,9 @@ nav ul li a:not(.active):before {
   padding-bottom: 2rem;
 }
 
+
+
+
 .cb:first-child {
   margin-left: 7.5vw;
 }
@@ -946,7 +972,6 @@ nav ul li a:not(.active):before {
   align-self: stretch;
   gap: 3rem;
   padding: 0 20vw 4rem 20vw;
-  scrollbar-color: var(--BolDH-White-White, #F2F2F2) transparent;
   overflow-y: auto;
 }
 
