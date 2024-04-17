@@ -1,5 +1,24 @@
 [
   {
+    "title": "Datathon Wikidata",
+    "division": "BolDH",
+    "type": "Initiatives",
+    "text": "<p>Appuntamento a luned\u00ec 13 maggio 2024 per un <a class=\"boldh-a-inline\" href=\"https://www.wikidata.org/wiki/Wikidata:WikiProject_Cultural_venues/Datathon\" target=\"_blank\">Datathlon Wikidata</a>, una maratona di acquisizione dati che si terr\u00e0 nell\u2019Aula Affreschi (via Zamboni 34, Bologna), dalle 09:00 alle 19:00, con <span class=\"keyword\">pausa pranzo intermedia</span>.</p> <p>Il datathon, organizzato da <span class=\"keyword\">Francesca Tomasi (UniBo)</span>, <span class=\"keyword\">Valentina Pasqual (UniBo)</span>, <span class=\"keyword\">Camillo Carlo Pellizzari di San Girolamo (SNS)</span>, <span class=\"keyword\">Matteo Romanello (UNIL)</span>, e <span class=\"keyword\">Federico Boschetti (CNR-ILC/VeDPH)</span> mira alla creazione di nuovi elementi Wikidata (si prevede nell'ordine di alcune centinaia) relativi in particolare a <span class=\"keyword\">dati di natura bibliografica</span> sul tema del <span class=\"keyword\">falso documentario</span>. Questa iniziativa ha lo scopo di espandere il grafo Wikidata rendendolo sempre pi\u00f9 utile per gli studi umanistici.</p> <p>L\u2019unico <span class=\"keyword\">pre-requisito</span> per la partecipazione al Datathon \u00e8 la consultazione di un tutorial online (pre-registrato) di 90 minuti di introduzione a Wikidata, alla modifica dei suoi contentuti e all'inserimento di metadati bibliografici. Il video \u00e8 reperibile al seguente indirizzo: <a class=\"boldh-a-inline\" target=\"_blank\" href=\"https://www.youtube.com/watch?v=2UDrn-HzO68\">https://www.youtube.com/watch?v=2UDrn-HzO68</a>.</p> <p><span class=\"keyword\">Chi \u00e8 interessato \u00e8 pregato di mandare una manifestazione di interesse inviando una mail all\u2019indirizzo <a class=\"boldh-a-inline\" href=\"mailto:boldh@unibo.it\">boldh@unibo.it</a> entro il 30 aprile, indicando come oggetto: \"Manifestazione d\u2019interesse per Datathon Wikidata\" e scrivendo nel corpo della mail: nome, cognome.</span></p> <p>Il progetto rientra tra le attivit\u00e0 del <a class=\"boldh-a-inline\" target=\"_blank\" href=\"https://www.wikidata.org/wiki/Wikidata:Gruppo_Wikidata_per_Musei,_Archivi_e_Biblioteche\">Gruppo Wikidata per Musei, Archivi e Biblioteche</a>. Per partecipare \u00e8 necessario <a class=\"boldh-a-inline\" href=\"https://www.wikidata.org/wiki/Special:CreateAccount\" target=\"_blank\">creare un account</a> Wikidata (o verificare di possedere gi\u00e0 un account del mondo WikiMedia) <span class=\"keyword\">entro l'8 maggio 2024</span>. </br>Per inserire dati su Wikidata \u00e8 necessario infatti avere un account attivo da almeno 4 giorni.</p> <p>Dopo aver creato l\u2019account, \u00e8 caldamente consigliato di cominciare a familiarizzare con la piattaforma, procedendo alla personalizzazione delle impostazioni al fine dello svolgimento delle attivit\u00e0 del 13 maggio 2024, seguendo:</p> <ul> <li><a class=\"boldh-a-inline\" target=\"_blank\" href=\"https://www.wikidata.org/wiki/Wikidata:Gruppo_Wikidata_per_Musei,_Archivi_e_Biblioteche/Editathon_mensile#Preparazione\">Istruzioni</a></li> <li><a href=\"https://www.youtube.com/watch?v=iLNElDg0EQc\" target=\"_blank\" class=\"boldh-a-inline\">Videotutorial</a></li> </ul>",
+    "date": "13/05/2024",
+    "time": "from 9:00 to 19:00",
+    "place": "Via Zamboni 34, Bologna",
+    "place_extended": "Aula Affreschi, Via Zamboni 34, Bologna",
+    "subtitle": "Maratona di acquisizione dati di natura bibliografica sul tema del falso documentario",
+    "urls": [
+      {
+        "text": "Crea account Wikidata",
+        "url": "https://www.wikidata.org/wiki/Special:CreateAccount"
+      }
+    ],
+    "downloads": [],
+    "IMAGE": ""
+  },
+  {
     "title": "Charles van den Heuvel, A classification of the arts in a digital ecosystem. Exploring Dynamic ODP\u2019s",
     "division": "CHeDE",
     "type": "Lecture",
