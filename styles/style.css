@@ -147,23 +147,20 @@ p, ul, ol {
 }
 
 /* ------------ BUTTONS AND LINKS ------------ */
-.boldh-a-inline {
+.boldh-a-inline { /*I use background image and not :before pseudo element so to let decoration animation work also on multi-line links*/
   color: var(--BolDH-White-White, #F2F2F2);
   text-decoration: none;
   font-family: SequelMedium;
   position: relative;
+  background-image: linear-gradient(var(--BolDH-Accent-1), var(--BolDH-Accent-1));
+  background-position: 0% 100%;
+  background-repeat: no-repeat;
+  padding-bottom: 0.2rem;
+  background-size: 100% 2px;
+  transition: background-size .2s ease-in;
 }
 
-.boldh-a-inline:before {
-  position: absolute;
-  content: "";
-  width: 100%;
-  border-bottom: 2px solid var(--BolDH-Accent-1, #32C3A0);
-  bottom: -0.2rem;
-  transform-origin: left;
-  transform: scaleX(1);
-  transition: transform .2s ease-in;
-}
+
 
 .boldh-btn {
   /* BolDH/Buttons */
@@ -1258,6 +1255,11 @@ nav ul li a:not(.active):before {
   }
 
   /* ------- BTNS and LINKS ------- */
+  .boldh-a-inline:hover {
+    background-size: 0% 2px;
+    background-position: 100% 100%;
+  }
+
   .secondary-btn:hover {
     background-color: var(--BolDH-Black-Dark2, #252525);
     border-color: var(--BolDH-White-White, #F2F2F2);
@@ -1297,21 +1299,7 @@ nav ul li a:not(.active):before {
     transition: all ease-in .2s;
   }
 
-  .boldh-a-inline:hover {
-    color: var(--BolDH-Accent-1, #32C3A0);
-    transition: transform .2s ease-in;
-  }
 
-  .boldh-a-inline:hover:before {
-    position: absolute;
-    content: "";
-    width: 100%;
-    border-bottom: 2px solid var(--BolDH-Accent-1, #32C3A0);
-    bottom: -0.2rem;
-    transform-origin: right;
-    transform: scaleX(0);
-    transition: transform .2s ease-in;
-  }
 
   /* ------ Topics ------ */
   .research-topic:hover {
