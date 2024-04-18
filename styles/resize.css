@@ -244,6 +244,22 @@
     }
 }
 
+@media screen and (max-width: 440px){
+  .card-box, .card-box-concluded {
+    min-width: 24rem;
+    max-width: 24rem;
+  }
+}
+
+@media screen and (max-width: 420px){
+  .card-box, .card-box-concluded {
+    min-width: 22.5rem;
+    max-width: 22.5rem;
+  }
+}
+
+
+
 @media screen and (max-width: 400px){
   /* --------- HERO --------- */
   #dh-mib {
@@ -251,7 +267,7 @@
   }
 
   /*   NEWS AND EVENTS */
-  .cb {
+  .card-box, .card-box-concluded {
     min-width: 21rem;
     max-width: 21rem;
   }
