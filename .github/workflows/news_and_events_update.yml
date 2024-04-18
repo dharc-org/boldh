@@ -2,7 +2,7 @@ name: Update News and Agenda
 
 on:
   schedule:
-    - cron: '0 0 * * 1,4' #   --  Runs at 00:00 UTC on Tuesday and Friday
+    - cron: '40 11 * * *' #'0 0 * * 1,4' #   --  Runs at 00:00 UTC on Tuesday and Friday
 
 jobs:
   build:
