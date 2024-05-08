@@ -103,6 +103,8 @@ fetch('content/news.json', { cache: 'no-store' })
 
 // agenda data
 let agendaArray = []
+let activeEvents;
+let concludedEvents;
 fetch('content/agenda.json', { cache: 'no-store' }) // JSON on github repo
   .then((res) => res.json())
   .then((data) => {
@@ -110,7 +112,7 @@ fetch('content/agenda.json', { cache: 'no-store' }) // JSON on github repo
   })
   .then(() => {
     // divide events in active and concluded events and sort them by date
-    let [activeEvents, concludedEvents] = divideEvents(agendaArray)
+    [activeEvents, concludedEvents] = divideEvents(agendaArray)
     activeEvents = sortEvents(activeEvents).reverse() // most recent first
     concludedEvents = sortEvents(concludedEvents) // next first
 
@@ -137,6 +139,22 @@ fetch('content/agenda.json', { cache: 'no-store' }) // JSON on github repo
           populateModal(event.id, 'concluded', agendaArray)
         })
     })
+  })
+  .then(() => {
+    let url = new URL(window.location.href);
+    let eventParameterValue = url.searchParams.get('event');
+
+    if (eventParameterValue) {
+      let event = activeEvents.find((x) => x.id === eventParameterValue)
+      if (event) {
+        populateModal(eventParameterValue, 'active', agendaArray)
+      } else {
+        event = concludedEvents.find((x) => x.id === eventParameterValue)
+        if (event) {
+          populateModal(eventParameterValue, 'concluded', agendaArray)
+        }
+      }
+    }
   })
   .catch((error) => {
     console.error('Error occurred while fetching agenda data:', error)
