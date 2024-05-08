@@ -4,9 +4,7 @@ export function divideEvents(agendaArray) {
   let concludedArr = []
   // divide events inconcluded or active array
   agendaArray.forEach(function (event) {
-    let eventIndex = agendaArray.indexOf(event)
     let endDate
-    event.id = eventIndex
     let parts
     if (event.date.includes('-')) {
       // if event is a range of dates, take the last date of the range as the end date
