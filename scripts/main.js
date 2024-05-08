@@ -140,7 +140,7 @@ fetch('content/agenda.json', { cache: 'no-store' }) // JSON on github repo
         })
     })
   })
-  .then(() => {
+  .then(() => { //Check if an event parameter is present in the url to open the modal with the event
     let url = new URL(window.location.href);
     let eventParameterValue = url.searchParams.get('event');
 
