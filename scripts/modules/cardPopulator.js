@@ -1,12 +1,12 @@
+import { handleUrl } from './urlHandler.js'
+
 // DIVIDE EVENTS IN ACTIVE AND CONCLUDED EVENTS AND SORT THEM BY DATE
 export function divideEvents(agendaArray) {
   let activeArr = []
   let concludedArr = []
   // divide events inconcluded or active array
   agendaArray.forEach(function (event) {
-    let eventIndex = agendaArray.indexOf(event)
     let endDate
-    event.id = eventIndex
     let parts
     if (event.date.includes('-')) {
       // if event is a range of dates, take the last date of the range as the end date
@@ -86,6 +86,10 @@ export function populateCard(itemType, item) {
 
 
 export function populateModal(id, eventStatus, agendaArray) {
+
+  handleUrl(id, "open")
+  // Update the URL with the event id to allow direct access to the event page
+
   // eventStatus is the status of the event (active or concluded) and it is used to define the color of the date tag
   const modalContent = document.getElementById('modal-content')
   modalContent.innerHTML = '' // reset modal content

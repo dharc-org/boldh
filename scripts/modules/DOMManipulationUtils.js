@@ -1,3 +1,5 @@
+import { handleUrl } from './urlHandler.js'
+
 // NAVBAR LINKS STATE CHANGE
 export function changeLinkState() {
   const links = document.querySelectorAll('.nav-link-li a')
@@ -15,6 +17,7 @@ export function closeModal() {
   document.getElementById('modal-overlay').classList.remove('modal-overlay-show');
   document.getElementById('modal-content').innerHTML = ''
   document.body.style.overflow = 'auto'
+  handleUrl('', "close")
 }
 
 // OPEN/CLOSE MENU FUNCTION
