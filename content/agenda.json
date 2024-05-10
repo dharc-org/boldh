@@ -16,8 +16,8 @@
       }
     ],
     "downloads": [],
-    "IMAGE": "Event poster\n[https://ficlit.unibo.it/it/eventi/elena-giglia-open-science-in-dialogue-with-society/@@unibo.tiles.richtext/925a6fd9b58442b2a2e9dc8a80ba52ef/@@images/e44b6854-bdc1-4194-ab62-7fcf5e5c8a85.jpeg]\n",
-    "ID": "event-4"
+    "image": "Event poster\n[https://ficlit.unibo.it/it/eventi/elena-giglia-open-science-in-dialogue-with-society/@@unibo.tiles.richtext/925a6fd9b58442b2a2e9dc8a80ba52ef/@@images/e44b6854-bdc1-4194-ab62-7fcf5e5c8a85.jpeg]\n",
+    "id": "evt-4"
   },
   {
     "title": "Datathon Wikidata",
@@ -36,8 +36,8 @@
       }
     ],
     "downloads": [],
-    "IMAGE": "",
-    "ID": "event-3"
+    "image": "",
+    "id": "evt-3"
   },
   {
     "title": "Charles van den Heuvel, A classification of the arts in a digital ecosystem. Exploring Dynamic ODP\u2019s",
@@ -56,8 +56,8 @@
       }
     ],
     "downloads": [],
-    "IMAGE": "",
-    "ID": "event-2"
+    "image": "",
+    "id": "evt-2"
   },
   {
     "title": "Patrimonio culturale e infrastrutture di ricerca: la conservazione e la comunicazione al pubblico",
@@ -89,7 +89,7 @@
         "url": "https://site.unibo.it/una-europa/en/agenda/una-resin-conference/programma-una-resin.pdf"
       }
     ],
-    "IMAGE": "",
-    "ID": "event-1"
+    "image": "",
+    "id": "evt-1"
   }
 ]
