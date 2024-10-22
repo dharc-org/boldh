@@ -37,6 +37,10 @@ jobs:
           git add -A
           git diff-index --quiet HEAD || (git commit -a -m "updated logs" --allow-empty)
 
+      - name: pull changes from main
+        run: |
+          git pull origin main || echo "No changes to pull or already up to date."
+
       - name: push changes
         uses: ad-m/github-push-action@v0.6.0
         with:
