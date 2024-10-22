@@ -2,7 +2,7 @@ name: Update News and Agenda
 
 on:
   schedule:
-    - cron: '0 0 * * 1,4' 
+    - cron: '0 0 * * 1,4'
 
 jobs:
   build:
@@ -10,7 +10,7 @@ jobs:
     steps:
 
       - name: checkout repo content
-        uses: actions/checkout@v3 
+        uses: actions/checkout@v3
 
       - name: setup python
         uses: actions/setup-python@v4
@@ -35,17 +35,15 @@ jobs:
           git config --local user.email "valentina.pasqual2@unibo.it"
           git config --local user.name "ValentinaPasqual"
 
-      - name: fetch and rebase changes from main
+      - name: fetch latest changes from main
         run: |
           git fetch origin main
-          git checkout main
-          git pull --rebase origin main # Ensures that changes from the remote are integrated properly
-          git status  # Show the status after pulling and rebasing
+          git merge origin/main || echo "No changes to merge."
 
       - name: commit files
         run: |
           git add -A
-          git diff-index --quiet HEAD || git commit -m "updated logs"
+          git diff-index --quiet HEAD || (git commit -a -m "updated logs" --allow-empty)
 
       - name: push changes
         uses: ad-m/github-push-action@v0.6.0
