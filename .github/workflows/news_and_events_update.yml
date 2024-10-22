@@ -35,9 +35,14 @@ jobs:
           git config --local user.email "valentina.pasqual2@unibo.it"
           git config --local user.name "ValentinaPasqual"
 
-      - name: pull changes from main
+      - name: fetch changes from main
         run: |
-          git pull origin main || echo "No changes to pull or already up to date."
+          git fetch origin main
+          git status  # Show the status after fetching
+
+      - name: merge changes from main
+        run: |
+          git merge origin/main || echo "Merge conflict or no changes to merge."
 
       - name: commit files
         run: |
