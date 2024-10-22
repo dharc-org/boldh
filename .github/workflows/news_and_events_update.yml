@@ -35,17 +35,17 @@ jobs:
           git config --local user.email "valentina.pasqual2@unibo.it"
           git config --local user.name "ValentinaPasqual"
 
-      - name: fetch changes from main
+      - name: fetch and rebase changes from main
         run: |
           git fetch origin main
           git checkout main
-          git pull origin main # Ensures local main branch is up to date
-          git status  # Show the status after pulling
+          git pull --rebase origin main # Ensures that changes from the remote are integrated properly
+          git status  # Show the status after pulling and rebasing
 
       - name: commit files
         run: |
           git add -A
-          git diff-index --quiet HEAD || (git commit -a -m "updated logs" --allow-empty)
+          git diff-index --quiet HEAD || git commit -m "updated logs"
 
       - name: push changes
         uses: ad-m/github-push-action@v0.6.0
