@@ -38,11 +38,9 @@ jobs:
       - name: fetch changes from main
         run: |
           git fetch origin main
-          git status  # Show the status after fetching
-
-      - name: merge changes from main
-        run: |
-          git merge origin/main || echo "Merge conflict or no changes to merge."
+          git checkout main
+          git pull origin main # Ensures local main branch is up to date
+          git status  # Show the status after pulling
 
       - name: commit files
         run: |
