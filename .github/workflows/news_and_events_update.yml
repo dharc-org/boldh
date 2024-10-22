@@ -2,7 +2,7 @@ name: Update News and Agenda
 
 on:
   schedule:
-    - cron: '0 0 * * 1,4' #'0 0 * * 1,4' #   --  Runs at 00:00 UTC on Tuesday and Friday
+    - cron: '0 0 * * 1,4' 
 
 jobs:
   build:
@@ -10,12 +10,12 @@ jobs:
     steps:
 
       - name: checkout repo content
-        uses: actions/checkout@v3 # checkout the repository content
+        uses: actions/checkout@v3 
 
       - name: setup python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.10' # install the python version needed
+          python-version: '3.10'
 
       - name: install python packages
         run: |
@@ -30,19 +30,22 @@ jobs:
           GOOGLE_SHEETS_CREDS: ${{ secrets.GOOGLE_SHEETS_CREDS }}
         run: python news_and_events_update.py
 
-      - name: commit files
+      - name: configure git
         run: |
           git config --local user.email "valentina.pasqual2@unibo.it"
           git config --local user.name "ValentinaPasqual"
-          git add -A
-          git diff-index --quiet HEAD || (git commit -a -m "updated logs" --allow-empty)
 
       - name: pull changes from main
         run: |
           git pull origin main || echo "No changes to pull or already up to date."
 
+      - name: commit files
+        run: |
+          git add -A
+          git diff-index --quiet HEAD || (git commit -a -m "updated logs" --allow-empty)
+
       - name: push changes
         uses: ad-m/github-push-action@v0.6.0
         with:
           github_token: ${{ secrets.BOLDH_TOKEN }}
-          branch: main 
+          branch: main
