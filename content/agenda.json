@@ -1,5 +1,25 @@
 [
   {
+    "title": "Revealing Connections",
+    "division": "/DH.arc",
+    "type": "Seminar",
+    "text": "<p>\n    The <span class=\"keyword\">Revealing Connections: Leveraging Linked Open Data to discover knowledge through ResearchSpace</span> is a one-day seminar dedicated to the topics relevant for (but not limited to) better understanding the complex world of digital semantic archives. The seminar will offer insights into the ever-growing field of <span class=\"keyword\">Linked Open Data</span> and <span class=\"keyword\">Semantic Web technologies</span>, while also providing some concrete examples in form of methods and tools useful for creating digital collections.\n</p>\n<p>\n    <a class=\"boldh-a-inline\" href=\"https://dharc-org.github.io/RevealingConnections/speakers.html\" target=\"_blank\">Speakers</a> invited to attend and share with our audience their knowledge, pluriennial experience and best practices, are confirmed experts of their fields, and their contributions are thought to serve as guidance for present and future works of students, professionals, institutions and research community in general.\n</p>\n<p>\n    The first part of the seminar will be entirely dedicated to <span class=\"keyword\">ResearchSpace</span>, a free open-source semantic web platform supporting knowledge preservation and diversity. The audience will be presented with this innovative system from both theoretic and practical points of view. Afterwards, during the second part of the seminar, our speakers will dedicate their lectures to <span class=\"keyword\">Semantic Web and Linked Open Data</span>, presenting the state of the art and the latest tendencies in these fields. Finally, the two concluding talks will be characterised by the <span class=\"keyword\">intersections with the Chinese cultural heritage</span>, as a tribute to two projects directly related to this seminar.\n</p>\n<p>\n    This seminar is being organised as a part of the Framework for Attracting and Strengthening Research Excellence (FARE) funded project entitled <span class=\"keyword\">WenDAng - WRITE Digital Archive (CINECA code: R20K7ZB983)</span>, directly related to the European Research Council (ERC) funded project entitled <span class=\"keyword\">WRITE - New Forms of Calligraphy in China: A Contemporary Cultural Mirror (GA n. 949645)</span>, in collaboration with the <a class=\"boldh-a-inline\" href=\"https://centri.unibo.it/dharc/en\" target=\"_blank\">/DH.arc - Digital Humanities Research Center</a> of the University of Bologna. The dissemination of knowledge that will occur during this seminar will also highly contribute to the WenDAng project objectives and goals, especially for the data modelling process and the construction of the technological infrastracture that will support the preservation, visualisation and dissemination of the research data through the WRITE Digital Semantic Archive.\n</p>",
+    "date": "28/11/2024",
+    "time": "from 9:30 to 17:00",
+    "place": "San Giovanni in Monte 2, Bologna",
+    "place_extended": "Giorgio Prodi Lecture HallPiazza, San Giovanni in Monte 2, Bologna",
+    "subtitle": "Leveraging Linked Open Data to Discover Knowledge through Research Space",
+    "urls": [
+      {
+        "text": "Discover more",
+        "url": "https://dharc-org.github.io/RevealingConnections/about.html"
+      }
+    ],
+    "downloads": [],
+    "image": "",
+    "id": "evt-7"
+  },
+  {
     "title": "Nuove macchine e antichi saperi: IA, Supercalcolo e dati per il patrimonio culturale",
     "division": "BolDH",
     "type": "Conference",
