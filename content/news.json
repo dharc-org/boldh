@@ -1,14 +1,21 @@
 [
   {
+    "title": "KNOT - Rethinking Scholarly Digital Objects as Cultural Heritage",
+    "division": "/DH.arc",
+    "type": "Research",
+    "text": "Learn more about the KNOT project, a three-year pilot tasked with investigating ways to integrate the digital cultural heritage of Italian universities into the national infrastructure being built by the Central Institute for the Digitization of Cultural Heritage (ICDP) - Digital Library.",
+    "url": "https://icdp-digital-library.github.io/KNOT/"
+  },
+  {
     "title": "New Article: \"Italo Calvino's \u2018destini incrociati\u2019. An experiment of semantic narrative modelling and visualisation\"",
     "division": "/DH.arc",
     "type": "Published contribution",
-    "text": "\"Italo Calvino's \u2018destini incrociati\u2019. An experiment of semantic narrative modelling and visualisation\" has been recently published in Umanistica Digitale",
+    "text": "\"Italo Calvino's \u2018destini incrociati\u2019. An experiment of semantic narrative modelling and visualisation\" has been recently published in Umanistica Digitale.",
     "url": "https://doi.org/10.6092/issn.2532-8816/19013"
   },
   {
     "title": "Results of the May 13 Wikidata Datathon",
-    "division": "BolDH",
+    "division": "/DH.arc",
     "type": "Initiatives",
     "text": "Look at the outcomes of the Data Acquisition Marathon held in Aula Affreschi on the 13th of May, 2024!",
     "url": "https://outreachdashboard.wmflabs.org/courses/UNIBO/Datathaton_(13-05-2024)/home"
@@ -17,14 +24,14 @@
     "title": "New article: \"OpenCitations Meta\"",
     "division": "CHeDE",
     "type": "Published contribution",
-    "text": "\"OpenCitations Meta\" has been recently published in Quantitative Science Studies",
+    "text": "\"OpenCitations Meta\" has been recently published in Quantitative Science Studies.",
     "url": "https://doi.org/10.1162/qss_a_00292"
   },
   {
     "title": "New article: \"Modelling Chinese contemporary calligraphy: the WRITE data model\"",
     "division": "/DH.arc",
     "type": "Published contribution",
-    "text": "\"Modelling Chinese contemporary calligraphy: the WRITE data model\" has been recently published in Digital Scholarship in the Humanities",
+    "text": "\"Modelling Chinese contemporary calligraphy: the WRITE data model\" has been recently published in Digital Scholarship in the Humanities.",
     "url": "https://doi.org/10.1093/llc/fqae006"
   },
   {
