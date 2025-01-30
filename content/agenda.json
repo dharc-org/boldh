@@ -1,5 +1,20 @@
 [
   {
+    "title": "Dalla filologia digitale alla filologia computazionale",
+    "division": "CHeDE",
+    "type": "Cycle of Lectures",
+    "text": "<p>\nLa filologia digitale sta vivendo una nuova rivoluzione, alimentata dalla larga disponibilit\u00e0 e democratizzazioni di metodi di apprendimento automatico e di intelligenza artificiale di tipo generativo. Questa nuova rivoluzione arriva in un momento in cui la comunit\u00e0 scientifica non ha ancora metabolizzato la filologia digitale basata sulla rappresentazione del testo nello spazio digitale. Diventa quindi urgente per la comunit\u00e0 di comprendere le sfide e le implicazioni di questo nuova realt\u00e0 per evitare da un lato di restare ai margini degli ultimi sviluppi tecnologici, dall\u2019altro di cedere ai facili entusiasmi che tendono a minimizzare i problemi epistemologici ed etici di queste tecnologie. Il ciclo di lezioni vuole quindi partire da un inquadramento storico e metodologico della filologia digitale, per presentare poi le nuove tecnologie e i recenti sviluppi nelle discipline che riguardano testi e documenti. Questa presentazione si servir\u00e0 del caso studio di una ricerca in corso sui manoscritti moderni (1575-1800).\n</p>\n\n<h2>Calendario degli incontri</h2>\r\n<ul>\r\n    <li>\r\n        <span class=\"keyword\">17 Febbraio, ore 17-19</span>. \u201cIeri oggi e domani delle edizioni digitali\u201d. La lezione fornisce un inquadramento storico e metodologico.\r\n    </li>\r\n    <li>\r\n        <span class=\"keyword\">18 Febbraio, ore 17-19</span>. \u201cScienze del testo e del documento e metodi computazionali: paleografia, codicologia, papirologia e filologia\u201d. La lezione presenta le ultime novit\u00e0 nelle varie discipline che studiano il testo e le sue materialit\u00e0.\r\n    </li>\r\n    <li>\r\n        <span class=\"keyword\">20 Febbraio, ore 11-13</span>. \u201cManoscritti moderni e metodi computazionali\u201d. La lezione presenta i problemi posti per lo studio dei manoscritti moderni, e i metodi scelti dal progetto di ricerca \u201cPRIMA\u201d per rispondere a questi problemi.\r\n    </li>\r\n    <li>\r\n        <span class=\"keyword\">21 Febbraio, ore 11-13</span>. \u201cFilologia strutturale e filologia quantitativa per la testualit\u00e0 fluida\u201d. La lezione presenta un nuovo metodo filologico computazionale elaborato per gestire la testualit\u00e0 fluida dei testi trasmessi dai manoscritti moderni, ma anche per le larghe tradizioni caratterizzate da una forte diffrazione e contaminazione.\r\n    </li>\r\n</ul>\r\n",
+    "date": "17-21/02/2024",
+    "time": "from 11:00 to 19:00",
+    "place": "Dipartimento di Filologia Classica e Italianistica (FICLIT)",
+    "place_extended": "Sala Pasoli, Via Zamboni 32 - 3 piano",
+    "subtitle": "Ciclo di distinguished lectures a cura della Prof.ssa Elena Pierazzo (Universit\u00e0 di Tours)",
+    "urls": [],
+    "downloads": [],
+    "image": "",
+    "id": "evt-8"
+  },
+  {
     "title": "Revealing Connections",
     "division": "/DH.arc",
     "type": "Seminar",
