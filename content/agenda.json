@@ -1,5 +1,25 @@
 [
   {
+    "title": "Accessing Digital Humanities Research on the Cultural Heritage",
+    "division": "BolDH",
+    "type": "Conference",
+    "text": "<p>Workshop of the <span class=\"keyword\">PRIN \"Atlas\"</span>, a project to implement a knowledge graph of the international scholarly research on Italian Cultural Heritage</p>",
+    "date": "26/03/2025",
+    "time": "from 9:30 to 17:00",
+    "place": "Aula Affreschi, via Zamboni 32",
+    "place_extended": "Aula Affreschi, via Zamboni 32, Bologna",
+    "subtitle": "Workshop of the PRIN \"Atlas\", a project to implement a knowledge graph of the international scholarly research on Italian Cultural Heritage",
+    "urls": [
+      {
+        "text": "Discover more",
+        "url": "https://dh-atlas.github.io/workshop.html"
+      }
+    ],
+    "downloads": [],
+    "image": "",
+    "id": "evt-9"
+  },
+  {
     "title": "Dalla filologia digitale alla filologia computazionale",
     "division": "CHeDE",
     "type": "Cycle of Lectures",
