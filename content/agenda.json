@@ -1,13 +1,57 @@
 [
   {
+    "title": "Building Knowledge Landscapes Across Digital Humanities: /DH.arc and DHLab in dialogue",
+    "division": "/DH.arc",
+    "type": "Seminar",
+    "text": "<p>Three days of <span class=\"keyword\">seminars</span> and <span class=\"keyword\">workshops</span>, exploring key research and practices in <span class=\"keyword\">Digital Humanities</span>, establishing a methodological exchange between two leading research centers, the <a class=\"boldh-a-inline\" href=\"https://centri.unibo.it/dharc/en\" target=\"_blank\">/DH.arc</a> (Bologna) and the <a class=\"boldh-a-inline\" href=\"https://dhlab.nl/\" target=\"_blank\">DHLab</a> (Amsterdam).</p>\n\n<p>Designed for researchers, students, cultural heritage professionals, and information and knowledge engineers.</p>\n\n<p>Attendance is <span class=\"keyword\">free</span>, but spots are <span class=\"keyword\">limited</span>.</p>\n\n<p>Reserve your place <span class=\"keyword\">via the form</span> below or by contacting <a class=\"boldh-a-inline\" href=\"mailto:know.land.unibo@gmail.com\" target=\"_blank\">know.land.unibo@gmail.com.</a></p>\n\n<p>The seminar will also be <span class=\"keyword\">streamed online</span>. Please note that registration via the form is required to receive the streaming link.</p>",
+    "date": "05-07/11/2025",
+    "time": "from 10:00 to 17:30",
+    "place": "Aula Affreschi, via Zamboni 34",
+    "place_extended": "Aula Affreschi, Via Zamboni 34, Bologna",
+    "subtitle": "Three days of seminars and workshops establishing a methodological exchange between two leading research centers, the /DH.arc (Bologna) and the DHLab (Amsterdam).",
+    "urls": [
+      {
+        "text": "Full program",
+        "url": "https://dharc-org.github.io/dharc-x-dhlab-seminars/"
+      },
+      {
+        "text": "Registration form",
+        "url": "https://docs.google.com/forms/d/e/1FAIpQLSdD7uwLv_zs1l5O8cl3O0mZTSqRJrs9sHPivAadOLd5XdwWCw/viewform"
+      }
+    ],
+    "downloads": [],
+    "image": "",
+    "id": "evt-11"
+  },
+  {
+    "title": "La Notte Bianca del FICLIT tra libri, archivi e linguaggi",
+    "division": "/DH.arc",
+    "type": "Initiative",
+    "text": "<p>\n        Il 15 settembre il Dipartimento di Filologia Classica e Italianistica dell\u2019Universit\u00e0 di Bologna aprir\u00e0 le porte della storica sede di via Zamboni 32 per la prima Notte Bianca del FICLIT.\n</p>\n<p>\n        Attraverso visite guidate sar\u00e0 possibile conoscere gli spazi della didattica e della ricerca, i laboratori, i centri di ricerca e i progetti di terza missione del Dipartimento.\n</p>\n<p>\n        L'iniziativa \u00e8 inserita nel <a class=\"boldh-a-inline\" href=\"https://www.nottedeiricercatori-society.eu/aspettando-la-notte\" target=\"_blank\">programma di eventi</a> che anticipano la Notte Europea dei Ricercatori 2025 (26 settembre).\n</p>\n<h4>\n        Tour del Dipartimento:\n</h4>\n<p>\n        Le visite guidate avranno cadenza oraria (18.30; 19.30; 20.30; 21.30) su prenotazione all'ingresso del Dipartimento, fino a esaurimento posti.\n</p>\n<p>Attraverso visite guidate sar\u00e0 possibile conoscere gli spazi della didattica e della ricerca, i laboratori, i centri di ricerca e i progetti di terza missione del Dipartimento.</p>",
+    "date": "15/09/2025",
+    "time": "from 18:00 to 22:00",
+    "place": "Dipartimento di Filologia Classica e Italianistica (FICLIT)",
+    "place_extended": "Dipartimento di Filologia Classica e Italianistica (FICLIT) - via Zamboni, 32",
+    "subtitle": "Presentazione dei centri di ricerca, dei corsi di studio, delle attivit\u00e0 culturali e di divulgazione scientifica e tour del Dipartimento",
+    "urls": [
+      {
+        "text": "Scopri di pi\u00f9",
+        "url": "https://ficlit.unibo.it/it/eventi/la-notte-bianca-del-ficlit"
+      }
+    ],
+    "downloads": [],
+    "image": "Event poster\n[https://ficlit.unibo.it/it/eventi/la-notte-bianca-del-ficlit/@@unibo.tiles.richtext/f055c6bbe2d54588ac015d87e14df7ce/@@images/228ae974-64f7-4f91-80dc-9ad72bfab267.jpeg]\n",
+    "id": "evt-10"
+  },
+  {
     "title": "Accessing Digital Humanities Research on the Cultural Heritage",
     "division": "BolDH",
     "type": "Conference",
     "text": "<p>Workshop of the <span class=\"keyword\">PRIN \"Atlas\"</span>, a project to implement a knowledge graph of the international scholarly research on Italian Cultural Heritage</p>",
     "date": "26/03/2025",
     "time": "from 9:30 to 17:00",
-    "place": "Aula Affreschi, via Zamboni 32",
-    "place_extended": "Aula Affreschi, via Zamboni 32, Bologna",
+    "place": "Aula Affreschi, via Zamboni 34",
+    "place_extended": "Aula Affreschi, via Zamboni 34, Bologna",
     "subtitle": "Workshop of the PRIN \"Atlas\", a project to implement a knowledge graph of the international scholarly research on Italian Cultural Heritage",
     "urls": [
       {
