@@ -3,6 +3,7 @@ name: Update News and Agenda
 on:
   schedule:
     - cron: '0 0 * * *' #'0 0 * * 1,4'
+  workflow_dispatch:
 
 jobs:
   build:
