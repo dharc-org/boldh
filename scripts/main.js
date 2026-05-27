@@ -12,13 +12,14 @@ function openPhotosFromElement(el) {
   const count = parseInt(el.dataset.count, 10)
   const ext = el.dataset.ext || 'jpeg'
   const prefix = el.dataset.prefix
-  // Read the button's text from its first text node so the arrow SVG is excluded
-  const titleNode = Array.from(el.childNodes).find(
-    (n) => n.nodeType === Node.TEXT_NODE && n.textContent.trim()
-  )
-  const title = titleNode ? titleNode.textContent.trim() : el.textContent.trim()
+  const titleEl = el.querySelector('.card-title')
+  const subtitleEl = el.querySelector('.card-text')
+  const dateEl = el.querySelector('.agenda-active')
+  const title = titleEl ? titleEl.textContent.trim() : el.textContent.trim()
+  const subtitle = subtitleEl ? subtitleEl.textContent.trim() : ''
+  const date = dateEl ? dateEl.textContent.trim() : ''
   if (folder && count) {
-    populatePhotosModal({ id: el.id, title, folder, count, ext, prefix })
+    populatePhotosModal({ id: el.id, title, subtitle, date, folder, count, ext, prefix })
   }
 }
 

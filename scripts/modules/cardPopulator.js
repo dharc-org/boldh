@@ -142,14 +142,16 @@ export function populateModal(id, eventStatus, agendaArray) {
 }
 
 // POPULATE MODAL WITH A GRID OF PHOTOS FROM A GIVEN FOLDER
-export function populatePhotosModal({ id, title, folder, count, ext = 'jpeg', prefix }) {
+export function populatePhotosModal({ id, title, subtitle, date, folder, count, ext = 'jpeg', prefix }) {
   if (id) handleUrl(id, 'open', 'photos')
 
   const modalContent = document.getElementById('modal-content')
   modalContent.innerHTML = ''
 
   const filePrefix = prefix || folder
-  const titleBlock = `<div id='modal-t-sbt-cnt'><h4 id='modal-title'>${title}</h4></div>`
+  const subtitleHtml = subtitle ? `<p class='subtitle' id='modal-sbt'>${subtitle}</p>` : ''
+  const titleBlock = `<div id='modal-t-sbt-cnt'><h4 id='modal-title'>${title}</h4>${subtitleHtml}</div>`
+  const dateBlock = date ? `<div id='modal-tag-group'><p class='modal-tag modal-date-active'>${date}</p></div>` : ''
 
   let photosHtml = ''
   for (let i = 1; i <= count; i++) {
@@ -159,7 +161,7 @@ export function populatePhotosModal({ id, title, folder, count, ext = 'jpeg', pr
   const grid = `<div class='photo-grid'>${photosHtml}</div>`
   const mainContent = `<div id='modal-main-cnt'>${grid}</div>`
 
-  modalContent.innerHTML = titleBlock + mainContent
+  modalContent.innerHTML = titleBlock + dateBlock + mainContent
 
   document.getElementById('modal-overlay').classList.add('modal-overlay-show')
   document.getElementById('expansion-container').classList.add('expansion-container-show')

@@ -748,7 +748,7 @@ nav ul li a:not(.active):before {
 }
 
 /* --------------- NEWS & AGENDA SECTION ----------------*/
-#news-section, #agenda-section {
+#news-section, #agenda-section, #gallery-section {
   width: 100%;
   padding: 8rem 0 6rem 0; /* Here padding bottom is set to 6rem since '.news-box-container' and '.agenda-box-container' already have 2rem padding bottom to give space for the horizontal scrollbar */
   display: flex;
@@ -1080,6 +1080,18 @@ nav ul li a:not(.active):before {
   transition: transform .2s ease-in;
 }
 
+
+#from-d-to-h {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)),
+    url('../assets/img/photogallery/from_d_to_h/from_d_to_h_35.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+
 @media (hover: hover) {
   .photos-btn:hover {
     background-color: var(--BolDH-Black-Dark3, #272727);
@@ -1385,7 +1397,7 @@ nav ul li a:not(.active):before {
     transition: all .2s ease-in;
   }
   
-  .event-box:hover .card-arrow-cnt {
+  .event-box:hover .card-arrow-cnt, .gallery-box:hover .card-arrow-cnt {
     transform: rotate(-30deg);
     transition: transform .2s ease-in;
   }
