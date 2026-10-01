@@ -1,5 +1,20 @@
 [
   {
+    "title": "Oral Data, FAIR-ness, and Digital Humanities",
+    "division": "BolDH",
+    "type": "Workshop",
+    "text": "<p><span class=\"keyword\">A two-day workshop</span> exploring the challenges and opportunities of using oral data in research.</p><p><a class=\"boldh-a-inline\" href=\"https://dharc-org.github.io/fm-kp-workshop/\" target=\"_blank\">Program and registration form</a></p>\n<p>From collection to dissemination according to FAIR principles, experts and researchers will share experiences, methodologies, and best practices for the <span class=\"keyword\">management, preservation, and reuse of oral sources</span>.</p>",
+    "date": "28-29/10/2026",
+    "time": "10:00-18:00 / 9:00-13:00",
+    "place": "Aula Affreschi and online",
+    "place_extended": "Aula Affreschi, via Zamboni 34, Bologna and online",
+    "subtitle": "Ethical, methodological, and technological challenges",
+    "urls": [],
+    "downloads": [],
+    "image": "",
+    "id": "evt-16"
+  },
+  {
     "title": "Scientific Mapping with SciMAT",
     "division": "BolDH",
     "type": "Seminar",
