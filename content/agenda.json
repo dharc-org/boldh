@@ -1,5 +1,25 @@
 [
   {
+    "title": "From thought to practice",
+    "division": "/DH.arc",
+    "type": "Seminar",
+    "text": "<p>This year's edition of the /DH.arc seminars, <span class=\"keyword\">\"From thought to practice\"</span>, explores how <span class=\"keyword\">digital methods and artificial intelligence</span> reshape the questions, sources, and practices of the humanities.</p>\n<p>Across two days, the seminar follows three movements of <span class=\"keyword\">learning, sharing, and doing</span>: invited experts open the conversation, researchers from Bologna and Copenhagen present concrete use cases from their work, and a hands-on workshop turns these exchanges into practice through the development of <span class=\"keyword\">efficient and creative AI pipelines</span>.</p>",
+    "date": "05-06/11/2026",
+    "time": "10:00-17:30 / 9:00-13:00",
+    "place": "Aula Affreschi and online",
+    "place_extended": "Aula Affreschi, via Zamboni 34, Bologna and online",
+    "subtitle": "A Dialogue Between Artificial Intelligence and Digital Humanities",
+    "urls": [
+      {
+        "text": "Info and registration",
+        "url": "https://dharc-org.github.io/dharc-seminars/from-thought-to-practice"
+      }
+    ],
+    "downloads": [],
+    "image": "",
+    "id": "evt-17"
+  },
+  {
     "title": "Oral Data, FAIR-ness, and Digital Humanities",
     "division": "BolDH",
     "type": "Workshop",
